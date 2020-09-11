@@ -2,6 +2,7 @@ import UIKit
 
 class AddProductsVC: UIViewController {
     
+    fileprivate let photoButton = ECButton(backgroundColor: .white, title: "Select Photo", fontSize: 21)
     fileprivate let nameTextField = ECTextField(padding: 16, placeholderText: "Enter product name")
     fileprivate let priceTextField = ECTextField(padding: 16, placeholderText: "Enter price")
     fileprivate let sizesTextField = ECTextField(padding: 16, placeholderText: "Enter sizes")
@@ -11,6 +12,13 @@ class AddProductsVC: UIViewController {
         let stackView = UIStackView(arrangedSubviews: [nameTextField, priceTextField, sizesTextField, saveButton])
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
+        stackView.spacing = 18
+        return stackView
+    }()
+    
+    fileprivate lazy var overrallStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [photoButton, verticalStackView])
+        stackView.axis = .vertical
         stackView.spacing = 18
         return stackView
     }()
@@ -32,13 +40,15 @@ class AddProductsVC: UIViewController {
         sizesTextField.autocorrectionType = .no
         saveButton.isEnabled = false
         
+        photoButton.setRoundedBorder(borderColor: .black, borderWidth: 1, radius: 2)
         nameTextField.setRoundedBorder(borderColor: .black, borderWidth: 1, radius: 2)
         priceTextField.setRoundedBorder(borderColor: .black, borderWidth: 1, radius: 2)
         sizesTextField.setRoundedBorder(borderColor: .black, borderWidth: 1, radius: 2)
         saveButton.setRoundedBorder(borderColor: .black, borderWidth: 1, radius: 2)
         
-        view.addSubview(verticalStackView)
+        view.addSubview(overrallStackView)
+        photoButton.heightAnchor.constraint(equalToConstant: 275).isActive = true
         saveButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        verticalStackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 30, left: 20, bottom: 0, right: 20))
+        overrallStackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 30, left: 20, bottom: 0, right: 20))
     }
 }

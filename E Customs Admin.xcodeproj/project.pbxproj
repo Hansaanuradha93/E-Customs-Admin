@@ -24,6 +24,7 @@
 		47AC6990250B127A00A16053 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC698F250B127A00A16053 /* LoginVM.swift */; };
 		47AC6993250B217800A16053 /* AddProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC6992250B217800A16053 /* AddProductsVC.swift */; };
 		47AC6995250B21A700A16053 /* AddProductsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC6994250B21A700A16053 /* AddProductsVM.swift */; };
+		47AC6998250BB4CB00A16053 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC6997250BB4CB00A16053 /* Keys.swift */; };
 		CDD6DA0BDAF580919DEBEE0C /* Pods_E_Customs_Admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFFF634ADA54DF89D7D8AEB2 /* Pods_E_Customs_Admin.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		47AC698F250B127A00A16053 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		47AC6992250B217800A16053 /* AddProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductsVC.swift; sourceTree = "<group>"; };
 		47AC6994250B21A700A16053 /* AddProductsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductsVM.swift; sourceTree = "<group>"; };
+		47AC6997250BB4CB00A16053 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		94CEC4D8F315C597F1FE6B52 /* Pods-E Customs Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E Customs Admin.debug.xcconfig"; path = "Target Support Files/Pods-E Customs Admin/Pods-E Customs Admin.debug.xcconfig"; sourceTree = "<group>"; };
 		AFFF634ADA54DF89D7D8AEB2 /* Pods_E_Customs_Admin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Customs_Admin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 				476758F0250A6589005E726E /* Scenes */,
 				476758F1250A6598005E726E /* Extensions */,
 				476758F2250A65A2005E726E /* Helper */,
+				47AC6996250BB4BB00A16053 /* Constants */,
 				476758ED250A6562005E726E /* Support Files */,
 			);
 			path = "E Customs Admin";
@@ -201,6 +204,14 @@
 				47AC6994250B21A700A16053 /* AddProductsVM.swift */,
 			);
 			name = "Add Products";
+			sourceTree = "<group>";
+		};
+		47AC6996250BB4BB00A16053 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				47AC6997250BB4CB00A16053 /* Keys.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 		BC2E953F242B1F2CADF6040E /* Pods */ = {
@@ -331,6 +342,7 @@
 				476758DA250A6398005E726E /* AppDelegate.swift in Sources */,
 				47AC6993250B217800A16053 /* AddProductsVC.swift in Sources */,
 				47AC697E250B110400A16053 /* ECTextField.swift in Sources */,
+				47AC6998250BB4CB00A16053 /* Keys.swift in Sources */,
 				47AC6986250B117A00A16053 /* Bindable.swift in Sources */,
 				47AC6989250B122E00A16053 /* SignupVC.swift in Sources */,
 				47AC6984250B116000A16053 /* UIViewController+Ext.swift in Sources */,

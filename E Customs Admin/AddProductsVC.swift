@@ -47,11 +47,10 @@ class AddProductsVC: UIViewController {
     
     
     @objc fileprivate func handleSelectPhoto() {
-        print("select photo")
-//        let imagePickerController = UIImagePickerController()
-//        imagePickerController.delegate = self
-//        imagePickerController.allowsEditing = true
-//        present(imagePickerController, animated: true)
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        present(imagePickerController, animated: true)
     }
     
     
@@ -149,5 +148,20 @@ class AddProductsVC: UIViewController {
         photoButton.heightAnchor.constraint(equalToConstant: 275).isActive = true
         saveButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         overrallStackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 30, left: 20, bottom: 0, right: 20))
+    }
+}
+
+
+// MARK: -
+extension AddProductsVC: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedImage = info[UIImagePickerController.InfoKey(rawValue: ImagePicker.EditedImage.key)] as? UIImage {
+            viewModel.bindableImage.value = editedImage
+        } else if let originalImage = info[UIImagePickerController.InfoKey(rawValue: ImagePicker.OriginalImage.key)] as? UIImage {
+            viewModel.bindableImage.value = originalImage
+        }
+        viewModel.checkFormValidity()
+        dismiss(animated: true, completion: nil)
     }
 }

@@ -22,6 +22,8 @@
 		47AC698B250B124300A16053 /* SignupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC698A250B124300A16053 /* SignupVM.swift */; };
 		47AC698E250B126500A16053 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC698D250B126500A16053 /* LoginVC.swift */; };
 		47AC6990250B127A00A16053 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC698F250B127A00A16053 /* LoginVM.swift */; };
+		47AC6993250B217800A16053 /* AddProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC6992250B217800A16053 /* AddProductsVC.swift */; };
+		47AC6995250B21A700A16053 /* AddProductsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC6994250B21A700A16053 /* AddProductsVM.swift */; };
 		CDD6DA0BDAF580919DEBEE0C /* Pods_E_Customs_Admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFFF634ADA54DF89D7D8AEB2 /* Pods_E_Customs_Admin.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,8 @@
 		47AC698A250B124300A16053 /* SignupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVM.swift; sourceTree = "<group>"; };
 		47AC698D250B126500A16053 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		47AC698F250B127A00A16053 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		47AC6992250B217800A16053 /* AddProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductsVC.swift; sourceTree = "<group>"; };
+		47AC6994250B21A700A16053 /* AddProductsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductsVM.swift; sourceTree = "<group>"; };
 		94CEC4D8F315C597F1FE6B52 /* Pods-E Customs Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E Customs Admin.debug.xcconfig"; path = "Target Support Files/Pods-E Customs Admin/Pods-E Customs Admin.debug.xcconfig"; sourceTree = "<group>"; };
 		AFFF634ADA54DF89D7D8AEB2 /* Pods_E_Customs_Admin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Customs_Admin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -131,6 +135,7 @@
 		476758F0250A6589005E726E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				47AC6991250B216200A16053 /* Add Products */,
 				47AC698C250B125300A16053 /* Login  */,
 				47AC6987250B121200A16053 /* Sign Up */,
 			);
@@ -187,6 +192,15 @@
 				47AC698F250B127A00A16053 /* LoginVM.swift */,
 			);
 			name = "Login ";
+			sourceTree = "<group>";
+		};
+		47AC6991250B216200A16053 /* Add Products */ = {
+			isa = PBXGroup;
+			children = (
+				47AC6992250B217800A16053 /* AddProductsVC.swift */,
+				47AC6994250B21A700A16053 /* AddProductsVM.swift */,
+			);
+			name = "Add Products";
 			sourceTree = "<group>";
 		};
 		BC2E953F242B1F2CADF6040E /* Pods */ = {
@@ -315,6 +329,7 @@
 			files = (
 				47AC698E250B126500A16053 /* LoginVC.swift in Sources */,
 				476758DA250A6398005E726E /* AppDelegate.swift in Sources */,
+				47AC6993250B217800A16053 /* AddProductsVC.swift in Sources */,
 				47AC697E250B110400A16053 /* ECTextField.swift in Sources */,
 				47AC6986250B117A00A16053 /* Bindable.swift in Sources */,
 				47AC6989250B122E00A16053 /* SignupVC.swift in Sources */,
@@ -322,6 +337,7 @@
 				47AC6980250B113100A16053 /* UIView+Ext.swift in Sources */,
 				47AC698B250B124300A16053 /* SignupVM.swift in Sources */,
 				47AC6990250B127A00A16053 /* LoginVM.swift in Sources */,
+				47AC6995250B21A700A16053 /* AddProductsVM.swift in Sources */,
 				47AC6982250B114700A16053 /* UIColor+Ext.swift in Sources */,
 				47AC697B250B10D000A16053 /* ECButton.swift in Sources */,
 				476758DC250A6398005E726E /* SceneDelegate.swift in Sources */,

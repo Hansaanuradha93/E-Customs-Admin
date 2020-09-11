@@ -42,7 +42,15 @@ class AddProductsVC: UIViewController {
     
     
     @objc fileprivate func handleSave() {
-        print("save")
+        viewModel.saveImageToFirebase { [weak self] error in
+            guard let self = self else { return }
+            if let error = error {
+                self.presentAlert(title: "Poduct saving failed!", message: error.localizedDescription, buttonTitle: "OK")
+                return
+            }
+            self.presentAlert(title: "Successful!", message: "Poduct saved successfully!", buttonTitle: "OK")
+            self.clearData()
+        }
     }
     
     
@@ -79,6 +87,14 @@ class AddProductsVC: UIViewController {
         let bottomSpace = view.frame.height - overrallStackView.frame.origin.y - overrallStackView.frame.height
         let difference = keyboardFrame.height - bottomSpace
         self.overrallStackView.transform = CGAffineTransform(translationX: 0, y: -(difference + 10))
+    }
+    
+    
+    fileprivate func clearData() {
+        saveButton.setImage(nil, for: .normal)
+        nameTextField.text = ""
+        priceTextField.text = ""
+        sizesTextField.text = ""
     }
     
     

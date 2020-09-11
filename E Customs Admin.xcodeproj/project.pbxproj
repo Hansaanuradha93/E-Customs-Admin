@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,12 @@
 		476758E3250A6399005E726E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476758E2250A6399005E726E /* Assets.xcassets */; };
 		476758E6250A6399005E726E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476758E4250A6399005E726E /* LaunchScreen.storyboard */; };
 		476758F4250A663A005E726E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 476758F3250A663A005E726E /* GoogleService-Info.plist */; };
+		47AC697B250B10D000A16053 /* ECButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC697A250B10D000A16053 /* ECButton.swift */; };
+		47AC697E250B110400A16053 /* ECTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC697D250B110400A16053 /* ECTextField.swift */; };
+		47AC6980250B113100A16053 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC697F250B113100A16053 /* UIView+Ext.swift */; };
+		47AC6982250B114700A16053 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC6981250B114700A16053 /* UIColor+Ext.swift */; };
+		47AC6984250B116000A16053 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC6983250B116000A16053 /* UIViewController+Ext.swift */; };
+		47AC6986250B117A00A16053 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC6985250B117A00A16053 /* Bindable.swift */; };
 		CDD6DA0BDAF580919DEBEE0C /* Pods_E_Customs_Admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFFF634ADA54DF89D7D8AEB2 /* Pods_E_Customs_Admin.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +30,12 @@
 		476758E5250A6399005E726E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		476758E7250A6399005E726E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		476758F3250A663A005E726E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		47AC697A250B10D000A16053 /* ECButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECButton.swift; sourceTree = "<group>"; };
+		47AC697D250B110400A16053 /* ECTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECTextField.swift; sourceTree = "<group>"; };
+		47AC697F250B113100A16053 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		47AC6981250B114700A16053 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		47AC6983250B116000A16053 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		47AC6985250B117A00A16053 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		94CEC4D8F315C597F1FE6B52 /* Pods-E Customs Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E Customs Admin.debug.xcconfig"; path = "Target Support Files/Pods-E Customs Admin/Pods-E Customs Admin.debug.xcconfig"; sourceTree = "<group>"; };
 		AFFF634ADA54DF89D7D8AEB2 /* Pods_E_Customs_Admin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Customs_Admin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -102,6 +114,8 @@
 		476758EF250A6580005E726E /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				47AC6979250B10BA00A16053 /* Buttons */,
+				47AC697C250B10F000A16053 /* Text Fields */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -116,6 +130,9 @@
 		476758F1250A6598005E726E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				47AC697F250B113100A16053 /* UIView+Ext.swift */,
+				47AC6981250B114700A16053 /* UIColor+Ext.swift */,
+				47AC6983250B116000A16053 /* UIViewController+Ext.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -123,8 +140,25 @@
 		476758F2250A65A2005E726E /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				47AC6985250B117A00A16053 /* Bindable.swift */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		47AC6979250B10BA00A16053 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				47AC697A250B10D000A16053 /* ECButton.swift */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		47AC697C250B10F000A16053 /* Text Fields */ = {
+			isa = PBXGroup;
+			children = (
+				47AC697D250B110400A16053 /* ECTextField.swift */,
+			);
+			name = "Text Fields";
 			sourceTree = "<group>";
 		};
 		BC2E953F242B1F2CADF6040E /* Pods */ = {
@@ -133,7 +167,6 @@
 				94CEC4D8F315C597F1FE6B52 /* Pods-E Customs Admin.debug.xcconfig */,
 				04B299E5B6E6FC37F500BA58 /* Pods-E Customs Admin.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -253,6 +286,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				476758DA250A6398005E726E /* AppDelegate.swift in Sources */,
+				47AC697E250B110400A16053 /* ECTextField.swift in Sources */,
+				47AC6986250B117A00A16053 /* Bindable.swift in Sources */,
+				47AC6984250B116000A16053 /* UIViewController+Ext.swift in Sources */,
+				47AC6980250B113100A16053 /* UIView+Ext.swift in Sources */,
+				47AC6982250B114700A16053 /* UIColor+Ext.swift in Sources */,
+				47AC697B250B10D000A16053 /* ECButton.swift in Sources */,
 				476758DC250A6398005E726E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

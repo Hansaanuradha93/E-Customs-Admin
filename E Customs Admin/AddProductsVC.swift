@@ -91,7 +91,7 @@ class AddProductsVC: UIViewController {
     
     
     fileprivate func clearData() {
-        saveButton.setImage(nil, for: .normal)
+        photoButton.setImage(nil, for: .normal)
         nameTextField.text = ""
         priceTextField.text = ""
         sizesTextField.text = ""
@@ -161,7 +161,7 @@ class AddProductsVC: UIViewController {
         saveButton.setRoundedBorder(borderColor: .black, borderWidth: 0, radius: 2)
         
         view.addSubview(overrallStackView)
-        photoButton.heightAnchor.constraint(equalToConstant: 275).isActive = true
+        photoButton.heightAnchor.constraint(equalToConstant: 215).isActive = true
         saveButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         overrallStackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 30, left: 20, bottom: 0, right: 20))
     }

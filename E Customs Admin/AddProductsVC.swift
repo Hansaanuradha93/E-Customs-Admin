@@ -4,7 +4,7 @@ class AddProductsVC: UIViewController {
     
     fileprivate let viewModel = AddProductsVM()
     
-    fileprivate let photoButton = ECButton(backgroundColor: .white, title: "Select Photo", titleColor: .gray, fontSize: 21)
+    fileprivate let photoButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: "Select Photo", titleColor: .gray, fontSize: 21)
     fileprivate let nameTextField = ECTextField(padding: 16, placeholderText: "Enter product name")
     fileprivate let priceTextField = ECTextField(padding: 16, placeholderText: "Enter price")
     fileprivate let sizesTextField = ECTextField(padding: 16, placeholderText: "Enter sizes")
@@ -138,7 +138,7 @@ class AddProductsVC: UIViewController {
         sizesTextField.autocorrectionType = .no
         saveButton.isEnabled = false
         
-        photoButton.setRoundedBorder(borderColor: .black, borderWidth: 1, radius: 2)
+        photoButton.setRoundedBorder(borderColor: .black, borderWidth: 0, radius: 2)
         nameTextField.setRoundedBorder(borderColor: .black, borderWidth: 1, radius: 2)
         priceTextField.setRoundedBorder(borderColor: .black, borderWidth: 1, radius: 2)
         sizesTextField.setRoundedBorder(borderColor: .black, borderWidth: 1, radius: 2)

@@ -139,10 +139,10 @@ class AddProductsVC: UIViewController {
         saveButton.isEnabled = false
         
         photoButton.setRoundedBorder(borderColor: .black, borderWidth: 0, radius: 2)
-        nameTextField.setRoundedBorder(borderColor: .black, borderWidth: 1, radius: 2)
-        priceTextField.setRoundedBorder(borderColor: .black, borderWidth: 1, radius: 2)
-        sizesTextField.setRoundedBorder(borderColor: .black, borderWidth: 1, radius: 2)
-        saveButton.setRoundedBorder(borderColor: .black, borderWidth: 1, radius: 2)
+        nameTextField.setRoundedBorder(borderColor: .black, borderWidth: 0.5, radius: 2)
+        priceTextField.setRoundedBorder(borderColor: .black, borderWidth: 0.5, radius: 2)
+        sizesTextField.setRoundedBorder(borderColor: .black, borderWidth: 0.5, radius: 2)
+        saveButton.setRoundedBorder(borderColor: .black, borderWidth: 0, radius: 2)
         
         view.addSubview(overrallStackView)
         photoButton.heightAnchor.constraint(equalToConstant: 275).isActive = true

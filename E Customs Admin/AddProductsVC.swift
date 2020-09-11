@@ -2,6 +2,8 @@ import UIKit
 
 class AddProductsVC: UIViewController {
     
+    fileprivate let viewModel = AddProductsVM()
+    
     fileprivate let photoButton = ECButton(backgroundColor: .white, title: "Select Photo", titleColor: .gray, fontSize: 21)
     fileprivate let nameTextField = ECTextField(padding: 16, placeholderText: "Enter product name")
     fileprivate let priceTextField = ECTextField(padding: 16, placeholderText: "Enter price")
@@ -28,6 +30,8 @@ class AddProductsVC: UIViewController {
         super.viewDidLoad()
         setupUI()
         addTargets()
+        
+        setupViewModelObserver()
     }
     
     
@@ -46,14 +50,48 @@ class AddProductsVC: UIViewController {
     
     
     @objc fileprivate func handleTextChange(textField: UITextField) {
-        print("text changed")
-//        signupViewModel.fullName = fullNameTextField.text
-//        signupViewModel.email = emailTextField.text
-//        signupViewModel.password = passwordTextField.text
+        viewModel.name = nameTextField.text
+        viewModel.price = priceTextField.text
+        viewModel.sizes = sizesTextField.text
+    }
+    
+    
+    @objc fileprivate func handleTapDismiss() {
+        view.endEditing(true)
+    }
+    
+    
+    fileprivate func setupViewModelObserver() {
+        viewModel.bindalbeIsFormValid.bind { [weak self] isFormValid in
+            guard let self = self, let isFormValid = isFormValid else { return }
+            if isFormValid {
+                self.saveButton.backgroundColor = .black
+                self.saveButton.setTitleColor(.white, for: .normal)
+            } else {
+                self.saveButton.backgroundColor = UIColor.appColor(.lightGray)
+                self.saveButton.setTitleColor(.gray, for: .disabled)
+            }
+            self.saveButton.isEnabled = isFormValid
+        }
+        
+        viewModel.bindableImage.bind { [weak self] image in
+            guard let self = self else { return }
+            self.photoButton.setImage(image, for: .normal)
+        }
+        
+        viewModel.bindableIsSaving.bind { [weak self] isSaving in
+            guard let self = self, let isSaving = isSaving else { return }
+            if isSaving {
+                self.showPreloader()
+            } else {
+                self.hidePreloader()
+            }
+        }
     }
     
     
     fileprivate func addTargets() {
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapDismiss)))
         photoButton.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
         nameTextField.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
         priceTextField.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)

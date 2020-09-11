@@ -2,7 +2,7 @@ import UIKit
 
 class AddProductsVC: UIViewController {
     
-    fileprivate let photoButton = ECButton(backgroundColor: .white, title: "Select Photo", fontSize: 21)
+    fileprivate let photoButton = ECButton(backgroundColor: .white, title: "Select Photo", titleColor: .gray, fontSize: 21)
     fileprivate let nameTextField = ECTextField(padding: 16, placeholderText: "Enter product name")
     fileprivate let priceTextField = ECTextField(padding: 16, placeholderText: "Enter price")
     fileprivate let sizesTextField = ECTextField(padding: 16, placeholderText: "Enter sizes")
@@ -23,9 +23,42 @@ class AddProductsVC: UIViewController {
         return stackView
     }()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        addTargets()
+    }
+    
+    
+    @objc fileprivate func handleSave() {
+        print("save")
+    }
+    
+    
+    @objc fileprivate func handleSelectPhoto() {
+        print("select photo")
+//        let imagePickerController = UIImagePickerController()
+//        imagePickerController.delegate = self
+//        imagePickerController.allowsEditing = true
+//        present(imagePickerController, animated: true)
+    }
+    
+    
+    @objc fileprivate func handleTextChange(textField: UITextField) {
+        print("text changed")
+//        signupViewModel.fullName = fullNameTextField.text
+//        signupViewModel.email = emailTextField.text
+//        signupViewModel.password = passwordTextField.text
+    }
+    
+    
+    fileprivate func addTargets() {
+        photoButton.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
+        nameTextField.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
+        priceTextField.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
+        sizesTextField.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
+        saveButton.addTarget(self, action: #selector(handleSave), for: .touchUpInside)
     }
     
     

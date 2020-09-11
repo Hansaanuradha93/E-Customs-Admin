@@ -30,8 +30,14 @@ class AddProductsVC: UIViewController {
         super.viewDidLoad()
         setupUI()
         addTargets()
-        
+        setupNotifications()
         setupViewModelObserver()
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
     
     
@@ -58,6 +64,28 @@ class AddProductsVC: UIViewController {
     
     @objc fileprivate func handleTapDismiss() {
         view.endEditing(true)
+    }
+    
+    
+    @objc fileprivate func handleKeyboardHide() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.overrallStackView.transform = .identity
+        })
+    }
+    
+    
+    @objc fileprivate func handleKeyboardShow(notification: Notification) {
+        guard let value = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        let keyboardFrame = value.cgRectValue
+        let bottomSpace = view.frame.height - overrallStackView.frame.origin.y - overrallStackView.frame.height
+        let difference = keyboardFrame.height - bottomSpace
+        self.overrallStackView.transform = CGAffineTransform(translationX: 0, y: -(difference + 10))
+    }
+    
+    
+    fileprivate func setupNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     

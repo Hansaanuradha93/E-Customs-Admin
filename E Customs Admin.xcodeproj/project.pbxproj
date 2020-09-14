@@ -19,6 +19,7 @@
 		476A24E4250CDC5900E8200D /* OrderListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24E3250CDC5900E8200D /* OrderListVM.swift */; };
 		476A24E7250CDCC800E8200D /* RequestBoxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24E6250CDCC800E8200D /* RequestBoxVC.swift */; };
 		476A24E9250CDCE100E8200D /* RequestBoxVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24E8250CDCE100E8200D /* RequestBoxVM.swift */; };
+		479E0886250FD3C7002EAD27 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479E0885250FD3C7002EAD27 /* Product.swift */; };
 		47AC697B250B10D000A16053 /* ECButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC697A250B10D000A16053 /* ECButton.swift */; };
 		47AC697E250B110400A16053 /* ECTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC697D250B110400A16053 /* ECTextField.swift */; };
 		47AC6980250B113100A16053 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC697F250B113100A16053 /* UIView+Ext.swift */; };
@@ -51,6 +52,7 @@
 		476A24E3250CDC5900E8200D /* OrderListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListVM.swift; sourceTree = "<group>"; };
 		476A24E6250CDCC800E8200D /* RequestBoxVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBoxVC.swift; sourceTree = "<group>"; };
 		476A24E8250CDCE100E8200D /* RequestBoxVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBoxVM.swift; sourceTree = "<group>"; };
+		479E0885250FD3C7002EAD27 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		47AC697A250B10D000A16053 /* ECButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECButton.swift; sourceTree = "<group>"; };
 		47AC697D250B110400A16053 /* ECTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECTextField.swift; sourceTree = "<group>"; };
 		47AC697F250B113100A16053 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		476758EE250A657A005E726E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				479E0885250FD3C7002EAD27 /* Product.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				47AC6984250B116000A16053 /* UIViewController+Ext.swift in Sources */,
 				476A24E9250CDCE100E8200D /* RequestBoxVM.swift in Sources */,
 				47AC6980250B113100A16053 /* UIView+Ext.swift in Sources */,
+				479E0886250FD3C7002EAD27 /* Product.swift in Sources */,
 				47AC698B250B124300A16053 /* SignupVM.swift in Sources */,
 				47AC6990250B127A00A16053 /* LoginVM.swift in Sources */,
 				47AC6995250B21A700A16053 /* AddProductsVM.swift in Sources */,

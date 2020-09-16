@@ -27,13 +27,13 @@ class HomeVC: UITableViewController {
 extension HomeVC {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return viewModel.products.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.reuseID, for: indexPath) as! ProductCell
-        cell.set()
+        cell.set(product: viewModel.products[indexPath.row])
         return cell
     }
     
@@ -50,6 +50,7 @@ extension HomeVC {
     fileprivate func fetchProducts() {
         listener = viewModel.fetchProducts { (status) in
             if status {
+                DispatchQueue.main.async { self.tableView.reloadData()}
             }
         }
     }

@@ -1,7 +1,7 @@
 import UIKit
 import Firebase
 
-class HomeVC: UIViewController {
+class HomeVC: UITableViewController {
 
     // MARK: Properties
     let viewModel = HomeVM()
@@ -19,6 +19,22 @@ class HomeVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if isMovingFromParent { listener?.remove() }
+    }
+}
+
+
+// MARK: - UITableView
+extension HomeVC {
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        cell.backgroundColor = .red
+        return cell
     }
 }
 

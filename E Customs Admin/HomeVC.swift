@@ -32,9 +32,14 @@ extension HomeVC {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        cell.backgroundColor = .red
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.reuseID, for: indexPath) as! ProductCell
+        cell.setup()
         return cell
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
 
@@ -45,7 +50,6 @@ extension HomeVC {
     fileprivate func fetchProducts() {
         listener = viewModel.fetchProducts { (status) in
             if status {
-                print(self.viewModel.products)
             }
         }
     }
@@ -54,5 +58,8 @@ extension HomeVC {
     fileprivate func setupUI() {
         view.backgroundColor = .white
         navigationController?.navigationBar.isHidden = true
+        
+        tableView.separatorStyle = .none
+        tableView.register(ProductCell.self, forCellReuseIdentifier: ProductCell.reuseID)
     }
 }

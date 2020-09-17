@@ -11,6 +11,7 @@
 		4720AAE925127A2D00A52FC5 /* ECImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4720AAE825127A2D00A52FC5 /* ECImageView.swift */; };
 		4720AAEB25127A9100A52FC5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4720AAEA25127A9100A52FC5 /* Constants.swift */; };
 		4720AAEE25127C8000A52FC5 /* ECLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4720AAED25127C8000A52FC5 /* ECLabel.swift */; };
+		475297872513CB1300106150 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475297862513CB1300106150 /* NetworkManager.swift */; };
 		476758DA250A6398005E726E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476758D9250A6398005E726E /* AppDelegate.swift */; };
 		476758DC250A6398005E726E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476758DB250A6398005E726E /* SceneDelegate.swift */; };
 		476758E3250A6399005E726E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476758E2250A6399005E726E /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		4720AAE825127A2D00A52FC5 /* ECImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECImageView.swift; sourceTree = "<group>"; };
 		4720AAEA25127A9100A52FC5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4720AAED25127C8000A52FC5 /* ECLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECLabel.swift; sourceTree = "<group>"; };
+		475297862513CB1300106150 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		476758D6250A6398005E726E /* E Customs Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E Customs Admin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		476758D9250A6398005E726E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		476758DB250A6398005E726E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 			name = Labels;
 			sourceTree = "<group>";
 		};
+		475297852513CAE800106150 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				475297862513CB1300106150 /* NetworkManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		476758CD250A6398005E726E = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +158,7 @@
 				476758F0250A6589005E726E /* Scenes */,
 				476758F1250A6598005E726E /* Extensions */,
 				476758F2250A65A2005E726E /* Helper */,
+				475297852513CAE800106150 /* Managers */,
 				47AC6996250BB4BB00A16053 /* Constants */,
 				476758ED250A6562005E726E /* Support Files */,
 			);
@@ -454,6 +465,7 @@
 				4720AAEE25127C8000A52FC5 /* ECLabel.swift in Sources */,
 				47AC697B250B10D000A16053 /* ECButton.swift in Sources */,
 				476A24E2250CDC3700E8200D /* OrderListVC.swift in Sources */,
+				475297872513CB1300106150 /* NetworkManager.swift in Sources */,
 				4720AAE6251277D100A52FC5 /* ProductCell.swift in Sources */,
 				476758DC250A6398005E726E /* SceneDelegate.swift in Sources */,
 				476A24E7250CDCC800E8200D /* RequestBoxVC.swift in Sources */,

@@ -27,6 +27,7 @@ extension ProductCell {
     func set(product: Product) {
         titleLabel.text = product.name ?? ""
         priceLabel.text = "$\(product.price ?? "")"
+        thumbnailImageView.downloadImage(from: product.thumbnailUrl ?? "")
     }
     
     
@@ -36,6 +37,6 @@ extension ProductCell {
         
         thumbnailImageView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, size: .init(width: 0, height: 330))
         titleLabel.anchor(top: thumbnailImageView.bottomAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 8, left: 8, bottom: 0, right: 8))
-        priceLabel.anchor(top: titleLabel.bottomAnchor, leading: titleLabel.leadingAnchor, bottom: nil, trailing: titleLabel.trailingAnchor, padding: .init(top: 8, left: 0, bottom: 0, right: 0))
+        priceLabel.anchor(top: titleLabel.bottomAnchor, leading: titleLabel.leadingAnchor, bottom: nil, trailing: titleLabel.trailingAnchor, padding: .init(top: 4, left: 0, bottom: 0, right: 0))
     }
 }

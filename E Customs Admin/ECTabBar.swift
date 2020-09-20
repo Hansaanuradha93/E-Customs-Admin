@@ -16,28 +16,28 @@ extension ECTabBar {
     
     fileprivate func createHomeNC() -> UINavigationController {
         let homeVC = HomeVC()
-        homeVC.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
+        homeVC.tabBarItem = UITabBarItem(title: "", image: Asserts.house, selectedImage: Asserts.houseFill)
         return UINavigationController(rootViewController: homeVC)
     }
     
     
     fileprivate func createAddProductNC() -> UINavigationController {
         let addProductVC = AddProductsVC()
-        addProductVC.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "plus"), selectedImage: UIImage(systemName: "plus"))
+        addProductVC.tabBarItem = UITabBarItem(title: "", image: Asserts.plus, selectedImage: Asserts.plus)
         return UINavigationController(rootViewController: addProductVC)
     }
     
     
     fileprivate func createOrderListNC() -> UINavigationController {
         let orderListVC = OrderListVC()
-        orderListVC.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "doc.text"), selectedImage: UIImage(systemName: "doc.text.fill"))
+        orderListVC.tabBarItem = UITabBarItem(title: "", image: Asserts.document, selectedImage: Asserts.documentFill)
         return UINavigationController(rootViewController: orderListVC)
     }
     
     
     fileprivate func createRequestBoxNC() -> UINavigationController {
         let requestBoxVC = RequestBoxVC()
-        requestBoxVC.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "envelope"), selectedImage: UIImage(systemName: "envelope.fill"))
+        requestBoxVC.tabBarItem = UITabBarItem(title: "", image: Asserts.envelope, selectedImage: Asserts.envelopeFill)
         return UINavigationController(rootViewController: requestBoxVC)
     }
 }

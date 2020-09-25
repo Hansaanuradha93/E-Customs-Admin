@@ -1,6 +1,6 @@
 import UIKit
 
-class ECTitleLabel: UILabel {
+class ECBoldLabel: UILabel {
 
     // MARK: Initializers
     override init(frame: CGRect) {

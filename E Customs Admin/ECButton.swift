@@ -12,7 +12,7 @@ class ECButton: UIButton {
 
     
     convenience init(backgroundColor: UIColor = .white, title: String = "", titleColor: UIColor = .black, radius: CGFloat = 0, fontSize: CGFloat = 32) {
-        self.init(frame: .zero)
+        self.init(type: .system)
         self.setup(backgroundColor: backgroundColor, title: title, titleColor: titleColor, radius: radius, fontSize: fontSize)
     }
 }

@@ -41,6 +41,12 @@ extension HomeVC {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 445
     }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = ProductDetailsVC(viewModel: ProductDetialsVM(product: viewModel.products[indexPath.row]))
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 }
 
 

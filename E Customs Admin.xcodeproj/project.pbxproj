@@ -25,6 +25,8 @@
 		476A24E4250CDC5900E8200D /* OrderListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24E3250CDC5900E8200D /* OrderListVM.swift */; };
 		476A24E7250CDCC800E8200D /* RequestBoxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24E6250CDCC800E8200D /* RequestBoxVC.swift */; };
 		476A24E9250CDCE100E8200D /* RequestBoxVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24E8250CDCE100E8200D /* RequestBoxVM.swift */; };
+		479C46EF251F0F23000CACFE /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479C46EE251F0F23000CACFE /* ProductDetailsVC.swift */; };
+		479C46F2251F0F47000CACFE /* ProductDetialsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479C46F1251F0F47000CACFE /* ProductDetialsVM.swift */; };
 		479E0886250FD3C7002EAD27 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479E0885250FD3C7002EAD27 /* Product.swift */; };
 		47AC697B250B10D000A16053 /* ECButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC697A250B10D000A16053 /* ECButton.swift */; };
 		47AC697E250B110400A16053 /* ECTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC697D250B110400A16053 /* ECTextField.swift */; };
@@ -66,6 +68,8 @@
 		476A24E3250CDC5900E8200D /* OrderListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListVM.swift; sourceTree = "<group>"; };
 		476A24E6250CDCC800E8200D /* RequestBoxVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBoxVC.swift; sourceTree = "<group>"; };
 		476A24E8250CDCE100E8200D /* RequestBoxVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBoxVM.swift; sourceTree = "<group>"; };
+		479C46EE251F0F23000CACFE /* ProductDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
+		479C46F1251F0F47000CACFE /* ProductDetialsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetialsVM.swift; sourceTree = "<group>"; };
 		479E0885250FD3C7002EAD27 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		47AC697A250B10D000A16053 /* ECButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECButton.swift; sourceTree = "<group>"; };
 		47AC697D250B110400A16053 /* ECTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECTextField.swift; sourceTree = "<group>"; };
@@ -249,9 +253,9 @@
 		476A24DB250CD87E00E8200D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				479C46ED251F0EEB000CACFE /* Shoe Detail */,
 				4720AAE4251277AB00A52FC5 /* Cells */,
-				476A24DC250CD89000E8200D /* HomeVC.swift */,
-				476A24DE250CD89A00E8200D /* HomeVM.swift */,
+				479C46EC251F0EDE000CACFE /* Home */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -272,6 +276,24 @@
 				476A24E8250CDCE100E8200D /* RequestBoxVM.swift */,
 			);
 			name = "Request Box ";
+			sourceTree = "<group>";
+		};
+		479C46EC251F0EDE000CACFE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				476A24DC250CD89000E8200D /* HomeVC.swift */,
+				476A24DE250CD89A00E8200D /* HomeVM.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		479C46ED251F0EEB000CACFE /* Shoe Detail */ = {
+			isa = PBXGroup;
+			children = (
+				479C46EE251F0F23000CACFE /* ProductDetailsVC.swift */,
+				479C46F1251F0F47000CACFE /* ProductDetialsVM.swift */,
+			);
+			name = "Shoe Detail";
 			sourceTree = "<group>";
 		};
 		47AC6979250B10BA00A16053 /* Buttons */ = {
@@ -476,8 +498,10 @@
 				476A24DA250CD7EC00E8200D /* ECTabBar.swift in Sources */,
 				4720AAEE25127C8000A52FC5 /* ECBoldLabel.swift in Sources */,
 				47AC697B250B10D000A16053 /* ECButton.swift in Sources */,
+				479C46F2251F0F47000CACFE /* ProductDetialsVM.swift in Sources */,
 				476A24E2250CDC3700E8200D /* OrderListVC.swift in Sources */,
 				475297872513CB1300106150 /* NetworkManager.swift in Sources */,
+				479C46EF251F0F23000CACFE /* ProductDetailsVC.swift in Sources */,
 				4720AAE6251277D100A52FC5 /* ProductCell.swift in Sources */,
 				476758DC250A6398005E726E /* SceneDelegate.swift in Sources */,
 				476A24E7250CDCC800E8200D /* RequestBoxVC.swift in Sources */,

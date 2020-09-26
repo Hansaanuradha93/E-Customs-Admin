@@ -253,8 +253,8 @@
 		476A24DB250CD87E00E8200D /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				479C46ED251F0EEB000CACFE /* Shoe Detail */,
 				4720AAE4251277AB00A52FC5 /* Cells */,
+				479C46ED251F0EEB000CACFE /* Shoe Detail */,
 				479C46EC251F0EDE000CACFE /* Home */,
 			);
 			name = Home;

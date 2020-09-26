@@ -23,7 +23,13 @@ class ProductDetailsVC: UIViewController {
     // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
-        print(viewModel.product)
+        setupUI()
+    }
+    
+    
+    fileprivate func setupUI() {
+        view.backgroundColor = .white
+        title = "DETAIL"
+        tabBarItem.title = ""
     }
 }

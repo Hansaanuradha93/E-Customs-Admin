@@ -145,7 +145,7 @@ class AddProductsVC: UIViewController {
     
     fileprivate func setupUI() {
         view.backgroundColor = .white
-        title = "Add Sneaker"
+        title = "ADD SNEAKER"
         tabBarItem.title = ""
         
         nameTextField.autocorrectionType = .no

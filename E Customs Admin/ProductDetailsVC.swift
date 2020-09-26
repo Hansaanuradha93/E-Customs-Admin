@@ -96,13 +96,25 @@ extension ProductDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate
 extension ProductDetailsVC {
     
     @objc fileprivate func handleAddToBag() {
-        print("add to bag")
+        addToBag()
     }
 }
 
 
 // MARK: - Methods
 extension ProductDetailsVC {
+    
+    fileprivate func addToBag() {
+        viewModel.addToBag { [weak self] error in
+            guard let self = self else { return }
+            if let error = error {
+                self.presentAlert(title: "Product Adding to Bag Failed", message: error.localizedDescription, buttonTitle: Strings.ok)
+                return
+            }
+            self.presentAlert(title: "Successful!", message: "Poduct added to Bag successfully!", buttonTitle: Strings.ok)
+        }
+    }
+    
     
     fileprivate func setupViewModelObserver() {
         viewModel.bindableIsSizesAvailable.bind { [weak self] isSizesAvailable in
@@ -122,6 +134,15 @@ extension ProductDetailsVC {
                 self.addToBagButton.backgroundColor = UIColor.appColor(.lightGray)
                 self.addToBagButton.setTitleColor(.gray, for: .normal)
                 self.addToBagButton.isEnabled = false
+            }
+        }
+        
+        viewModel.bindableIsSaving.bind { [weak self] isSaving in
+            guard let self = self, let isSaving = isSaving else { return }
+            if isSaving {
+                self.showPreloader()
+            } else {
+                self.hidePreloader()
             }
         }
     }

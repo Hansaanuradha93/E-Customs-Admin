@@ -145,8 +145,8 @@ class AddProductsVC: UIViewController {
     
     fileprivate func setupUI() {
         view.backgroundColor = .white
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Add Sneaker"
+        title = "Add Sneaker"
+        tabBarItem.title = ""
         
         nameTextField.autocorrectionType = .no
         priceTextField.keyboardType = .decimalPad

@@ -58,7 +58,8 @@ extension HomeVC {
     
     fileprivate func setupUI() {
         view.backgroundColor = .white
-        navigationController?.navigationBar.isHidden = true
+        title = "Home"
+        tabBarItem.title = ""
         
         tableView.separatorStyle = .none
         tableView.register(ProductCell.self, forCellReuseIdentifier: ProductCell.reuseID)

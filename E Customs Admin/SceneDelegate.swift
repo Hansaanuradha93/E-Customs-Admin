@@ -10,9 +10,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        
-        try? Auth.auth().signOut()
-        
+                
         var controller: UIViewController!
         if (Auth.auth().currentUser != nil) {
             controller = ECTabBar()

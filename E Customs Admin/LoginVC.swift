@@ -85,7 +85,7 @@ extension LoginVC {
 extension LoginVC {
     
     fileprivate func navigateToHome() {
-        print("navigate to Home")
+        UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = ECTabBar()
     }
     
     

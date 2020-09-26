@@ -257,7 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				4720AAE4251277AB00A52FC5 /* Cells */,
-				479C46ED251F0EEB000CACFE /* Shoe Detail */,
+				479C46ED251F0EEB000CACFE /* Product Detail */,
 				479C46EC251F0EDE000CACFE /* Home */,
 			);
 			name = Home;
@@ -290,13 +290,13 @@
 			name = Home;
 			sourceTree = "<group>";
 		};
-		479C46ED251F0EEB000CACFE /* Shoe Detail */ = {
+		479C46ED251F0EEB000CACFE /* Product Detail */ = {
 			isa = PBXGroup;
 			children = (
 				479C46EE251F0F23000CACFE /* ProductDetailsVC.swift */,
 				479C46F1251F0F47000CACFE /* ProductDetialsVM.swift */,
 			);
-			name = "Shoe Detail";
+			name = "Product Detail";
 			sourceTree = "<group>";
 		};
 		47AC6979250B10BA00A16053 /* Buttons */ = {

@@ -6,22 +6,23 @@ class AddProductsVC: UIViewController {
     
     fileprivate let photoButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: "Select Photo", titleColor: .gray, fontSize: 21)
     fileprivate let nameTextField = ECTextField(padding: 16, placeholderText: "Enter product name")
+    fileprivate let descriptionTextField = ECTextField(padding: 16, placeholderText: "Enter description")
     fileprivate let priceTextField = ECTextField(padding: 16, placeholderText: "Enter price")
     fileprivate let sizesTextField = ECTextField(padding: 16, placeholderText: "Enter sizes")
-    fileprivate let saveButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: "Save", titleColor: .gray, fontSize: 21)
+    fileprivate let saveButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: "Save", titleColor: .gray, fontSize: 18)
     
     fileprivate lazy var verticalStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [nameTextField, priceTextField, sizesTextField, saveButton])
+        let stackView = UIStackView(arrangedSubviews: [nameTextField, descriptionTextField, priceTextField, sizesTextField, saveButton])
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
-        stackView.spacing = 18
+        stackView.spacing = 24
         return stackView
     }()
     
     fileprivate lazy var overrallStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [photoButton, verticalStackView])
         stackView.axis = .vertical
-        stackView.spacing = 18
+        stackView.spacing = 24
         return stackView
     }()
 
@@ -64,6 +65,7 @@ class AddProductsVC: UIViewController {
     
     @objc fileprivate func handleTextChange(textField: UITextField) {
         viewModel.name = nameTextField.text
+        viewModel.description = descriptionTextField.text
         viewModel.price = priceTextField.text
         viewModel.sizes = sizesTextField.text
     }
@@ -93,6 +95,7 @@ class AddProductsVC: UIViewController {
     fileprivate func clearData() {
         photoButton.setImage(nil, for: .normal)
         nameTextField.text = ""
+        descriptionTextField.text = ""
         priceTextField.text = ""
         sizesTextField.text = ""
     }
@@ -119,7 +122,8 @@ class AddProductsVC: UIViewController {
         
         viewModel.bindableImage.bind { [weak self] image in
             guard let self = self else { return }
-            self.photoButton.setImage(image, for: .normal)
+            let buttonImage = image?.withRenderingMode(.alwaysOriginal)
+            self.photoButton.setImage(buttonImage, for: .normal)
         }
         
         viewModel.bindableIsSaving.bind { [weak self] isSaving in
@@ -156,6 +160,7 @@ class AddProductsVC: UIViewController {
         
         photoButton.setRoundedBorder(borderColor: .black, borderWidth: 0, radius: 2)
         nameTextField.setRoundedBorder(borderColor: .black, borderWidth: 0.5, radius: 2)
+        descriptionTextField.setRoundedBorder(borderColor: .black, borderWidth: 0.5, radius: 2)
         priceTextField.setRoundedBorder(borderColor: .black, borderWidth: 0.5, radius: 2)
         sizesTextField.setRoundedBorder(borderColor: .black, borderWidth: 0.5, radius: 2)
         saveButton.setRoundedBorder(borderColor: .black, borderWidth: 0, radius: 2)

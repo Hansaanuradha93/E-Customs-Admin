@@ -5,6 +5,7 @@ class AddProductsVM {
     
     // MARK: Properties
     var name: String? { didSet { checkFormValidity() } }
+    var description: String? { didSet { checkFormValidity() } }
     var price: String? { didSet { checkFormValidity() } }
     var sizes: String? { didSet { checkFormValidity() } }
     
@@ -56,6 +57,7 @@ extension AddProductsVM {
         let productInfo: [String: Any] = [
             "id": documentId,
             "name": name ?? "",
+            "description": description ?? "",
             "price": price ?? "0",
             "sizes": sizes ?? "",
             "thumbnailUrl": imageUrl
@@ -75,7 +77,7 @@ extension AddProductsVM {
     
     
     func checkFormValidity() {
-        let isFormValid = name?.isEmpty == false && price?.isEmpty == false && sizes?.isEmpty == false && bindableImage.value != nil
+        let isFormValid = name?.isEmpty == false && description?.isEmpty == false && price?.isEmpty == false && sizes?.isEmpty == false && bindableImage.value != nil
         bindalbeIsFormValid.value = isFormValid
     }
 }

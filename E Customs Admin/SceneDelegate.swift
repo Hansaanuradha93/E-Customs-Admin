@@ -1,4 +1,5 @@
 import UIKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -9,7 +10,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let controller = ECTabBar()
+        
+        try? Auth.auth().signOut()
+        
+        var controller: UIViewController!
+        if (Auth.auth().currentUser != nil) {
+            controller = ECTabBar()
+        } else {
+            controller = UINavigationController(rootViewController: SignupVC())
+        }
+        
         window?.rootViewController = controller
         window?.makeKeyAndVisible()
     }

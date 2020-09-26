@@ -47,6 +47,8 @@ class ProductDetailsVC: UIViewController {
         setupScrollView()
         layoutUI()
         setupCollectionView()
+        setData()
+        setupViewModelObserver()
     }
 }
 
@@ -55,13 +57,14 @@ class ProductDetailsVC: UIViewController {
 extension ProductDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return viewModel.sizes.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: SizeCell.reuseID, for: indexPath) as! SizeCell
-        cell.setup(size: 7.0)
+        let size = Double(viewModel.sizes[indexPath.item]) ?? 0
+        cell.setup(size: size)
         
         if selectedItem == indexPath.item {
             cell.setSelected(isSelected: true)
@@ -91,6 +94,25 @@ extension ProductDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate
 // MARK: - Methods
 extension ProductDetailsVC {
     
+    fileprivate func setupViewModelObserver() {
+        viewModel.bindableIsSizesAvailable.bind { [weak self] isSizesAvailable in
+            guard let self = self, let isSizesAvailable = isSizesAvailable else { return }
+            if isSizesAvailable {
+                DispatchQueue.main.async { self.collectionView.reloadData() }
+            }
+        }
+    }
+    
+    
+    fileprivate func setData() {
+        thumbnailImageView.downloadImage(from: viewModel.product.thumbnailUrl ?? "")
+        titleLabel.text = (viewModel.product.name ?? "").uppercased()
+        descriptionLabel.text = viewModel.product.description ?? ""
+        let sizes = (viewModel.product.sizes ?? "").replacingOccurrences(of: " ", with: "", options: .literal, range: nil)
+        viewModel.sizes = sizes.components(separatedBy: ",")
+    }
+    
+    
     fileprivate func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -118,8 +140,6 @@ extension ProductDetailsVC {
     
     
     fileprivate func layoutUI() {
-        titleLabel.text = "Title".uppercased()
-        descriptionLabel.text = "The Nike Air Max 1 Ultra 2.0 Flyknit Men's Shoe updates the iconic original with an ultra-lightweight upper while keeping the plush, time-tested Max Air cushioning."
         sizeLabel.text = "Size".uppercased()
         
         contentView.addSubview(thumbnailImageView)

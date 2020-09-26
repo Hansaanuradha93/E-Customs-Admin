@@ -12,7 +12,7 @@ class ProductDetailsVC: UIViewController {
     fileprivate let titleLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
     fileprivate let descriptionLabel = ECRegularLabel(textAlignment: .left, fontSize: 12, numberOfLines: 3)
     fileprivate let sizeLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
-    fileprivate let addToBagButton = ECButton(backgroundColor: .black, title: "Add to Bag", titleColor: .white, radius: 2, fontSize: 16)
+    fileprivate let addToBagButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: "Add to Bag", titleColor: .gray, radius: 2, fontSize: 16)
     
     var selectedItem = -1
 
@@ -80,6 +80,7 @@ extension ProductDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate
             selectedItem = -1
         } else {
             selectedItem = indexPath.item
+            viewModel.selectedSize = viewModel.sizes[selectedItem]
         }
         collectionView.reloadData()
     }
@@ -87,6 +88,15 @@ extension ProductDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize {
         return CGSize(width: 65, height: 55)
+    }
+}
+
+
+// MARK: - Objc Methods
+extension ProductDetailsVC {
+    
+    @objc fileprivate func handleAddToBag() {
+        print("add to bag")
     }
 }
 
@@ -99,6 +109,19 @@ extension ProductDetailsVC {
             guard let self = self, let isSizesAvailable = isSizesAvailable else { return }
             if isSizesAvailable {
                 DispatchQueue.main.async { self.collectionView.reloadData() }
+            }
+        }
+        
+        viewModel.bindalbeIsProductIsReady.bind { [weak self] isReady in
+            guard let self = self, let isReady = isReady else { return }
+            if isReady {
+                self.addToBagButton.backgroundColor = .black
+                self.addToBagButton.setTitleColor(.white, for: .normal)
+                self.addToBagButton.isEnabled = true
+            } else {
+                self.addToBagButton.backgroundColor = UIColor.appColor(.lightGray)
+                self.addToBagButton.setTitleColor(.gray, for: .normal)
+                self.addToBagButton.isEnabled = false
             }
         }
     }
@@ -141,6 +164,8 @@ extension ProductDetailsVC {
     
     fileprivate func layoutUI() {
         sizeLabel.text = "Size".uppercased()
+        addToBagButton.isEnabled = false
+        addToBagButton.addTarget(self, action: #selector(handleAddToBag), for: .touchUpInside)
         
         contentView.addSubview(thumbnailImageView)
         contentView.addSubview(titleLabel)

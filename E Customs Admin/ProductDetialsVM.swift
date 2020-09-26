@@ -6,6 +6,7 @@ class ProductDetialsVM {
     let product: Product
     
     var sizes: [String] = [] { didSet { isSizesAvailable() } }
+    var selectedSize: String? { didSet { checkIsReadyToAddToBag() } }
     
     var bindableIsSizesAvailable = Bindable<Bool>()
     var bindalbeIsProductIsReady = Bindable<Bool>()
@@ -27,8 +28,8 @@ extension ProductDetialsVM {
     }
     
     
-    func checkFormValidity() {
-        let isProductIsReady = sizes.isEmpty == false
-        bindalbeIsProductIsReady.value = isProductIsReady
+    func checkIsReadyToAddToBag() {
+        let isReady = selectedSize?.isEmpty == false
+        bindalbeIsProductIsReady.value = isReady
     }
 }

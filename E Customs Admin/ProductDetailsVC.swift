@@ -12,6 +12,7 @@ class ProductDetailsVC: UIViewController {
     fileprivate let titleLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
     fileprivate let descriptionLabel = ECRegularLabel(textAlignment: .left, fontSize: 12, numberOfLines: 3)
     fileprivate let sizeLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
+    fileprivate let addToBagButton = ECButton(backgroundColor: .black, title: "Add to Bag", titleColor: .white, radius: 2, fontSize: 16)
     
     var selectedItem = -1
 
@@ -126,6 +127,7 @@ extension ProductDetailsVC {
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(sizeLabel)
         contentView.addSubview(collectionView)
+        contentView.addSubview(addToBagButton)
     
         let paddingTop: CGFloat = 36
         let paddindCorders: CGFloat = 24
@@ -135,5 +137,6 @@ extension ProductDetailsVC {
         descriptionLabel.anchor(top: titleLabel.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorders, bottom: 0, right: paddindCorders))
         sizeLabel.anchor(top: descriptionLabel.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorders, bottom: 0, right: paddindCorders))
         collectionView.anchor(top: sizeLabel.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorders, bottom: 0, right: paddindCorders), size: .init(width: 0, height: 60))
+        addToBagButton.anchor(top: collectionView.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorders, bottom: 0, right: paddindCorders), size: .init(width: 0, height: 50))
     }
 }

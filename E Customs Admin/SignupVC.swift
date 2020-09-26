@@ -8,8 +8,8 @@ class SignupVC: UIViewController {
     fileprivate let fullNameTextField = ECTextField(padding: 16, placeholderText: Strings.enterFullName)
     fileprivate let emailTextField = ECTextField(padding: 16, placeholderText: Strings.enterEmail)
     fileprivate let passwordTextField = ECTextField(padding: 16, placeholderText: Strings.enterPassword)
-    fileprivate let signupButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.signup, titleColor: .gray, fontSize: 21)
-    fileprivate let goToLoginButton = ECButton(backgroundColor: .white, title: Strings.gotoLogin, titleColor: .black, fontSize: 18)
+    fileprivate let signupButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.signup, titleColor: .gray, fontSize: 18)
+    fileprivate let goToLoginButton = ECButton(backgroundColor: .white, title: Strings.gotoLogin, titleColor: .black, fontSize: 15)
     
     fileprivate lazy var verticalStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [fullNameTextField, emailTextField, passwordTextField, signupButton])

@@ -27,6 +27,7 @@
 		476A24E9250CDCE100E8200D /* RequestBoxVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24E8250CDCE100E8200D /* RequestBoxVM.swift */; };
 		479C46EF251F0F23000CACFE /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479C46EE251F0F23000CACFE /* ProductDetailsVC.swift */; };
 		479C46F2251F0F47000CACFE /* ProductDetialsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479C46F1251F0F47000CACFE /* ProductDetialsVM.swift */; };
+		479C46FB251F2B1F000CACFE /* SizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479C46FA251F2B1F000CACFE /* SizeCell.swift */; };
 		479E0886250FD3C7002EAD27 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479E0885250FD3C7002EAD27 /* Product.swift */; };
 		47AC697B250B10D000A16053 /* ECButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC697A250B10D000A16053 /* ECButton.swift */; };
 		47AC697E250B110400A16053 /* ECTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC697D250B110400A16053 /* ECTextField.swift */; };
@@ -70,6 +71,7 @@
 		476A24E8250CDCE100E8200D /* RequestBoxVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBoxVM.swift; sourceTree = "<group>"; };
 		479C46EE251F0F23000CACFE /* ProductDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
 		479C46F1251F0F47000CACFE /* ProductDetialsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetialsVM.swift; sourceTree = "<group>"; };
+		479C46FA251F2B1F000CACFE /* SizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeCell.swift; sourceTree = "<group>"; };
 		479E0885250FD3C7002EAD27 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		47AC697A250B10D000A16053 /* ECButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECButton.swift; sourceTree = "<group>"; };
 		47AC697D250B110400A16053 /* ECTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECTextField.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				4720AAE5251277D100A52FC5 /* ProductCell.swift */,
+				479C46FA251F2B1F000CACFE /* SizeCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				476A24E2250CDC3700E8200D /* OrderListVC.swift in Sources */,
 				475297872513CB1300106150 /* NetworkManager.swift in Sources */,
 				479C46EF251F0F23000CACFE /* ProductDetailsVC.swift in Sources */,
+				479C46FB251F2B1F000CACFE /* SizeCell.swift in Sources */,
 				4720AAE6251277D100A52FC5 /* ProductCell.swift in Sources */,
 				476758DC250A6398005E726E /* SceneDelegate.swift in Sources */,
 				476A24E7250CDCC800E8200D /* RequestBoxVC.swift in Sources */,

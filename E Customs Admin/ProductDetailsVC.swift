@@ -13,6 +13,9 @@ class ProductDetailsVC: UIViewController {
     fileprivate let descriptionLabel = ECRegularLabel(textAlignment: .left, fontSize: 12, numberOfLines: 3)
     fileprivate let sizeLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
     
+    var selectedItem = -1
+
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -44,13 +47,54 @@ class ProductDetailsVC: UIViewController {
         layoutUI()
         setupCollectionView()
     }
+}
+
+
+// MARK: - UICollectionView
+extension ProductDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 9
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: SizeCell.reuseID, for: indexPath) as! SizeCell
+        cell.setup(size: 7.0)
+        
+        if selectedItem == indexPath.item {
+            cell.setSelected(isSelected: true)
+        } else {
+            cell.setSelected(isSelected: false)
+        }
+        return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if selectedItem == indexPath.item {
+            selectedItem = -1
+        } else {
+            selectedItem = indexPath.item
+        }
+        collectionView.reloadData()
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize {
+        return CGSize(width: 65, height: 55)
+    }
+}
+
+
+// MARK: - Methods
+extension ProductDetailsVC {
     
     fileprivate func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(SizeCell.self, forCellWithReuseIdentifier: SizeCell.reuseID)
     }
     
     
@@ -91,31 +135,5 @@ class ProductDetailsVC: UIViewController {
         descriptionLabel.anchor(top: titleLabel.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorders, bottom: 0, right: paddindCorders))
         sizeLabel.anchor(top: descriptionLabel.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorders, bottom: 0, right: paddindCorders))
         collectionView.anchor(top: sizeLabel.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorders, bottom: 0, right: paddindCorders), size: .init(width: 0, height: 60))
-    }
-}
-
-
-// MARK: - UICollectionView
-extension ProductDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .red
-        return cell
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize {
-        return CGSize(width: 65, height: 55)
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.init(top: 0, left: 10, bottom: 0, right: 10)
     }
 }

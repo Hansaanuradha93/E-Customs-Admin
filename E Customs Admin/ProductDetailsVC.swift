@@ -3,7 +3,13 @@ import UIKit
 class ProductDetailsVC: UIViewController {
 
     // MARK: Properties
-    var viewModel: ProductDetialsVM!
+    fileprivate var viewModel: ProductDetialsVM!
+    
+    fileprivate let scrollView = UIScrollView()
+    fileprivate let contentView = UIView()
+    
+    fileprivate let thumbnailImageView = ECImageView(contentMode: .scaleAspectFill)
+
     
     
     // MARK: Initializers
@@ -31,5 +37,21 @@ class ProductDetailsVC: UIViewController {
         view.backgroundColor = .white
         title = "DETAIL"
         tabBarItem.title = ""
+        
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        
+        scrollView.fillSuperview()
+        contentView.anchor(top: scrollView.topAnchor, leading: scrollView.leadingAnchor, bottom: scrollView.bottomAnchor, trailing: scrollView.trailingAnchor)
+        
+        NSLayoutConstraint.activate([
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.heightAnchor.constraint(equalToConstant: 800)
+        ])
+        
+        contentView.addSubview(thumbnailImageView)
+        
+        thumbnailImageView.anchor(top: contentView.topAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, size: .init(width: 0, height: 375))
+        
     }
 }

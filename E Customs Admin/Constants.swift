@@ -19,7 +19,9 @@ struct Asserts {
 struct Strings {
     
     // Titles
+    static let home = "HOME"
     static let addSneaker = "ADD SNEAKER"
+    static let detail = "DETAIL"
     
     // Placeholders
     static let empty = ""
@@ -41,6 +43,9 @@ struct Strings {
     static let successful = "Successful!"
     static let productSavedSuccessfully = "Poduct saved successfully!"
     
+    static let productAddingToBagFailed = "Product Adding to Bag Failed"
+    static let productAddedToBagSuccessfully = "Poduct added to Bag successfully!"
+    
     
     // Buttons
     static let ok = "OK"
@@ -51,4 +56,10 @@ struct Strings {
     
     static let selectPhoto = "Select Photo"
     static let save = "Save"
+    
+    static let addToBag = "Add to Bag"
+    
+    
+    // Labels
+    static let size = "Size"
 }

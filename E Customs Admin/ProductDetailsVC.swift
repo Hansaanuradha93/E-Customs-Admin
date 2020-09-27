@@ -12,11 +12,8 @@ class ProductDetailsVC: UIViewController {
     fileprivate let titleLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
     fileprivate let descriptionLabel = ECRegularLabel(textAlignment: .left, fontSize: 12, numberOfLines: 3)
     fileprivate let sizeLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
-    fileprivate let addToBagButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: "Add to Bag", titleColor: .gray, radius: 2, fontSize: 16)
-    
-    var selectedItem = -1
-
-    
+    fileprivate let addToBagButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.addToBag, titleColor: .gray, radius: 2, fontSize: 16)
+        
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -25,12 +22,14 @@ class ProductDetailsVC: UIViewController {
         return cv
     }()
 
+    var selectedItem = -1
 
     
     // MARK: Initializers
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
+    
     
     required init?(coder: NSCoder) { fatalError() }
     
@@ -108,10 +107,10 @@ extension ProductDetailsVC {
         viewModel.addToBag { [weak self] error in
             guard let self = self else { return }
             if let error = error {
-                self.presentAlert(title: "Product Adding to Bag Failed", message: error.localizedDescription, buttonTitle: Strings.ok)
+                self.presentAlert(title: Strings.productAddingToBagFailed, message: error.localizedDescription, buttonTitle: Strings.ok)
                 return
             }
-            self.presentAlert(title: "Successful!", message: "Poduct added to Bag successfully!", buttonTitle: Strings.ok)
+            self.presentAlert(title: Strings.successful, message: Strings.productAddedToBagSuccessfully, buttonTitle: Strings.ok)
         }
     }
     
@@ -167,7 +166,7 @@ extension ProductDetailsVC {
     
     fileprivate func setupScrollView() {
         view.backgroundColor = .white
-        title = "DETAIL"
+        title = Strings.detail
         tabBarItem.title = ""
         
         view.addSubview(scrollView)
@@ -184,16 +183,11 @@ extension ProductDetailsVC {
     
     
     fileprivate func layoutUI() {
-        sizeLabel.text = "Size".uppercased()
+        sizeLabel.text = Strings.size.uppercased()
         addToBagButton.isEnabled = false
         addToBagButton.addTarget(self, action: #selector(handleAddToBag), for: .touchUpInside)
         
-        contentView.addSubview(thumbnailImageView)
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(descriptionLabel)
-        contentView.addSubview(sizeLabel)
-        contentView.addSubview(collectionView)
-        contentView.addSubview(addToBagButton)
+        contentView.addSubviews(thumbnailImageView, titleLabel, descriptionLabel, sizeLabel, collectionView, addToBagButton)
     
         let paddingTop: CGFloat = 36
         let paddindCorders: CGFloat = 24

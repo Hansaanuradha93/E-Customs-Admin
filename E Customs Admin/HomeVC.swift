@@ -64,7 +64,7 @@ extension HomeVC {
     
     fileprivate func setupUI() {
         view.backgroundColor = .white
-        title = "HOME"
+        title = Strings.home
         tabBarItem.title = ""
         
         tableView.separatorStyle = .none

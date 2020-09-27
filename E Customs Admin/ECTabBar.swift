@@ -46,7 +46,7 @@ extension ECTabBar {
         viewControllers = [createHomeNC(), createAddProductNC(), createOrderListNC(), createRequestBoxNC()]
         
         let traits = [UIFontDescriptor.TraitKey.weight: UIFont.Weight.medium]
-        var descriptor = UIFontDescriptor(fontAttributes: [UIFontDescriptor.AttributeName.family: "Avenir Next"])
+        var descriptor = UIFontDescriptor(fontAttributes: [UIFontDescriptor.AttributeName.family: Fonts.avenirNext])
         descriptor = descriptor.addingAttributes([UIFontDescriptor.AttributeName.traits: traits])
         let attributes = [NSAttributedString.Key.font: UIFont(descriptor: descriptor, size: 18)]
         UINavigationBar.appearance().titleTextAttributes = attributes

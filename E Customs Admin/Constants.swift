@@ -1,5 +1,6 @@
 import UIKit
 
+// MARK: - Asserts
 struct Asserts {
     
     // Images
@@ -16,6 +17,13 @@ struct Asserts {
 }
 
 
+// MARK: - Fonts
+struct Fonts {
+    static let avenirNext = "Avenir Next"
+}
+
+
+// MARK: - Strings
 struct Strings {
     
     // Titles

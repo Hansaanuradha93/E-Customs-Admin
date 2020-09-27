@@ -2,6 +2,7 @@ import UIKit
 
 class AddProductsVC: UIViewController {
     
+    // MARK: Properties
     fileprivate let viewModel = AddProductsVM()
     
     fileprivate let photoButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.selectPhoto, titleColor: .gray, fontSize: 21)
@@ -27,6 +28,7 @@ class AddProductsVC: UIViewController {
     }()
 
     
+    // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -40,7 +42,11 @@ class AddProductsVC: UIViewController {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
     }
-    
+}
+
+
+// MARK: - Objc Methods
+extension AddProductsVC {
     
     @objc fileprivate func handleSave() {
         viewModel.saveImageToFirebase { [weak self] error in
@@ -90,7 +96,11 @@ class AddProductsVC: UIViewController {
         let difference = keyboardFrame.height - bottomSpace
         self.overrallStackView.transform = CGAffineTransform(translationX: 0, y: -(difference + 10))
     }
-    
+}
+
+
+// MARK: - Methods
+extension AddProductsVC {
     
     fileprivate func clearData() {
         photoButton.setImage(nil, for: .normal)
@@ -173,7 +183,7 @@ class AddProductsVC: UIViewController {
 }
 
 
-// MARK: -
+// MARK: - UIImagePickerControllerDelegate && UINavigationControllerDelegate
 extension AddProductsVC: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

@@ -4,12 +4,12 @@ class AddProductsVC: UIViewController {
     
     fileprivate let viewModel = AddProductsVM()
     
-    fileprivate let photoButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: "Select Photo", titleColor: .gray, fontSize: 21)
-    fileprivate let nameTextField = ECTextField(padding: 16, placeholderText: "Enter product name")
-    fileprivate let descriptionTextField = ECTextField(padding: 16, placeholderText: "Enter description")
-    fileprivate let priceTextField = ECTextField(padding: 16, placeholderText: "Enter price")
-    fileprivate let sizesTextField = ECTextField(padding: 16, placeholderText: "Enter sizes")
-    fileprivate let saveButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: "Save", titleColor: .gray, fontSize: 18)
+    fileprivate let photoButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.selectPhoto, titleColor: .gray, fontSize: 21)
+    fileprivate let nameTextField = ECTextField(padding: 16, placeholderText: Strings.enterProductName)
+    fileprivate let descriptionTextField = ECTextField(padding: 16, placeholderText: Strings.enterDescription)
+    fileprivate let priceTextField = ECTextField(padding: 16, placeholderText: Strings.enterPrice)
+    fileprivate let sizesTextField = ECTextField(padding: 16, placeholderText: Strings.enterSizes)
+    fileprivate let saveButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.save, titleColor: .gray, fontSize: 18)
     
     fileprivate lazy var verticalStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [nameTextField, descriptionTextField, priceTextField, sizesTextField, saveButton])
@@ -46,10 +46,10 @@ class AddProductsVC: UIViewController {
         viewModel.saveImageToFirebase { [weak self] error in
             guard let self = self else { return }
             if let error = error {
-                self.presentAlert(title: "Poduct saving failed!", message: error.localizedDescription, buttonTitle: "OK")
+                self.presentAlert(title: Strings.productSavingFailed, message: error.localizedDescription, buttonTitle: Strings.ok)
                 return
             }
-            self.presentAlert(title: "Successful!", message: "Poduct saved successfully!", buttonTitle: "OK")
+            self.presentAlert(title: Strings.successful, message: Strings.productSavedSuccessfully, buttonTitle: Strings.ok)
             self.clearData()
         }
     }
@@ -149,7 +149,7 @@ class AddProductsVC: UIViewController {
     
     fileprivate func setupUI() {
         view.backgroundColor = .white
-        title = "ADD SNEAKER"
+        title = Strings.addSneaker
         tabBarItem.title = ""
         
         nameTextField.autocorrectionType = .no

@@ -13,7 +13,7 @@ class ProductDetailsVC: UIViewController {
     fileprivate let descriptionLabel = ECRegularLabel(textAlignment: .left, fontSize: 12, numberOfLines: 3)
     fileprivate let sizeLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
     fileprivate let addToBagButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.addToBag, titleColor: .gray, radius: 2, fontSize: 16)
-        
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -29,7 +29,6 @@ class ProductDetailsVC: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
-    
     
     required init?(coder: NSCoder) { fatalError() }
     
@@ -77,6 +76,7 @@ extension ProductDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if selectedItem == indexPath.item {
             selectedItem = -1
+            viewModel.selectedSize = "0"
         } else {
             selectedItem = indexPath.item
             viewModel.selectedSize = viewModel.sizes[selectedItem]
@@ -104,13 +104,13 @@ extension ProductDetailsVC {
 extension ProductDetailsVC {
     
     fileprivate func addToBag() {
-        viewModel.addToBag { [weak self] error in
+        viewModel.addToBag { [weak self] status, message in
             guard let self = self else { return }
-            if let error = error {
-                self.presentAlert(title: Strings.productAddingToBagFailed, message: error.localizedDescription, buttonTitle: Strings.ok)
-                return
+            if status {
+                self.presentAlert(title: Strings.successfull, message: message, buttonTitle: Strings.ok)
+            } else {
+                self.presentAlert(title: Strings.failed, message: message, buttonTitle: Strings.ok)
             }
-            self.presentAlert(title: Strings.successful, message: Strings.productAddedToBagSuccessfully, buttonTitle: Strings.ok)
         }
     }
     
@@ -165,9 +165,10 @@ extension ProductDetailsVC {
     
     
     fileprivate func setupScrollView() {
+        navigationController?.navigationBar.barTintColor = UIColor.white
         view.backgroundColor = .white
         title = Strings.detail
-        tabBarItem.title = ""
+        tabBarItem.title = Strings.empty
         
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
@@ -187,7 +188,12 @@ extension ProductDetailsVC {
         addToBagButton.isEnabled = false
         addToBagButton.addTarget(self, action: #selector(handleAddToBag), for: .touchUpInside)
         
-        contentView.addSubviews(thumbnailImageView, titleLabel, descriptionLabel, sizeLabel, collectionView, addToBagButton)
+        contentView.addSubview(thumbnailImageView)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(descriptionLabel)
+        contentView.addSubview(sizeLabel)
+        contentView.addSubview(collectionView)
+        contentView.addSubview(addToBagButton)
     
         let paddingTop: CGFloat = 36
         let paddindCorders: CGFloat = 24

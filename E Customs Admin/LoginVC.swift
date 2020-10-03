@@ -5,8 +5,8 @@ class LoginVC: UIViewController {
     // MARK: Properties
     fileprivate let viewModel = LoginVM()
     
-    fileprivate let emailTextField = ECTextField(padding: 16, placeholderText: Strings.enterEmail)
-    fileprivate let passwordTextField = ECTextField(padding: 16, placeholderText: Strings.enterPassword)
+    fileprivate let emailTextField = ECTextField(padding: 16, placeholderText: Strings.email)
+    fileprivate let passwordTextField = ECTextField(padding: 16, placeholderText: Strings.password)
     fileprivate let loginButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.login, titleColor: .gray, fontSize: 18)
     fileprivate let gotoSignupButton = ECButton(backgroundColor: .white, title: Strings.gotoSignup, titleColor: .black, fontSize: 15)
     
@@ -14,7 +14,7 @@ class LoginVC: UIViewController {
         let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginButton])
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
-        stackView.spacing = 18
+        stackView.spacing = 24
         return stackView
     }()
 
@@ -41,13 +41,13 @@ extension LoginVC {
     
     @objc fileprivate func handleLogin() {
         handleTapDismiss()
-        viewModel.performLogin { [weak self] error in
+        viewModel.performLogin { [weak self] status, message in
             guard let self = self else { return }
-            if let error = error {
-                self.presentAlert(title: Strings.loginFailed, message: error.localizedDescription, buttonTitle: Strings.ok)
-                return
+            if status {
+                self.navigateToHome()
+            } else {
+                self.presentAlert(title: Strings.failed, message: message, buttonTitle: Strings.ok)
             }
-            self.navigateToHome()
         }
     }
     
@@ -129,6 +129,7 @@ extension LoginVC {
     
     
     fileprivate func setupUI() {
+        navigationController?.navigationBar.barTintColor = UIColor.white
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = Strings.login
@@ -139,12 +140,12 @@ extension LoginVC {
         passwordTextField.autocorrectionType = .no
         loginButton.isEnabled = false
         
-        emailTextField.setRoundedBorder(borderColor: .black, borderWidth: 0.5, radius: 2)
-        passwordTextField.setRoundedBorder(borderColor: .black, borderWidth: 0.5, radius: 2)
+        emailTextField.setRoundedBorder(borderColor: GlobalDimensions.borderColor, borderWidth: GlobalDimensions.borderWidth, radius: GlobalDimensions.cornerRadius)
+        passwordTextField.setRoundedBorder(borderColor: GlobalDimensions.borderColor, borderWidth: GlobalDimensions.borderWidth, radius: GlobalDimensions.cornerRadius)
         loginButton.setRoundedBorder(borderColor: .black, borderWidth: 0, radius: 2)
         
         view.addSubview(verticalStackView)
-        loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        loginButton.heightAnchor.constraint(equalToConstant: GlobalDimensions.height).isActive = true
         verticalStackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 30, left: 20, bottom: 0, right: 20))
         
         view.addSubview(gotoSignupButton)

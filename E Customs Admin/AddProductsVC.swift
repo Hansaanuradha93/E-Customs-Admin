@@ -55,7 +55,7 @@ extension AddProductsVC {
                 self.presentAlert(title: Strings.productSavingFailed, message: error.localizedDescription, buttonTitle: Strings.ok)
                 return
             }
-            self.presentAlert(title: Strings.successful, message: Strings.productSavedSuccessfully, buttonTitle: Strings.ok)
+            self.presentAlert(title: Strings.successfull, message: Strings.productSavedSuccessfully, buttonTitle: Strings.ok)
             self.clearData()
         }
     }

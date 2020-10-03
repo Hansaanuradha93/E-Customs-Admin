@@ -42,6 +42,7 @@
 		47AC6993250B217800A16053 /* AddProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC6992250B217800A16053 /* AddProductsVC.swift */; };
 		47AC6995250B21A700A16053 /* AddProductsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC6994250B21A700A16053 /* AddProductsVM.swift */; };
 		47AC6998250BB4CB00A16053 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AC6997250BB4CB00A16053 /* Keys.swift */; };
+		47B00C702528E4E500E15D3C /* ECSemiBoldLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B00C6F2528E4E500E15D3C /* ECSemiBoldLabel.swift */; };
 		47DB895F251E5EC400DD86EF /* ECMediumLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DB895E251E5EC400DD86EF /* ECMediumLabel.swift */; };
 		47DB8962251E5F4900DD86EF /* ECRegularLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DB8961251E5F4900DD86EF /* ECRegularLabel.swift */; };
 		CDD6DA0BDAF580919DEBEE0C /* Pods_E_Customs_Admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFFF634ADA54DF89D7D8AEB2 /* Pods_E_Customs_Admin.framework */; };
@@ -86,6 +87,7 @@
 		47AC6992250B217800A16053 /* AddProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductsVC.swift; sourceTree = "<group>"; };
 		47AC6994250B21A700A16053 /* AddProductsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductsVM.swift; sourceTree = "<group>"; };
 		47AC6997250BB4CB00A16053 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		47B00C6F2528E4E500E15D3C /* ECSemiBoldLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECSemiBoldLabel.swift; sourceTree = "<group>"; };
 		47DB895E251E5EC400DD86EF /* ECMediumLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECMediumLabel.swift; sourceTree = "<group>"; };
 		47DB8961251E5F4900DD86EF /* ECRegularLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECRegularLabel.swift; sourceTree = "<group>"; };
 		94CEC4D8F315C597F1FE6B52 /* Pods-E Customs Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E Customs Admin.debug.xcconfig"; path = "Target Support Files/Pods-E Customs Admin/Pods-E Customs Admin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				4720AAED25127C8000A52FC5 /* ECBoldLabel.swift */,
+				47B00C6F2528E4E500E15D3C /* ECSemiBoldLabel.swift */,
 				47DB895E251E5EC400DD86EF /* ECMediumLabel.swift */,
 				47DB8961251E5F4900DD86EF /* ECRegularLabel.swift */,
 			);
@@ -480,6 +483,7 @@
 				4720AAE925127A2D00A52FC5 /* ECImageView.swift in Sources */,
 				476758DA250A6398005E726E /* AppDelegate.swift in Sources */,
 				47AC6993250B217800A16053 /* AddProductsVC.swift in Sources */,
+				47B00C702528E4E500E15D3C /* ECSemiBoldLabel.swift in Sources */,
 				476A24DF250CD89A00E8200D /* HomeVM.swift in Sources */,
 				47AC697E250B110400A16053 /* ECTextField.swift in Sources */,
 				47AC6998250BB4CB00A16053 /* Keys.swift in Sources */,

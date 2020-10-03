@@ -30,12 +30,14 @@ struct Strings {
     static let home = "HOME"
     static let addSneaker = "ADD SNEAKER"
     static let detail = "DETAIL"
+    static let bag = "BAG"
     
     // Placeholders
     static let empty = ""
-    static let enterEmail = "Enter email"
-    static let enterPassword = "Enter password"
-    static let enterFullName = "Enter full name"
+    static let email = "Email"
+    static let password = "Password"
+    static let firstName = "First Name"
+    static let lastName = "Last Name"
     
     static let enterProductName = "Enter product name"
     static let enterDescription = "Enter description"
@@ -44,30 +46,45 @@ struct Strings {
     
     
     // Alerts
-    static let loginFailed = "Login Failed!"
-    static let signupFailed = "Signup Failed!"
+    static let failed = "Failed"
+    static let successfull = "Successful"
     
     static let productSavingFailed = "Poduct saving failed!"
-    static let successful = "Successful!"
     static let productSavedSuccessfully = "Poduct saved successfully!"
-    
     static let productAddingToBagFailed = "Product Adding to Bag Failed"
     static let productAddedToBagSuccessfully = "Poduct added to Bag successfully!"
     
-    
     // Buttons
     static let ok = "OK"
-    static let login = "Log In"
+    static let done = "DONE"
+    static let login = "LOG IN"
     static let gotoSignup = "Go to sign up"
-    static let signup = "Sign Up"
+    static let signup = "SIGN UP"
     static let gotoLogin = "Go to login"
-    
+    static let male = "Male"
+    static let female = "Female"
+    static let addToBag = "ADD TO BAG"
+    static let checkout = "CHECKOUT"
     static let selectPhoto = "Select Photo"
     static let save = "Save"
     
-    static let addToBag = "Add to Bag"
-    
-    
     // Labels
     static let size = "Size"
+    static let noItemsYet = "NO ITEMS YET"
+    static let notAvailable = "Not available"
+    static let qty = "Qty"
+    static let free = "Free"
+    static let subtotal = "Subtotal"
+    static let shipping = "Shipping"
+    static let tax = "Tax"
+    static let total = "Total"
 }
+
+
+struct GlobalDimensions {
+    static let height: CGFloat = 44
+    static let cornerRadius: CGFloat = 3
+    static let borderWidth: CGFloat = 0.5
+    static let borderColor: UIColor = .gray
+}
+

@@ -6,10 +6,10 @@ class AddProductsVC: UIViewController {
     fileprivate let viewModel = AddProductsVM()
     
     fileprivate let photoButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.selectPhoto, titleColor: .gray, fontSize: 21)
-    fileprivate let nameTextField = ECTextField(padding: 16, placeholderText: Strings.enterProductName)
-    fileprivate let descriptionTextField = ECTextField(padding: 16, placeholderText: Strings.enterDescription)
-    fileprivate let priceTextField = ECTextField(padding: 16, placeholderText: Strings.enterPrice)
-    fileprivate let sizesTextField = ECTextField(padding: 16, placeholderText: Strings.enterSizes)
+    fileprivate let nameTextField = ECTextField(padding: 16, placeholderText: Strings.productName)
+    fileprivate let descriptionTextField = ECTextField(padding: 16, placeholderText: Strings.description)
+    fileprivate let priceTextField = ECTextField(padding: 16, placeholderText: Strings.price)
+    fileprivate let sizesTextField = ECTextField(padding: 16, placeholderText: Strings.sizes)
     fileprivate let saveButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.save, titleColor: .gray, fontSize: 18)
     
     fileprivate lazy var verticalStackView: UIStackView = {
@@ -168,17 +168,18 @@ extension AddProductsVC {
         sizesTextField.autocorrectionType = .no
         saveButton.isEnabled = false
         
-        photoButton.setRoundedBorder(borderColor: .black, borderWidth: 0, radius: 2)
-        nameTextField.setRoundedBorder(borderColor: .black, borderWidth: 0.5, radius: 2)
-        descriptionTextField.setRoundedBorder(borderColor: .black, borderWidth: 0.5, radius: 2)
-        priceTextField.setRoundedBorder(borderColor: .black, borderWidth: 0.5, radius: 2)
-        sizesTextField.setRoundedBorder(borderColor: .black, borderWidth: 0.5, radius: 2)
-        saveButton.setRoundedBorder(borderColor: .black, borderWidth: 0, radius: 2)
+        photoButton.setRoundedBorder(borderColor: GlobalConstants.borderColor, borderWidth: 0, radius: GlobalConstants.cornerRadius)
+        nameTextField.setRoundedBorder(borderColor: GlobalConstants.borderColor, borderWidth: GlobalConstants.borderWidth, radius: GlobalConstants.cornerRadius)
+        descriptionTextField.setRoundedBorder(borderColor: GlobalConstants.borderColor, borderWidth: GlobalConstants.borderWidth, radius: GlobalConstants.cornerRadius)
+        priceTextField.setRoundedBorder(borderColor: GlobalConstants.borderColor, borderWidth: GlobalConstants.borderWidth, radius: GlobalConstants.cornerRadius)
+        sizesTextField.setRoundedBorder(borderColor: GlobalConstants.borderColor, borderWidth: GlobalConstants.borderWidth, radius: GlobalConstants.cornerRadius)
+        saveButton.setRoundedBorder(borderColor: GlobalConstants.borderColor, borderWidth: 0, radius: GlobalConstants.cornerRadius)
         
+        let paddingCorners: CGFloat = 24
         view.addSubview(overrallStackView)
         photoButton.heightAnchor.constraint(equalToConstant: 215).isActive = true
-        saveButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        overrallStackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 30, left: 20, bottom: 0, right: 20))
+        saveButton.heightAnchor.constraint(equalToConstant: GlobalConstants.height).isActive = true
+        overrallStackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 30, left: paddingCorners, bottom: 0, right: paddingCorners))
     }
 }
 

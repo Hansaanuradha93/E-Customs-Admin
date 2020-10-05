@@ -39,10 +39,10 @@ struct Strings {
     static let firstName = "First Name"
     static let lastName = "Last Name"
     
-    static let enterProductName = "Enter product name"
-    static let enterDescription = "Enter description"
-    static let enterPrice = "Enter price"
-    static let enterSizes = "Enter sizes"
+    static let productName = "Product Name"
+    static let description = "Description"
+    static let price = "Price"
+    static let sizes = "Sizes"
     
     
     // Alerts
@@ -81,7 +81,7 @@ struct Strings {
 }
 
 
-struct GlobalDimensions {
+struct GlobalConstants {
     static let height: CGFloat = 44
     static let cornerRadius: CGFloat = 3
     static let borderWidth: CGFloat = 0.5

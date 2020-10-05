@@ -181,8 +181,8 @@ extension SignupVC {
     
     
     fileprivate func setupUI() {
-        navigationController?.navigationBar.barTintColor = UIColor.white
         view.backgroundColor = .white
+        navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.navigationBar.isHidden = true
         
         firstNameTextField.autocorrectionType = .no
@@ -201,8 +201,9 @@ extension SignupVC {
         femaleButton.setRoundedBorder(borderColor: GlobalConstants.borderColor, borderWidth: GlobalConstants.borderWidth, radius: GlobalConstants.cornerRadius)
 
         let paddingTop: CGFloat = 30
+        let paddingCorners: CGFloat = 24
         view.addSubviews(titleLabel, verticalStackView, goToLoginButton)
-        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: paddingTop, left: 24, bottom: 0, right: 24))
+        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: paddingTop, left: paddingCorners, bottom: 0, right: paddingCorners))
         signupButton.heightAnchor.constraint(equalToConstant: GlobalConstants.height).isActive = true
         maleButton.heightAnchor.constraint(equalToConstant: GlobalConstants.height).isActive = true
         femaleButton.heightAnchor.constraint(equalToConstant: GlobalConstants.height).isActive = true

@@ -34,13 +34,14 @@ extension RequestBoxVC {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RequestCell.reuseID, for: indexPath) as! RequestCell
-        cell.set(request: viewModel.requests[indexPath.row])
+        var isLastRequest = (indexPath.row == viewModel.requests.count - 1)
+        cell.set(request: viewModel.requests[indexPath.row], isLastRequest: isLastRequest)
         return cell
     }
     
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+        return 150
     }
 }
 

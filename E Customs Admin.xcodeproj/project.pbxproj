@@ -27,6 +27,8 @@
 		476A24E9250CDCE100E8200D /* RequestBoxVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24E8250CDCE100E8200D /* RequestBoxVM.swift */; };
 		4789094B252CC2AA003CF1A6 /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4789094A252CC2AA003CF1A6 /* RequestCell.swift */; };
 		4789094E252CC6AD003CF1A6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4789094D252CC6AD003CF1A6 /* Request.swift */; };
+		47890955252CD57E003CF1A6 /* RequestDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47890954252CD57E003CF1A6 /* RequestDetailsVC.swift */; };
+		47890959252CD5B9003CF1A6 /* RequestDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47890958252CD5B9003CF1A6 /* RequestDetailsVM.swift */; };
 		479C46EF251F0F23000CACFE /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479C46EE251F0F23000CACFE /* ProductDetailsVC.swift */; };
 		479C46F2251F0F47000CACFE /* ProductDetialsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479C46F1251F0F47000CACFE /* ProductDetialsVM.swift */; };
 		479C46FB251F2B1F000CACFE /* SizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479C46FA251F2B1F000CACFE /* SizeCell.swift */; };
@@ -74,6 +76,8 @@
 		476A24E8250CDCE100E8200D /* RequestBoxVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBoxVM.swift; sourceTree = "<group>"; };
 		4789094A252CC2AA003CF1A6 /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCell.swift; sourceTree = "<group>"; };
 		4789094D252CC6AD003CF1A6 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		47890954252CD57E003CF1A6 /* RequestDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailsVC.swift; sourceTree = "<group>"; };
+		47890958252CD5B9003CF1A6 /* RequestDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailsVM.swift; sourceTree = "<group>"; };
 		479C46EE251F0F23000CACFE /* ProductDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
 		479C46F1251F0F47000CACFE /* ProductDetialsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetialsVM.swift; sourceTree = "<group>"; };
 		479C46FA251F2B1F000CACFE /* SizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeCell.swift; sourceTree = "<group>"; };
@@ -284,8 +288,8 @@
 			isa = PBXGroup;
 			children = (
 				47890949252CC28F003CF1A6 /* Cells */,
-				476A24E6250CDCC800E8200D /* RequestBoxVC.swift */,
-				476A24E8250CDCE100E8200D /* RequestBoxVM.swift */,
+				47890953252CD55D003CF1A6 /* Request Details */,
+				47890952252CD54B003CF1A6 /* Request Box */,
 			);
 			name = "Request Box ";
 			sourceTree = "<group>";
@@ -296,6 +300,24 @@
 				4789094A252CC2AA003CF1A6 /* RequestCell.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		47890952252CD54B003CF1A6 /* Request Box */ = {
+			isa = PBXGroup;
+			children = (
+				476A24E6250CDCC800E8200D /* RequestBoxVC.swift */,
+				476A24E8250CDCE100E8200D /* RequestBoxVM.swift */,
+			);
+			name = "Request Box";
+			sourceTree = "<group>";
+		};
+		47890953252CD55D003CF1A6 /* Request Details */ = {
+			isa = PBXGroup;
+			children = (
+				47890954252CD57E003CF1A6 /* RequestDetailsVC.swift */,
+				47890958252CD5B9003CF1A6 /* RequestDetailsVM.swift */,
+			);
+			name = "Request Details";
 			sourceTree = "<group>";
 		};
 		479C46EC251F0EDE000CACFE /* Home */ = {
@@ -499,6 +521,7 @@
 				476758DA250A6398005E726E /* AppDelegate.swift in Sources */,
 				47AC6993250B217800A16053 /* AddProductsVC.swift in Sources */,
 				47B00C702528E4E500E15D3C /* ECSemiBoldLabel.swift in Sources */,
+				47890955252CD57E003CF1A6 /* RequestDetailsVC.swift in Sources */,
 				476A24DF250CD89A00E8200D /* HomeVM.swift in Sources */,
 				47AC697E250B110400A16053 /* ECTextField.swift in Sources */,
 				47AC6998250BB4CB00A16053 /* Keys.swift in Sources */,
@@ -511,6 +534,7 @@
 				47AC6980250B113100A16053 /* UIView+Ext.swift in Sources */,
 				479E0886250FD3C7002EAD27 /* Product.swift in Sources */,
 				475297892513CBA800106150 /* UIImageView+Ext.swift in Sources */,
+				47890959252CD5B9003CF1A6 /* RequestDetailsVM.swift in Sources */,
 				47AC698B250B124300A16053 /* SignupVM.swift in Sources */,
 				47AC6990250B127A00A16053 /* LoginVM.swift in Sources */,
 				47AC6995250B21A700A16053 /* AddProductsVM.swift in Sources */,

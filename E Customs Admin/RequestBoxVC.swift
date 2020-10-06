@@ -34,7 +34,7 @@ extension RequestBoxVC {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RequestCell.reuseID, for: indexPath) as! RequestCell
-        var isLastRequest = (indexPath.row == viewModel.requests.count - 1)
+        let isLastRequest = (indexPath.row == viewModel.requests.count - 1)
         cell.set(request: viewModel.requests[indexPath.row], isLastRequest: isLastRequest)
         return cell
     }
@@ -42,6 +42,12 @@ extension RequestBoxVC {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = RequestDetailsVC(request: viewModel.requests[indexPath.row])
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
 

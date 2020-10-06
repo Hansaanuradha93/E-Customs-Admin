@@ -68,7 +68,8 @@ struct Strings {
     static let addToBag = "ADD TO BAG"
     static let checkout = "CHECKOUT"
     static let selectPhoto = "Select Photo"
-    static let save = "Save"
+    static let save = "SAVE"
+    static let approve = "APPROVE"
     
     // Labels
     static let size = "Size"

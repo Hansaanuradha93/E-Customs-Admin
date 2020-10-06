@@ -31,6 +31,8 @@ struct Strings {
     static let addSneaker = "ADD SNEAKER"
     static let detail = "DETAIL"
     static let bag = "BAG"
+    static let requestBox = "REQUEST BOX"
+    
     
     // Placeholders
     static let empty = ""

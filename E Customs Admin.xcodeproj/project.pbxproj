@@ -25,6 +25,8 @@
 		476A24E4250CDC5900E8200D /* OrderListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24E3250CDC5900E8200D /* OrderListVM.swift */; };
 		476A24E7250CDCC800E8200D /* RequestBoxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24E6250CDCC800E8200D /* RequestBoxVC.swift */; };
 		476A24E9250CDCE100E8200D /* RequestBoxVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24E8250CDCE100E8200D /* RequestBoxVM.swift */; };
+		4789094B252CC2AA003CF1A6 /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4789094A252CC2AA003CF1A6 /* RequestCell.swift */; };
+		4789094E252CC6AD003CF1A6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4789094D252CC6AD003CF1A6 /* Request.swift */; };
 		479C46EF251F0F23000CACFE /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479C46EE251F0F23000CACFE /* ProductDetailsVC.swift */; };
 		479C46F2251F0F47000CACFE /* ProductDetialsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479C46F1251F0F47000CACFE /* ProductDetialsVM.swift */; };
 		479C46FB251F2B1F000CACFE /* SizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479C46FA251F2B1F000CACFE /* SizeCell.swift */; };
@@ -70,6 +72,8 @@
 		476A24E3250CDC5900E8200D /* OrderListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListVM.swift; sourceTree = "<group>"; };
 		476A24E6250CDCC800E8200D /* RequestBoxVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBoxVC.swift; sourceTree = "<group>"; };
 		476A24E8250CDCE100E8200D /* RequestBoxVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBoxVM.swift; sourceTree = "<group>"; };
+		4789094A252CC2AA003CF1A6 /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCell.swift; sourceTree = "<group>"; };
+		4789094D252CC6AD003CF1A6 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		479C46EE251F0F23000CACFE /* ProductDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
 		479C46F1251F0F47000CACFE /* ProductDetialsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetialsVM.swift; sourceTree = "<group>"; };
 		479C46FA251F2B1F000CACFE /* SizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeCell.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				479E0885250FD3C7002EAD27 /* Product.swift */,
+				4789094D252CC6AD003CF1A6 /* Request.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -278,10 +283,19 @@
 		476A24E5250CDCAC00E8200D /* Request Box  */ = {
 			isa = PBXGroup;
 			children = (
+				47890949252CC28F003CF1A6 /* Cells */,
 				476A24E6250CDCC800E8200D /* RequestBoxVC.swift */,
 				476A24E8250CDCE100E8200D /* RequestBoxVM.swift */,
 			);
 			name = "Request Box ";
+			sourceTree = "<group>";
+		};
+		47890949252CC28F003CF1A6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4789094A252CC2AA003CF1A6 /* RequestCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		479C46EC251F0EDE000CACFE /* Home */ = {
@@ -479,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47AC698E250B126500A16053 /* LoginVC.swift in Sources */,
+				4789094B252CC2AA003CF1A6 /* RequestCell.swift in Sources */,
 				47DB895F251E5EC400DD86EF /* ECMediumLabel.swift in Sources */,
 				4720AAE925127A2D00A52FC5 /* ECImageView.swift in Sources */,
 				476758DA250A6398005E726E /* AppDelegate.swift in Sources */,
@@ -500,6 +515,7 @@
 				47AC6990250B127A00A16053 /* LoginVM.swift in Sources */,
 				47AC6995250B21A700A16053 /* AddProductsVM.swift in Sources */,
 				47AC6982250B114700A16053 /* UIColor+Ext.swift in Sources */,
+				4789094E252CC6AD003CF1A6 /* Request.swift in Sources */,
 				47DB8962251E5F4900DD86EF /* ECRegularLabel.swift in Sources */,
 				476A24E4250CDC5900E8200D /* OrderListVM.swift in Sources */,
 				476A24DA250CD7EC00E8200D /* ECTabBar.swift in Sources */,

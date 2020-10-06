@@ -3,10 +3,12 @@ import Firebase
 
 class RequestBoxVC: UITableViewController {
     
+    // MARK: Properties
     let viewModel = RequestBoxVM()
     fileprivate var listener: ListenerRegistration?
 
     
+    // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -19,7 +21,32 @@ class RequestBoxVC: UITableViewController {
         super.viewWillDisappear(animated)
         if isMovingFromParent { listener?.remove() }
     }
+}
+
+
+// MARK: - TableView
+extension RequestBoxVC {
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.requests.count
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: RequestCell.reuseID, for: indexPath) as! RequestCell
+        cell.set(request: viewModel.requests[indexPath.row])
+        return cell
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 170
+    }
+}
+
+
+// MARK: - Methods
+extension RequestBoxVC {
     
     fileprivate func fetchRequests() {
         listener = viewModel.fetchRequest { [weak self] status in
@@ -42,26 +69,5 @@ class RequestBoxVC: UITableViewController {
         view.backgroundColor = .white
         title = Strings.requestBox
         tabBarItem.title = Strings.empty
-    }
-}
-
-
-// MARK: - TableView
-extension RequestBoxVC {
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.requests.count
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: RequestCell.reuseID, for: indexPath) as! RequestCell
-        cell.set(request: viewModel.requests[indexPath.row])
-        return cell
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
     }
 }

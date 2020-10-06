@@ -49,6 +49,7 @@ class AddProductsVC: UIViewController {
 extension AddProductsVC {
     
     @objc fileprivate func handleSave() {
+        handleTapDismiss()
         viewModel.saveImageToFirebase { [weak self] error in
             guard let self = self else { return }
             if let error = error {
@@ -108,6 +109,12 @@ extension AddProductsVC {
         descriptionTextField.text = ""
         priceTextField.text = ""
         sizesTextField.text = ""
+        
+        viewModel.bindableImage.value = nil
+        viewModel.name = ""
+        viewModel.description = ""
+        viewModel.price = ""
+        viewModel.sizes = ""
     }
     
     

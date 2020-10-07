@@ -51,8 +51,6 @@ struct Strings {
     static let failed = "Failed"
     static let successfull = "Successful"
     
-    static let productSavingFailed = "Poduct saving failed!"
-    static let productSavedSuccessfully = "Poduct saved successfully!"
     static let productAddingToBagFailed = "Product Adding to Bag Failed"
     static let productAddedToBagSuccessfully = "Poduct added to Bag successfully!"
     

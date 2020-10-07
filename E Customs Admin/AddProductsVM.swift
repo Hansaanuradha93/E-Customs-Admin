@@ -19,7 +19,7 @@ class AddProductsVM {
 // MARK: - Methods
 extension AddProductsVM {
     
-    func saveImageToFirebase(completion: @escaping ((Error?) -> ())) {
+    func saveImageToFirebase(completion: @escaping (Bool, String) -> ()) {
         guard let image = self.bindableImage.value,
         let uploadData = image.jpegData(compressionQuality: 0.75) else { return }
         self.bindableIsSaving.value = true
@@ -29,7 +29,7 @@ extension AddProductsVM {
         storageRef.putData(uploadData, metadata: nil) { (_, error) in
             if let error = error {
                 self.bindableIsSaving.value = false
-                completion(error)
+                completion(false, error.localizedDescription)
                 return
             }
             self.fetchImageDownloadUrl(reference: storageRef, completion: completion)
@@ -37,11 +37,11 @@ extension AddProductsVM {
     }
     
     
-    fileprivate func fetchImageDownloadUrl(reference: StorageReference, completion: @escaping (Error?) -> ()) {
+    fileprivate func fetchImageDownloadUrl(reference: StorageReference, completion: @escaping (Bool, String) -> ()) {
         reference.downloadURL { (url, error) in
             if let error = error {
                 self.bindableIsSaving.value = false
-                completion(error)
+                completion(false, error.localizedDescription)
                 return
             }
             let downloadUrl = url?.absoluteString ?? ""
@@ -50,7 +50,7 @@ extension AddProductsVM {
     }
     
     
-    fileprivate func saveInfoToFirestore(imageUrl: String, completion: @escaping (Error?) -> ()) {
+    fileprivate func saveInfoToFirestore(imageUrl: String, completion: @escaping (Bool, String) -> ()) {
         let reference = Firestore.firestore().collection("products")
         let documentId = reference.document().documentID
         
@@ -67,11 +67,10 @@ extension AddProductsVM {
             guard let self = self else { return }
             self.bindableIsSaving.value = false
             if let error = error {
-                completion(error)
+                completion(false, error.localizedDescription)
                 return
             }
-            print("Product save successfully")
-            completion(nil)
+            completion(true, "Product save successfully")
         }
     }
     

@@ -50,14 +50,15 @@ extension AddProductsVC {
     
     @objc fileprivate func handleSave() {
         handleTapDismiss()
-        viewModel.saveImageToFirebase { [weak self] error in
+        
+        viewModel.saveImageToFirebase { [weak self] status, message in
             guard let self = self else { return }
-            if let error = error {
-                self.presentAlert(title: Strings.productSavingFailed, message: error.localizedDescription, buttonTitle: Strings.ok)
-                return
+            if status {
+                self.presentAlert(title: Strings.successfull, message: message, buttonTitle: Strings.ok)
+                self.clearData()
+            } else {
+                self.presentAlert(title: Strings.failed, message: message, buttonTitle: Strings.ok)
             }
-            self.presentAlert(title: Strings.successfull, message: Strings.productSavedSuccessfully, buttonTitle: Strings.ok)
-            self.clearData()
         }
     }
     

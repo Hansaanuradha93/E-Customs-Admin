@@ -51,12 +51,9 @@ struct Strings {
     static let failed = "Failed"
     static let successfull = "Successful"
     
-    static let productAddingToBagFailed = "Product Adding to Bag Failed"
-    static let productAddedToBagSuccessfully = "Poduct added to Bag successfully!"
     
     // Buttons
     static let ok = "OK"
-    static let done = "DONE"
     static let login = "LOG IN"
     static let gotoSignup = "Go to sign up"
     static let signup = "SIGN UP"
@@ -71,14 +68,6 @@ struct Strings {
     
     // Labels
     static let size = "Size"
-    static let noItemsYet = "NO ITEMS YET"
-    static let notAvailable = "Not available"
-    static let qty = "Qty"
-    static let free = "Free"
-    static let subtotal = "Subtotal"
-    static let shipping = "Shipping"
-    static let tax = "Tax"
-    static let total = "Total"
 }
 
 

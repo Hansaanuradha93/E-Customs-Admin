@@ -32,6 +32,8 @@ extension RequestCell {
         
         if isLastRequest {
             separatorLine.alpha = 0
+        } else {
+            separatorLine.alpha = 1
         }
     }
     

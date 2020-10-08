@@ -26,7 +26,7 @@ extension ProfileVC {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 1:
-            return 4
+            return 5
         default:
             return 1
         }
@@ -51,6 +51,9 @@ extension ProfileVC {
                 } else if indexPath.row == 3 {
                     let gender = (user.isMale ?? false) ? "Male" : "Female"
                     cell.set(name: "Gender", value: gender)
+                } else if indexPath.row == 4 {
+                    let gender = (user.isAdminUser ?? false) ? "Admin User" : "Normal User"
+                    cell.set(name: "Role", value: gender)
                 }
             }
             

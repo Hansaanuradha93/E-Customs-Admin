@@ -2,10 +2,7 @@ import UIKit
 
 // MARK: - Asserts
 struct Asserts {
-    
-    // Images
-    static let placeHolder = UIImage(named: "placeholder")!
-    
+
     // System Icons
     static let house = UIImage(systemName: "house")
     static let houseFill = UIImage(systemName: "house.fill")
@@ -14,6 +11,14 @@ struct Asserts {
     static let documentFill = UIImage(systemName: "doc.text.fill")
     static let envelope = UIImage(systemName: "envelope")
     static let envelopeFill = UIImage(systemName: "envelope.fill")
+    static let person = UIImage(systemName: "person")!
+    static let personFill = UIImage(systemName: "person.fill")!
+    
+    // Common
+    static let placeHolder = UIImage(named: "placeholder")!
+    
+    // Profile
+    static let user = UIImage(named: "user")!
 }
 
 
@@ -31,8 +36,9 @@ struct Strings {
     static let addSneaker = "ADD SNEAKER"
     static let detail = "DETAIL"
     static let bag = "BAG"
-    static let requestBox = "REQUEST BOX"
-    
+    static let requestList = "REQUEST LIST"
+    static let profile = "PROFILE"
+    static let orders = "ORDERS"
     
     // Placeholders
     static let empty = ""
@@ -46,11 +52,9 @@ struct Strings {
     static let price = "Price"
     static let sizes = "Sizes"
     
-    
     // Alerts
     static let failed = "Failed"
     static let successfull = "Successful"
-    
     
     // Buttons
     static let ok = "OK"
@@ -65,6 +69,7 @@ struct Strings {
     static let selectPhoto = "Select Photo"
     static let save = "SAVE"
     static let approve = "APPROVE"
+    static let checkOrders = "CHECK ORDERS"
     
     // Labels
     static let size = "Size"

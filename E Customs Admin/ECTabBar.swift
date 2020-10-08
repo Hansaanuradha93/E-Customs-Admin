@@ -28,7 +28,7 @@ extension ECTabBar {
     
     
     fileprivate func createRequestBoxNC() -> UINavigationController {
-        let requestBoxVC = RequestBoxVC()
+        let requestBoxVC = RequestListVC()
         requestBoxVC.tabBarItem = UITabBarItem(title: Strings.empty, image: Asserts.envelope, selectedImage: Asserts.envelopeFill)
         return UINavigationController(rootViewController: requestBoxVC)
     }

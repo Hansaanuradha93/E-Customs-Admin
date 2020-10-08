@@ -1,7 +1,7 @@
 import UIKit
 import Firebase
 
-class RequestBoxVC: UITableViewController {
+class RequestListVC: UITableViewController {
     
     // MARK: Properties
     let viewModel = RequestBoxVM()
@@ -25,7 +25,7 @@ class RequestBoxVC: UITableViewController {
 
 
 // MARK: - TableView
-extension RequestBoxVC {
+extension RequestListVC {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.requests.count
@@ -53,7 +53,7 @@ extension RequestBoxVC {
 
 
 // MARK: - Methods
-extension RequestBoxVC {
+extension RequestListVC {
     
     fileprivate func fetchRequests() {
         listener = viewModel.fetchRequest { [weak self] status in

@@ -71,6 +71,7 @@ struct Strings {
     static let save = "SAVE"
     static let approve = "APPROVE"
     static let checkOrders = "CHECK ORDERS"
+    static let signout = "SIGN OUT"
     
     // Labels
     static let size = "Size"

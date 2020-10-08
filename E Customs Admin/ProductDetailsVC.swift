@@ -12,6 +12,7 @@ class ProductDetailsVC: UIViewController {
     fileprivate let titleLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
     fileprivate let descriptionLabel = ECRegularLabel(textAlignment: .left, textColor: .lightGray, fontSize: 15, numberOfLines: 0)
     fileprivate let sizeLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
+    fileprivate let priceLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
     fileprivate let addToBagButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.addToBag, titleColor: .gray, radius: GlobalConstants.cornerRadius, fontSize: 16)
     
     let collectionView: UICollectionView = {
@@ -29,6 +30,7 @@ class ProductDetailsVC: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
+    
     
     required init?(coder: NSCoder) { fatalError() }
     
@@ -151,6 +153,7 @@ extension ProductDetailsVC {
         thumbnailImageView.downloadImage(from: viewModel.product.thumbnailUrl ?? "")
         titleLabel.text = (viewModel.product.name ?? "").uppercased()
         descriptionLabel.text = viewModel.product.description ?? ""
+        priceLabel.text = "\(viewModel.product.price ?? "")$"
         let sizes = (viewModel.product.sizes ?? "").replacingOccurrences(of: " ", with: "", options: .literal, range: nil)
         viewModel.sizes = sizes.components(separatedBy: ",")
     }
@@ -166,6 +169,7 @@ extension ProductDetailsVC {
     
     fileprivate func setupScrollView() {
         navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
         title = Strings.detail
         tabBarItem.title = Strings.empty
@@ -178,7 +182,7 @@ extension ProductDetailsVC {
         
         NSLayoutConstraint.activate([
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            contentView.heightAnchor.constraint(equalToConstant: 800)
+            contentView.heightAnchor.constraint(equalToConstant: 900)
         ])
     }
     
@@ -188,16 +192,17 @@ extension ProductDetailsVC {
         addToBagButton.isEnabled = false
         addToBagButton.addTarget(self, action: #selector(handleAddToBag), for: .touchUpInside)
         
-        contentView.addSubviews(thumbnailImageView, titleLabel, descriptionLabel, sizeLabel, collectionView, addToBagButton)
+        contentView.addSubviews(thumbnailImageView, titleLabel, descriptionLabel, priceLabel, sizeLabel, collectionView, addToBagButton)
     
         let paddingTop: CGFloat = 36
-        let paddindCorders: CGFloat = 24
+        let paddindCorners: CGFloat = 24
         
-        thumbnailImageView.anchor(top: contentView.topAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, size: .init(width: 0, height: 375))
-        titleLabel.anchor(top: thumbnailImageView.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorders, bottom: 0, right: paddindCorders))
-        descriptionLabel.anchor(top: titleLabel.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorders, bottom: 0, right: paddindCorders))
-        sizeLabel.anchor(top: descriptionLabel.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorders, bottom: 0, right: paddindCorders))
-        collectionView.anchor(top: sizeLabel.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorders, bottom: 0, right: paddindCorders), size: .init(width: 0, height: 60))
-        addToBagButton.anchor(top: collectionView.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorders, bottom: 0, right: paddindCorders), size: .init(width: 0, height: GlobalConstants.height))
+        thumbnailImageView.anchor(top: contentView.topAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddindCorners, left: 0, bottom: 0, right: 0),size: .init(width: 0, height: 375))
+        titleLabel.anchor(top: thumbnailImageView.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorners, bottom: 0, right: paddindCorners))
+        descriptionLabel.anchor(top: titleLabel.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorners, bottom: 0, right: paddindCorners))
+        priceLabel.anchor(top: descriptionLabel.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorners, bottom: 0, right: paddindCorners))
+        sizeLabel.anchor(top: priceLabel.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorners, bottom: 0, right: paddindCorners))
+        collectionView.anchor(top: sizeLabel.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorners, bottom: 0, right: paddindCorners), size: .init(width: 0, height: 60))
+        addToBagButton.anchor(top: collectionView.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddindCorners, bottom: 0, right: paddindCorners), size: .init(width: 0, height: GlobalConstants.height))
     }
 }

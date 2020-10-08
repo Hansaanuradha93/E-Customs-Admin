@@ -37,6 +37,7 @@ struct Strings {
     static let detail = "DETAIL"
     static let bag = "BAG"
     static let requestList = "REQUEST LIST"
+    static let requestDetail = "REQUEST DETAIL"
     static let profile = "PROFILE"
     static let orders = "ORDERS"
     

@@ -14,6 +14,11 @@
 		4728D666252F341600E7E099 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4728D665252F341600E7E099 /* User.swift */; };
 		4728D66A252F359800E7E099 /* ECTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4728D669252F359800E7E099 /* ECTextView.swift */; };
 		4728D66D252F35E000E7E099 /* Public Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4728D66C252F35E000E7E099 /* Public Enums.swift */; };
+		4728D675252F39DB00E7E099 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4728D674252F39DB00E7E099 /* ProfileVC.swift */; };
+		4728D678252F39F500E7E099 /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4728D677252F39F500E7E099 /* ProfileVM.swift */; };
+		4728D67C252F3A2E00E7E099 /* ProfilePictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4728D67B252F3A2E00E7E099 /* ProfilePictureCell.swift */; };
+		4728D67F252F3A4800E7E099 /* ProfileDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4728D67E252F3A4800E7E099 /* ProfileDetailCell.swift */; };
+		4728D682252F3A7000E7E099 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4728D681252F3A7000E7E099 /* ButtonCell.swift */; };
 		475297872513CB1300106150 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475297862513CB1300106150 /* NetworkManager.swift */; };
 		475297892513CBA800106150 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475297882513CBA800106150 /* UIImageView+Ext.swift */; };
 		476758DA250A6398005E726E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476758D9250A6398005E726E /* AppDelegate.swift */; };
@@ -64,6 +69,11 @@
 		4728D665252F341600E7E099 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4728D669252F359800E7E099 /* ECTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECTextView.swift; sourceTree = "<group>"; };
 		4728D66C252F35E000E7E099 /* Public Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Public Enums.swift"; sourceTree = "<group>"; };
+		4728D674252F39DB00E7E099 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		4728D677252F39F500E7E099 /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
+		4728D67B252F3A2E00E7E099 /* ProfilePictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureCell.swift; sourceTree = "<group>"; };
+		4728D67E252F3A4800E7E099 /* ProfileDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailCell.swift; sourceTree = "<group>"; };
+		4728D681252F3A7000E7E099 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		475297862513CB1300106150 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		475297882513CBA800106150 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		476758D6250A6398005E726E /* E Customs Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E Customs Admin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +174,35 @@
 			name = "Text Views";
 			sourceTree = "<group>";
 		};
+		4728D670252F393800E7E099 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4728D671252F394700E7E099 /* Cells */,
+				476A24E0250CDC1900E8200D /* Oder List */,
+				4728D673252F39B900E7E099 /* Profile */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		4728D671252F394700E7E099 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4728D67B252F3A2E00E7E099 /* ProfilePictureCell.swift */,
+				4728D67E252F3A4800E7E099 /* ProfileDetailCell.swift */,
+				4728D681252F3A7000E7E099 /* ButtonCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		4728D673252F39B900E7E099 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4728D674252F39DB00E7E099 /* ProfileVC.swift */,
+				4728D677252F39F500E7E099 /* ProfileVM.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		475297852513CAE800106150 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,8 +283,8 @@
 		476758F0250A6589005E726E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4728D670252F393800E7E099 /* Profile */,
 				476A24E5250CDCAC00E8200D /* Request Box  */,
-				476A24E0250CDC1900E8200D /* Oder List */,
 				476A24DB250CD87E00E8200D /* Home */,
 				47AC6991250B216200A16053 /* Add Products */,
 				47AC698C250B125300A16053 /* Login  */,
@@ -305,7 +344,7 @@
 			children = (
 				47890949252CC28F003CF1A6 /* Cells */,
 				47890953252CD55D003CF1A6 /* Request Details */,
-				47890952252CD54B003CF1A6 /* Request Box */,
+				47890952252CD54B003CF1A6 /* Request List */,
 			);
 			name = "Request Box ";
 			sourceTree = "<group>";
@@ -318,13 +357,13 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		47890952252CD54B003CF1A6 /* Request Box */ = {
+		47890952252CD54B003CF1A6 /* Request List */ = {
 			isa = PBXGroup;
 			children = (
 				476A24E6250CDCC800E8200D /* RequestListVC.swift */,
 				476A24E8250CDCE100E8200D /* RequestBoxVM.swift */,
 			);
-			name = "Request Box";
+			name = "Request List";
 			sourceTree = "<group>";
 		};
 		47890953252CD55D003CF1A6 /* Request Details */ = {
@@ -537,13 +576,16 @@
 				4720AAE925127A2D00A52FC5 /* ECImageView.swift in Sources */,
 				476758DA250A6398005E726E /* AppDelegate.swift in Sources */,
 				47AC6993250B217800A16053 /* AddProductsVC.swift in Sources */,
+				4728D678252F39F500E7E099 /* ProfileVM.swift in Sources */,
 				47B00C702528E4E500E15D3C /* ECSemiBoldLabel.swift in Sources */,
 				47890955252CD57E003CF1A6 /* RequestDetailsVC.swift in Sources */,
 				476A24DF250CD89A00E8200D /* HomeVM.swift in Sources */,
 				47AC697E250B110400A16053 /* ECTextField.swift in Sources */,
 				47AC6998250BB4CB00A16053 /* Keys.swift in Sources */,
 				4720AAEB25127A9100A52FC5 /* Constants.swift in Sources */,
+				4728D675252F39DB00E7E099 /* ProfileVC.swift in Sources */,
 				476A24DD250CD89000E8200D /* HomeVC.swift in Sources */,
+				4728D67C252F3A2E00E7E099 /* ProfilePictureCell.swift in Sources */,
 				47AC6986250B117A00A16053 /* Bindable.swift in Sources */,
 				47AC6989250B122E00A16053 /* SignupVC.swift in Sources */,
 				47AC6984250B116000A16053 /* UIViewController+Ext.swift in Sources */,
@@ -553,11 +595,13 @@
 				479E0886250FD3C7002EAD27 /* Product.swift in Sources */,
 				475297892513CBA800106150 /* UIImageView+Ext.swift in Sources */,
 				47890959252CD5B9003CF1A6 /* RequestDetailsVM.swift in Sources */,
+				4728D682252F3A7000E7E099 /* ButtonCell.swift in Sources */,
 				47AC698B250B124300A16053 /* SignupVM.swift in Sources */,
 				47AC6990250B127A00A16053 /* LoginVM.swift in Sources */,
 				47AC6995250B21A700A16053 /* AddProductsVM.swift in Sources */,
 				47AC6982250B114700A16053 /* UIColor+Ext.swift in Sources */,
 				4789094E252CC6AD003CF1A6 /* Request.swift in Sources */,
+				4728D67F252F3A4800E7E099 /* ProfileDetailCell.swift in Sources */,
 				47DB8962251E5F4900DD86EF /* ECRegularLabel.swift in Sources */,
 				476A24E4250CDC5900E8200D /* OrderListVM.swift in Sources */,
 				4728D666252F341600E7E099 /* User.swift in Sources */,

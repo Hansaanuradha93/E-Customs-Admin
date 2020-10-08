@@ -13,6 +13,7 @@
 		4720AAEE25127C8000A52FC5 /* ECBoldLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4720AAED25127C8000A52FC5 /* ECBoldLabel.swift */; };
 		4728D666252F341600E7E099 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4728D665252F341600E7E099 /* User.swift */; };
 		4728D66A252F359800E7E099 /* ECTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4728D669252F359800E7E099 /* ECTextView.swift */; };
+		4728D66D252F35E000E7E099 /* Public Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4728D66C252F35E000E7E099 /* Public Enums.swift */; };
 		475297872513CB1300106150 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475297862513CB1300106150 /* NetworkManager.swift */; };
 		475297892513CBA800106150 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475297882513CBA800106150 /* UIImageView+Ext.swift */; };
 		476758DA250A6398005E726E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476758D9250A6398005E726E /* AppDelegate.swift */; };
@@ -62,6 +63,7 @@
 		4720AAED25127C8000A52FC5 /* ECBoldLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECBoldLabel.swift; sourceTree = "<group>"; };
 		4728D665252F341600E7E099 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4728D669252F359800E7E099 /* ECTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECTextView.swift; sourceTree = "<group>"; };
+		4728D66C252F35E000E7E099 /* Public Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Public Enums.swift"; sourceTree = "<group>"; };
 		475297862513CB1300106150 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		475297882513CBA800106150 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		476758D6250A6398005E726E /* E Customs Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E Customs Admin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -400,6 +402,7 @@
 			children = (
 				47AC6997250BB4CB00A16053 /* Keys.swift */,
 				4720AAEA25127A9100A52FC5 /* Constants.swift */,
+				4728D66C252F35E000E7E099 /* Public Enums.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				479C46F2251F0F47000CACFE /* ProductDetialsVM.swift in Sources */,
 				476A24E2250CDC3700E8200D /* OrderListVC.swift in Sources */,
 				475297872513CB1300106150 /* NetworkManager.swift in Sources */,
+				4728D66D252F35E000E7E099 /* Public Enums.swift in Sources */,
 				479C46EF251F0F23000CACFE /* ProductDetailsVC.swift in Sources */,
 				479C46FB251F2B1F000CACFE /* SizeCell.swift in Sources */,
 				4720AAE6251277D100A52FC5 /* ProductCell.swift in Sources */,

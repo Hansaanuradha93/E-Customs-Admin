@@ -27,13 +27,6 @@ extension ECTabBar {
     }
     
     
-    fileprivate func createOrderListNC() -> UINavigationController {
-        let orderListVC = OrderListVC()
-        orderListVC.tabBarItem = UITabBarItem(title: Strings.empty, image: Asserts.document, selectedImage: Asserts.documentFill)
-        return UINavigationController(rootViewController: orderListVC)
-    }
-    
-    
     fileprivate func createRequestBoxNC() -> UINavigationController {
         let requestBoxVC = RequestBoxVC()
         requestBoxVC.tabBarItem = UITabBarItem(title: Strings.empty, image: Asserts.envelope, selectedImage: Asserts.envelopeFill)
@@ -43,12 +36,15 @@ extension ECTabBar {
     
     fileprivate func setupUI() {
         UITabBar.appearance().tintColor = .black
-        viewControllers = [createHomeNC(), createAddProductNC(), createOrderListNC(), createRequestBoxNC()]
+        viewControllers = [createHomeNC(), createAddProductNC(), createRequestBoxNC()]
         
         let traits = [UIFontDescriptor.TraitKey.weight: UIFont.Weight.medium]
         var descriptor = UIFontDescriptor(fontAttributes: [UIFontDescriptor.AttributeName.family: Fonts.avenirNext])
         descriptor = descriptor.addingAttributes([UIFontDescriptor.AttributeName.traits: traits])
-        let attributes = [NSAttributedString.Key.font: UIFont(descriptor: descriptor, size: 18)]
-        UINavigationBar.appearance().titleTextAttributes = attributes
+        let attributesForTitle = [NSAttributedString.Key.font: UIFont(descriptor: descriptor, size: 18)]
+        let attributesForLargeTitle = [NSAttributedString.Key.font: UIFont(descriptor: descriptor, size: 28)]
+        UINavigationBar.appearance().titleTextAttributes = attributesForTitle
+        UINavigationBar.appearance().largeTitleTextAttributes = attributesForLargeTitle
+        UINavigationBar.appearance().tintColor = .darkGray
     }
 }

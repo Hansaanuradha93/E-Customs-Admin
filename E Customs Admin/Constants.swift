@@ -22,12 +22,6 @@ struct Asserts {
 }
 
 
-// MARK: - Fonts
-struct Fonts {
-    static let avenirNext = "Avenir Next"
-}
-
-
 // MARK: - Strings
 struct Strings {
     
@@ -75,9 +69,21 @@ struct Strings {
     
     // Labels
     static let size = "Size"
+    static let gender = "Gender"
+    static let lodingIndicatorDots = "..."
+    static let role = "Role"
+    static let admin = "Admin"
+    static let customer = "Customer"
 }
 
 
+// MARK: - Fonts
+struct Fonts {
+    static let avenirNext = "Avenir Next"
+}
+
+
+// MARK: - GlobalConstants
 struct GlobalConstants {
     static let height: CGFloat = 44
     static let cornerRadius: CGFloat = 3

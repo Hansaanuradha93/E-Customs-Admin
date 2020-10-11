@@ -166,9 +166,11 @@ extension AddProductsVC {
     
     
     fileprivate func setupUI() {
+        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
         title = Strings.addSneaker
-        tabBarItem.title = ""
+        tabBarItem.title = Strings.empty
         
         nameTextField.autocorrectionType = .no
         priceTextField.keyboardType = .decimalPad

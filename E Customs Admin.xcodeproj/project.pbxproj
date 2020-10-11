@@ -25,7 +25,6 @@
 		476758DC250A6398005E726E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476758DB250A6398005E726E /* SceneDelegate.swift */; };
 		476758E3250A6399005E726E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476758E2250A6399005E726E /* Assets.xcassets */; };
 		476758E6250A6399005E726E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476758E4250A6399005E726E /* LaunchScreen.storyboard */; };
-		476758F4250A663A005E726E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 476758F3250A663A005E726E /* GoogleService-Info.plist */; };
 		476A24DA250CD7EC00E8200D /* ECTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24D9250CD7EC00E8200D /* ECTabBar.swift */; };
 		476A24DD250CD89000E8200D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24DC250CD89000E8200D /* HomeVC.swift */; };
 		476A24DF250CD89A00E8200D /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24DE250CD89A00E8200D /* HomeVM.swift */; };
@@ -57,6 +56,7 @@
 		47B00C702528E4E500E15D3C /* ECSemiBoldLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B00C6F2528E4E500E15D3C /* ECSemiBoldLabel.swift */; };
 		47DB895F251E5EC400DD86EF /* ECMediumLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DB895E251E5EC400DD86EF /* ECMediumLabel.swift */; };
 		47DB8962251E5F4900DD86EF /* ECRegularLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DB8961251E5F4900DD86EF /* ECRegularLabel.swift */; };
+		47E8EC7125331C5F00F2861F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47E8EC7025331C5F00F2861F /* GoogleService-Info.plist */; };
 		CDD6DA0BDAF580919DEBEE0C /* Pods_E_Customs_Admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFFF634ADA54DF89D7D8AEB2 /* Pods_E_Customs_Admin.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,7 +82,6 @@
 		476758E2250A6399005E726E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		476758E5250A6399005E726E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		476758E7250A6399005E726E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		476758F3250A663A005E726E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		476A24D9250CD7EC00E8200D /* ECTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECTabBar.swift; sourceTree = "<group>"; };
 		476A24DC250CD89000E8200D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		476A24DE250CD89A00E8200D /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
@@ -114,6 +113,7 @@
 		47B00C6F2528E4E500E15D3C /* ECSemiBoldLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECSemiBoldLabel.swift; sourceTree = "<group>"; };
 		47DB895E251E5EC400DD86EF /* ECMediumLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECMediumLabel.swift; sourceTree = "<group>"; };
 		47DB8961251E5F4900DD86EF /* ECRegularLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECRegularLabel.swift; sourceTree = "<group>"; };
+		47E8EC7025331C5F00F2861F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		94CEC4D8F315C597F1FE6B52 /* Pods-E Customs Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E Customs Admin.debug.xcconfig"; path = "Target Support Files/Pods-E Customs Admin/Pods-E Customs Admin.debug.xcconfig"; sourceTree = "<group>"; };
 		AFFF634ADA54DF89D7D8AEB2 /* Pods_E_Customs_Admin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Customs_Admin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -247,12 +247,12 @@
 		476758ED250A6562005E726E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				47E8EC7025331C5F00F2861F /* GoogleService-Info.plist */,
 				476758DB250A6398005E726E /* SceneDelegate.swift */,
 				476758D9250A6398005E726E /* AppDelegate.swift */,
 				476758E2250A6399005E726E /* Assets.xcassets */,
 				476758E4250A6399005E726E /* LaunchScreen.storyboard */,
 				476758E7250A6399005E726E /* Info.plist */,
-				476758F3250A663A005E726E /* GoogleService-Info.plist */,
 			);
 			name = "Support Files";
 			sourceTree = "<group>";
@@ -517,7 +517,7 @@
 			files = (
 				476758E6250A6399005E726E /* LaunchScreen.storyboard in Resources */,
 				476758E3250A6399005E726E /* Assets.xcassets in Resources */,
-				476758F4250A663A005E726E /* GoogleService-Info.plist in Resources */,
+				47E8EC7125331C5F00F2861F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

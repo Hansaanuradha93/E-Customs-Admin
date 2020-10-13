@@ -13,6 +13,11 @@ class RequestListVC: UITableViewController {
         super.viewDidLoad()
         setupUI()
         setupTableView()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchRequests()
     }
     

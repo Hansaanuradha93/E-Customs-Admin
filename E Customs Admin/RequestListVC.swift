@@ -4,7 +4,7 @@ import Firebase
 class RequestListVC: UITableViewController {
     
     // MARK: Properties
-    let viewModel = RequestBoxVM()
+    let viewModel = RequestListVM()
     fileprivate var listener: ListenerRegistration?
 
     

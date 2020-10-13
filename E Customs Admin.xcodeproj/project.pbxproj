@@ -31,7 +31,7 @@
 		476A24E2250CDC3700E8200D /* OrderListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24E1250CDC3700E8200D /* OrderListVC.swift */; };
 		476A24E4250CDC5900E8200D /* OrderListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24E3250CDC5900E8200D /* OrderListVM.swift */; };
 		476A24E7250CDCC800E8200D /* RequestListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24E6250CDCC800E8200D /* RequestListVC.swift */; };
-		476A24E9250CDCE100E8200D /* RequestBoxVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24E8250CDCE100E8200D /* RequestBoxVM.swift */; };
+		476A24E9250CDCE100E8200D /* RequestListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A24E8250CDCE100E8200D /* RequestListVM.swift */; };
 		4789094B252CC2AA003CF1A6 /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4789094A252CC2AA003CF1A6 /* RequestCell.swift */; };
 		4789094E252CC6AD003CF1A6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4789094D252CC6AD003CF1A6 /* Request.swift */; };
 		47890955252CD57E003CF1A6 /* RequestDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47890954252CD57E003CF1A6 /* RequestDetailsVC.swift */; };
@@ -88,7 +88,7 @@
 		476A24E1250CDC3700E8200D /* OrderListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListVC.swift; sourceTree = "<group>"; };
 		476A24E3250CDC5900E8200D /* OrderListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListVM.swift; sourceTree = "<group>"; };
 		476A24E6250CDCC800E8200D /* RequestListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestListVC.swift; sourceTree = "<group>"; };
-		476A24E8250CDCE100E8200D /* RequestBoxVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBoxVM.swift; sourceTree = "<group>"; };
+		476A24E8250CDCE100E8200D /* RequestListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestListVM.swift; sourceTree = "<group>"; };
 		4789094A252CC2AA003CF1A6 /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCell.swift; sourceTree = "<group>"; };
 		4789094D252CC6AD003CF1A6 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		47890954252CD57E003CF1A6 /* RequestDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailsVC.swift; sourceTree = "<group>"; };
@@ -361,7 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				476A24E6250CDCC800E8200D /* RequestListVC.swift */,
-				476A24E8250CDCE100E8200D /* RequestBoxVM.swift */,
+				476A24E8250CDCE100E8200D /* RequestListVM.swift */,
 			);
 			name = "Request List";
 			sourceTree = "<group>";
@@ -590,7 +590,7 @@
 				47AC6989250B122E00A16053 /* SignupVC.swift in Sources */,
 				47AC6984250B116000A16053 /* UIViewController+Ext.swift in Sources */,
 				4728D66A252F359800E7E099 /* ECTextView.swift in Sources */,
-				476A24E9250CDCE100E8200D /* RequestBoxVM.swift in Sources */,
+				476A24E9250CDCE100E8200D /* RequestListVM.swift in Sources */,
 				47AC6980250B113100A16053 /* UIView+Ext.swift in Sources */,
 				479E0886250FD3C7002EAD27 /* Product.swift in Sources */,
 				475297892513CBA800106150 /* UIImageView+Ext.swift in Sources */,

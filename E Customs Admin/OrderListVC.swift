@@ -50,10 +50,10 @@ extension OrderListVC {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let order = viewModel.orders[indexPath.row]
-//        let controller = OrderDetailsVC()
-//        controller.viewModel = OrderDetailsVM(order: order)
-//        self.navigationController?.pushViewController(controller, animated: true)
+        let order = viewModel.orders[indexPath.row]
+        let controller = OrderDetailsVC()
+        controller.viewModel = OrderDetailsVM(order: order)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
 

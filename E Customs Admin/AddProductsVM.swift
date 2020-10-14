@@ -56,7 +56,7 @@ extension AddProductsVM {
         
         let productInfo: [String: Any] = [
             "id": documentId,
-            "name": name ?? "",
+            "name": (name ?? "").uppercased(),
             "description": description ?? "",
             "price": price ?? "0",
             "sizes": sizes ?? "",

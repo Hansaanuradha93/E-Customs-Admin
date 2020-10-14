@@ -17,6 +17,9 @@ struct Asserts {
     // Common
     static let placeHolder = UIImage(named: "placeholder")!
     
+    // Order
+    static let close = UIImage(systemName: "xmark")!
+    
     // Profile
     static let user = UIImage(named: "user")!
 }
@@ -34,6 +37,7 @@ struct Strings {
     static let requestDetail = "REQUEST DETAIL"
     static let profile = "PROFILE"
     static let orders = "ORDERS"
+    static let orderDetail = "ORDER DETAIL"
     
     // Placeholders
     static let empty = ""
@@ -51,6 +55,23 @@ struct Strings {
     static let failed = "Failed"
     static let successfull = "Successful"
     
+    // Labels
+    static let size = "Size"
+    static let gender = "Gender"
+    static let lodingIndicatorDots = "..."
+    static let role = "Role"
+    static let admin = "Admin"
+    static let customer = "Customer"
+    static let notAvailable = "Not available"
+    static let qty = "Qty"
+    static let select = "Select"
+    static let noItemsYet = "NO ITEMS YET"
+    static let subtotal = "Subtotal"
+    static let shipping = "Shipping"
+    static let paymentMethod = "Payment Method"
+    static let processingFees = "Processing Fees"
+    static let total = "Total"
+    
     // Buttons
     static let ok = "OK"
     static let login = "LOG IN"
@@ -66,15 +87,6 @@ struct Strings {
     static let approve = "APPROVE"
     static let checkOrders = "CHECK ORDERS"
     static let signout = "SIGN OUT"
-    
-    // Labels
-    static let size = "Size"
-    static let gender = "Gender"
-    static let lodingIndicatorDots = "..."
-    static let role = "Role"
-    static let admin = "Admin"
-    static let customer = "Customer"
-    static let noItemsYet = "NO ITEMS YET"
 }
 
 

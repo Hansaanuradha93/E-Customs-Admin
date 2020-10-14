@@ -39,6 +39,13 @@
 		4797750B253744310024BDFC /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4797750A253744310024BDFC /* Order.swift */; };
 		47977510253744A70024BDFC /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4797750F253744A70024BDFC /* OrderCell.swift */; };
 		47977513253745080024BDFC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47977512253745080024BDFC /* Item.swift */; };
+		47977518253747360024BDFC /* OrderDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47977517253747360024BDFC /* OrderDetailsVC.swift */; };
+		4797751C2537474A0024BDFC /* OrderDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4797751B2537474A0024BDFC /* OrderDetailsVM.swift */; };
+		4797751F253747AF0024BDFC /* OrderHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4797751E253747AF0024BDFC /* OrderHeaderCell.swift */; };
+		47977522253747E20024BDFC /* NumberOfItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47977521253747E20024BDFC /* NumberOfItemsCell.swift */; };
+		47977525253748120024BDFC /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47977524253748120024BDFC /* ItemCell.swift */; };
+		47977528253748400024BDFC /* PaymentInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47977527253748400024BDFC /* PaymentInfoCell.swift */; };
+		4797752B2537485C0024BDFC /* ShippingAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4797752A2537485C0024BDFC /* ShippingAddressCell.swift */; };
 		479C46EF251F0F23000CACFE /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479C46EE251F0F23000CACFE /* ProductDetailsVC.swift */; };
 		479C46F2251F0F47000CACFE /* ProductDetialsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479C46F1251F0F47000CACFE /* ProductDetialsVM.swift */; };
 		479C46FB251F2B1F000CACFE /* SizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479C46FA251F2B1F000CACFE /* SizeCell.swift */; };
@@ -99,6 +106,13 @@
 		4797750A253744310024BDFC /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		4797750F253744A70024BDFC /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		47977512253745080024BDFC /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		47977517253747360024BDFC /* OrderDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsVC.swift; sourceTree = "<group>"; };
+		4797751B2537474A0024BDFC /* OrderDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsVM.swift; sourceTree = "<group>"; };
+		4797751E253747AF0024BDFC /* OrderHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHeaderCell.swift; sourceTree = "<group>"; };
+		47977521253747E20024BDFC /* NumberOfItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfItemsCell.swift; sourceTree = "<group>"; };
+		47977524253748120024BDFC /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		47977527253748400024BDFC /* PaymentInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInfoCell.swift; sourceTree = "<group>"; };
+		4797752A2537485C0024BDFC /* ShippingAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingAddressCell.swift; sourceTree = "<group>"; };
 		479C46EE251F0F23000CACFE /* ProductDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
 		479C46F1251F0F47000CACFE /* ProductDetialsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetialsVM.swift; sourceTree = "<group>"; };
 		479C46FA251F2B1F000CACFE /* SizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeCell.swift; sourceTree = "<group>"; };
@@ -342,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				4797750E253744900024BDFC /* Cells */,
+				47977516253746FE0024BDFC /* Order Detail */,
 				4797750D253744790024BDFC /* Order List */,
 			);
 			name = "Oder List";
@@ -396,8 +411,22 @@
 			isa = PBXGroup;
 			children = (
 				4797750F253744A70024BDFC /* OrderCell.swift */,
+				4797751E253747AF0024BDFC /* OrderHeaderCell.swift */,
+				47977521253747E20024BDFC /* NumberOfItemsCell.swift */,
+				47977524253748120024BDFC /* ItemCell.swift */,
+				47977527253748400024BDFC /* PaymentInfoCell.swift */,
+				4797752A2537485C0024BDFC /* ShippingAddressCell.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		47977516253746FE0024BDFC /* Order Detail */ = {
+			isa = PBXGroup;
+			children = (
+				47977517253747360024BDFC /* OrderDetailsVC.swift */,
+				4797751B2537474A0024BDFC /* OrderDetailsVM.swift */,
+			);
+			name = "Order Detail";
 			sourceTree = "<group>";
 		};
 		479C46EC251F0EDE000CACFE /* Home */ = {
@@ -605,11 +634,15 @@
 				47B00C702528E4E500E15D3C /* ECSemiBoldLabel.swift in Sources */,
 				47890955252CD57E003CF1A6 /* RequestDetailsVC.swift in Sources */,
 				476A24DF250CD89A00E8200D /* HomeVM.swift in Sources */,
+				47977528253748400024BDFC /* PaymentInfoCell.swift in Sources */,
+				4797751F253747AF0024BDFC /* OrderHeaderCell.swift in Sources */,
 				47AC697E250B110400A16053 /* ECTextField.swift in Sources */,
 				47AC6998250BB4CB00A16053 /* Keys.swift in Sources */,
 				4720AAEB25127A9100A52FC5 /* Constants.swift in Sources */,
+				47977525253748120024BDFC /* ItemCell.swift in Sources */,
 				4728D675252F39DB00E7E099 /* ProfileVC.swift in Sources */,
 				476A24DD250CD89000E8200D /* HomeVC.swift in Sources */,
+				47977522253747E20024BDFC /* NumberOfItemsCell.swift in Sources */,
 				4728D67C252F3A2E00E7E099 /* ProfilePictureCell.swift in Sources */,
 				47AC6986250B117A00A16053 /* Bindable.swift in Sources */,
 				47AC6989250B122E00A16053 /* SignupVC.swift in Sources */,
@@ -619,9 +652,11 @@
 				476A24E9250CDCE100E8200D /* RequestListVM.swift in Sources */,
 				47AC6980250B113100A16053 /* UIView+Ext.swift in Sources */,
 				479E0886250FD3C7002EAD27 /* Product.swift in Sources */,
+				4797752B2537485C0024BDFC /* ShippingAddressCell.swift in Sources */,
 				475297892513CBA800106150 /* UIImageView+Ext.swift in Sources */,
 				47890959252CD5B9003CF1A6 /* RequestDetailsVM.swift in Sources */,
 				4728D682252F3A7000E7E099 /* ButtonCell.swift in Sources */,
+				47977518253747360024BDFC /* OrderDetailsVC.swift in Sources */,
 				47AC698B250B124300A16053 /* SignupVM.swift in Sources */,
 				47AC6990250B127A00A16053 /* LoginVM.swift in Sources */,
 				47AC6995250B21A700A16053 /* AddProductsVM.swift in Sources */,
@@ -638,6 +673,7 @@
 				47AC697B250B10D000A16053 /* ECButton.swift in Sources */,
 				479C46F2251F0F47000CACFE /* ProductDetialsVM.swift in Sources */,
 				476A24E2250CDC3700E8200D /* OrderListVC.swift in Sources */,
+				4797751C2537474A0024BDFC /* OrderDetailsVM.swift in Sources */,
 				475297872513CB1300106150 /* NetworkManager.swift in Sources */,
 				4728D66D252F35E000E7E099 /* Public Enums.swift in Sources */,
 				479C46EF251F0F23000CACFE /* ProductDetailsVC.swift in Sources */,

@@ -74,6 +74,7 @@ struct Strings {
     static let role = "Role"
     static let admin = "Admin"
     static let customer = "Customer"
+    static let noItemsYet = "NO ITEMS YET"
 }
 
 

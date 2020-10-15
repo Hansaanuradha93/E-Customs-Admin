@@ -6,6 +6,10 @@ class OrderDetailsVM {
     var order: Order
     var user: User? = nil
     
+    let orderStatusArray = [OrderStatusType.created, OrderStatusType.processing, OrderStatusType.shipped, OrderStatusType.canceled]
+    
+    var seletedOrderStatus = ""
+    
     
     // MARK: Initializers
     init(order: Order) {
@@ -16,6 +20,24 @@ class OrderDetailsVM {
 
 // MARK: - Methods
 extension OrderDetailsVM {
+    
+    func updateOrderStatus(completion: @escaping (Bool, String) -> ()) {
+        guard let orderID = order.orderId, !seletedOrderStatus.isEmpty else { return }
+        let reference = Firestore.firestore().collection("orders").document(orderID)
+        
+        let data = ["status": seletedOrderStatus]
+        
+        reference.updateData(data) { (error) in
+            if let error = error {
+                print(error)
+                completion(false, error.localizedDescription)
+                return
+            }
+            
+            completion(true, "Order status updated to \(self.seletedOrderStatus)")
+        }
+    }
+    
     
     func fetchCustomerDetails(completion: @escaping (Bool) -> ()) {
         let customerUID = order.uid ?? ""

@@ -34,6 +34,8 @@ extension ButtonCell {
             title = Strings.checkout
         } else if buttonType == .checkOrders {
             title = Strings.checkOrders
+        } else if buttonType == .orderDetails {
+            title = Strings.updateOrder
         }
         button.setTitle(title, for: .normal)
     }

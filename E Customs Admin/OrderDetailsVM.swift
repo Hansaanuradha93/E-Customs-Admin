@@ -6,7 +6,7 @@ class OrderDetailsVM {
     var order: Order
     var user: User? = nil
     
-    let orderStatusArray = [OrderStatusType.created, OrderStatusType.processing, OrderStatusType.shipped, OrderStatusType.canceled]
+    let orderStatusArray = [OrderStatusType.created, OrderStatusType.processing, OrderStatusType.shipped]
     
     var seletedOrderStatus = ""
     

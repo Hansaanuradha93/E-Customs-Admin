@@ -14,9 +14,7 @@ extension OrderListVM {
     
     func fetchOrders(completion: @escaping (Bool) -> ()) -> ListenerRegistration? {
         let reference = Firestore.firestore().collection("orders")
-        
-        orders.removeAll()
-                
+                        
         let listener = reference.addSnapshotListener { (querySnapshot, error) in
             if let error = error {
                 print(error.localizedDescription)

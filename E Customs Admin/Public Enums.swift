@@ -18,5 +18,4 @@ public enum OrderStatusType: String {
     case processing = "Processing"
     case shipped = "Shipped"
     case completed = "Completed"
-    case canceled = "Canceled"
 }

@@ -36,6 +36,7 @@ extension OrderDetailsVC {
         switch section {
         case 2: return viewModel.order.items.count > 0 ? viewModel.order.items.count : 1
         case 4: return viewModel.user != nil ? 1 : 0
+        case 5: return (viewModel.order.status ?? "") != OrderStatusType.completed.rawValue ? 1 : 0
         default: return (viewModel.order.items.count > 0 && viewModel.user != nil) ? 1 : 0
         }
     }

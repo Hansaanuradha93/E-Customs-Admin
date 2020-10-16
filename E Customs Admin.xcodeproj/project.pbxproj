@@ -11,6 +11,7 @@
 		4720AAE925127A2D00A52FC5 /* ECImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4720AAE825127A2D00A52FC5 /* ECImageView.swift */; };
 		4720AAEB25127A9100A52FC5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4720AAEA25127A9100A52FC5 /* Constants.swift */; };
 		4720AAEE25127C8000A52FC5 /* ECBoldLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4720AAED25127C8000A52FC5 /* ECBoldLabel.swift */; };
+		472446CB2539CEF70046CB9F /* ECEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472446CA2539CEF70046CB9F /* ECEmptyStateView.swift */; };
 		4728D666252F341600E7E099 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4728D665252F341600E7E099 /* User.swift */; };
 		4728D66A252F359800E7E099 /* ECTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4728D669252F359800E7E099 /* ECTextView.swift */; };
 		4728D66D252F35E000E7E099 /* Public Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4728D66C252F35E000E7E099 /* Public Enums.swift */; };
@@ -76,6 +77,7 @@
 		4720AAE825127A2D00A52FC5 /* ECImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECImageView.swift; sourceTree = "<group>"; };
 		4720AAEA25127A9100A52FC5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4720AAED25127C8000A52FC5 /* ECBoldLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECBoldLabel.swift; sourceTree = "<group>"; };
+		472446CA2539CEF70046CB9F /* ECEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECEmptyStateView.swift; sourceTree = "<group>"; };
 		4728D665252F341600E7E099 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4728D669252F359800E7E099 /* ECTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECTextView.swift; sourceTree = "<group>"; };
 		4728D66C252F35E000E7E099 /* Public Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Public Enums.swift"; sourceTree = "<group>"; };
@@ -186,6 +188,14 @@
 			name = Labels;
 			sourceTree = "<group>";
 		};
+		472446C92539CEDE0046CB9F /* Empty State */ = {
+			isa = PBXGroup;
+			children = (
+				472446CA2539CEF70046CB9F /* ECEmptyStateView.swift */,
+			);
+			name = "Empty State";
+			sourceTree = "<group>";
+		};
 		4728D668252F357800E7E099 /* Text Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +301,7 @@
 		476758EF250A6580005E726E /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				472446C92539CEDE0046CB9F /* Empty State */,
 				476A24D8250CD7CE00E8200D /* Tab Bar */,
 				4720AAE7251279F700A52FC5 /* Image Views */,
 				4720AAEC25127C6700A52FC5 /* Labels */,
@@ -646,6 +657,7 @@
 				4728D67C252F3A2E00E7E099 /* ProfilePictureCell.swift in Sources */,
 				47AC6986250B117A00A16053 /* Bindable.swift in Sources */,
 				47AC6989250B122E00A16053 /* SignupVC.swift in Sources */,
+				472446CB2539CEF70046CB9F /* ECEmptyStateView.swift in Sources */,
 				4797750B253744310024BDFC /* Order.swift in Sources */,
 				47AC6984250B116000A16053 /* UIViewController+Ext.swift in Sources */,
 				4728D66A252F359800E7E099 /* ECTextView.swift in Sources */,

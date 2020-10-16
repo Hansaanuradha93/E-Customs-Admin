@@ -16,6 +16,10 @@ struct Asserts {
     
     // Common
     static let placeHolder = UIImage(named: "placeholder")!
+    static let emptyCart = UIImage(named: "emptyCart")!
+    static let emptyDocument = UIImage(named: "emptyDocument")!
+    static let emptyEnvelope = UIImage(named: "emptyEnvelope")!
+    static let emptyShoe = UIImage(named: "emptyShoe")!
     
     // Order
     static let close = UIImage(systemName: "xmark")!
@@ -62,10 +66,13 @@ struct Strings {
     static let role = "Role"
     static let admin = "Admin"
     static let customer = "Customer"
-    static let notAvailable = "Not available"
     static let qty = "Qty"
     static let select = "Select"
-    static let noItemsYet = "NO ITEMS YET"
+    static let noShoesYet = "No Shoes Yet"
+    static let noItemsYet = "No Items Yet"
+    static let noRequestsYet = "No Requests Yet"
+    static let noOrdersYet = "No Orders Yet"
+    static let notAvailable = "Not available"
     static let subtotal = "Subtotal"
     static let shipping = "Shipping"
     static let paymentMethod = "Payment Method"

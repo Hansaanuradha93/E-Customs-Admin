@@ -39,8 +39,10 @@ extension RequestListVC {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RequestCell.reuseID, for: indexPath) as! RequestCell
-        let isLastRequest = (indexPath.row == viewModel.requests.count - 1)
-        cell.set(request: viewModel.requests[indexPath.row], isLastRequest: isLastRequest)
+        if viewModel.requests.count > 0 {
+            let isLastRequest = (indexPath.row == viewModel.requests.count - 1)
+            cell.set(request: viewModel.requests[indexPath.row], isLastRequest: isLastRequest)
+        }
         return cell
     }
     

@@ -107,7 +107,7 @@ extension RequestDetailsVC {
     
     
     fileprivate func updateUI() {
-        statusLabel.text = Strings.requestApproved
+        statusLabel.text = Strings.requestIsApproved
         approveButton.setTitle(Strings.changePrice, for: .normal)
         priceTextField.text = ""
         viewModel.price = ""
@@ -121,10 +121,10 @@ extension RequestDetailsVC {
         ideaDescriptionLabel.text = request.ideaDescription ?? ""
         
         if request.isApproved ?? false {
-            statusLabel.text = Strings.requestApproved
+            statusLabel.text = Strings.requestIsApproved
             approveButton.setTitle(Strings.changePrice, for: .normal)
         } else {
-            statusLabel.text = Strings.requestPending
+            statusLabel.text = Strings.requestIsPending
             approveButton.setTitle(Strings.approve, for: .normal)
         }
     }

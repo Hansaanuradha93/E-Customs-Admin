@@ -82,8 +82,10 @@ struct Strings {
     static let paymentMethod = "Payment Method"
     static let processingFees = "Processing Fees"
     static let total = "Total"
-    static let requestApproved = "REQUEST IS APPROVED"
-    static let requestPending = "REQUEST IS STILL PENDING"
+    static let requestIsApproved = "REQUEST IS APPROVED"
+    static let requestIsPending = "REQUEST IS STILL PENDING"
+    static let requestApproved = "Request Approved"
+    static let requestPending = "Request Pending"
     
     // Buttons
     static let ok = "OK"

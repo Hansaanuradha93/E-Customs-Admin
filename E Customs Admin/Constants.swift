@@ -58,6 +58,10 @@ struct Strings {
     // Alerts
     static let failed = "Failed"
     static let successfull = "Successful"
+    static let yes = "Yes"
+    static let no = "No"
+    static let confirmApproval = "Confirm Approval"
+    static let approvalConfirmation = "Do you want to approve the request"
     
     // Labels
     static let size = "Size"
@@ -78,6 +82,8 @@ struct Strings {
     static let paymentMethod = "Payment Method"
     static let processingFees = "Processing Fees"
     static let total = "Total"
+    static let requestApproved = "REQUEST IS APPROVED"
+    static let requestPending = "REQUEST IS STILL PENDING"
     
     // Buttons
     static let ok = "OK"
@@ -96,6 +102,7 @@ struct Strings {
     static let signout = "SIGN OUT"
     static let updateOrder = "UPDATE ORDER"
     static let done = "DONE"
+    static let changePrice = "CHANGE PRICE"
 }
 
 

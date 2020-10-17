@@ -32,7 +32,7 @@ extension RequestCell {
         ideaDescriptionLabel.text = request.ideaDescription ?? ""
         thumbnailImageView.downloadImage(from: request.thumbnailUrl ?? "")
         statusLabel.text = (request.isApproved ?? false) ? Strings.requestApproved : Strings.requestPending
-        if let price = request.price {priceLabel.text = "$\(price)"}
+        if let price = request.price { priceLabel.text = "$\(price)" }
         
         if isLastRequest {
             separatorLine.alpha = 0

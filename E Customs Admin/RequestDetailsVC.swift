@@ -13,8 +13,8 @@ class RequestDetailsVC: UIViewController {
     fileprivate let sneakerNameLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
     fileprivate let ideaDescriptionLabel =  ECRegularLabel(textAlignment: .left, textColor: .lightGray, fontSize: 15, numberOfLines: 0)
     fileprivate let statusLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
-    
-    fileprivate let approveButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.approve, titleColor: .gray, radius: GlobalConstants.cornerRadius, fontSize: 16)
+    fileprivate let priceTextField = ECTextField(padding: 16, placeholderText: Strings.price)
+    fileprivate let approveButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.approve, titleColor: .gray, radius: GlobalConstants.cornerRadius, fontSize: 18)
     
     
     // MARK: Initializers
@@ -47,11 +47,41 @@ class RequestDetailsVC: UIViewController {
 extension RequestDetailsVC {
     
     @objc fileprivate func handleApprove() {
-        approveRequest()
+        var title = ""
+        var message = ""
+        
+        if request.isApproved ?? false {
+            title = "Confirm Change"
+            message = "Do you want to change the price"
+        } else {
+            title = Strings.confirmApproval
+            message = Strings.approvalConfirmation
+        }
+        
+        presentAlertAction(title: title, message: message, rightButtonTitle: Strings.yes, leftButtonTitle: Strings.no, rightButtonAction:  { (_) in
+            self.approveRequest()
+        })
+    }
+    
+    
+    @objc fileprivate func handleTextChange(textField: UITextField) {
+        viewModel.price = priceTextField.text
     }
     
     
     fileprivate func setupViewModelObserver() {
+        viewModel.bindalbeIsFormValid.bind { [weak self] isFormValid in
+            guard let self = self, let isFormValid = isFormValid else { return }
+            if isFormValid {
+                self.approveButton.backgroundColor = .black
+                self.approveButton.setTitleColor(.white, for: .normal)
+            } else {
+                self.approveButton.backgroundColor = UIColor.appColor(.lightGray)
+                self.approveButton.setTitleColor(.gray, for: .disabled)
+            }
+            self.approveButton.isEnabled = isFormValid
+        }
+        
         viewModel.bindableIsApproving.bind { [weak self] isSaving in
             guard let self = self, let isSaving = isSaving else { return }
             if isSaving {
@@ -64,7 +94,7 @@ extension RequestDetailsVC {
     
     
     fileprivate func approveRequest() {
-        viewModel.updateStatus(request: request) { [weak self] status, message in
+        viewModel.approve(request: request) { [weak self] status, message in
             guard let self = self else { return }
             if status {
                 self.presentAlert(title: Strings.successfull, message: message, buttonTitle: Strings.ok)
@@ -77,10 +107,11 @@ extension RequestDetailsVC {
     
     
     fileprivate func updateUI() {
-        approveButton.backgroundColor = UIColor.appColor(.lightGray)
-        approveButton.setTitleColor(.gray, for: .normal)
-        approveButton.isEnabled = false
-        statusLabel.text = "REQUEST IS APPROVED"
+        statusLabel.text = Strings.requestApproved
+        approveButton.setTitle(Strings.changePrice, for: .normal)
+        priceTextField.text = ""
+        viewModel.price = ""
+        view.endEditing(true)
     }
     
     
@@ -90,22 +121,24 @@ extension RequestDetailsVC {
         ideaDescriptionLabel.text = request.ideaDescription ?? ""
         
         if request.isApproved ?? false {
-            approveButton.backgroundColor = UIColor.appColor(.lightGray)
-            approveButton.setTitleColor(.gray, for: .normal)
-            approveButton.isEnabled = false
-            statusLabel.text = "REQUEST IS APPROVED"
+            statusLabel.text = Strings.requestApproved
+            approveButton.setTitle(Strings.changePrice, for: .normal)
         } else {
-            approveButton.backgroundColor = .black
-            approveButton.setTitleColor(.white, for: .normal)
-            approveButton.isEnabled = true
-            statusLabel.text = "REQUEST IS STILL PENDING"
+            statusLabel.text = Strings.requestPending
+            approveButton.setTitle(Strings.approve, for: .normal)
         }
     }
     
     
     fileprivate func setupUI() {
+        priceTextField.keyboardType = .decimalPad
+        priceTextField.autocorrectionType = .no
+        priceTextField.setRoundedBorder(borderColor: GlobalConstants.borderColor, borderWidth: GlobalConstants.borderWidth, radius: GlobalConstants.cornerRadius)
+        priceTextField.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
         approveButton.addTarget(self, action: #selector(handleApprove), for: .touchUpInside)
-        contentView.addSubviews(thumbnailImageView, sneakerNameLabel, ideaDescriptionLabel, statusLabel, approveButton)
+        approveButton.isEnabled = false
+        
+        contentView.addSubviews(thumbnailImageView, sneakerNameLabel, ideaDescriptionLabel, statusLabel, priceTextField,approveButton)
 
         let paddingTop: CGFloat = 36
         let paddingCorners: CGFloat = 24
@@ -114,7 +147,8 @@ extension RequestDetailsVC {
         sneakerNameLabel.anchor(top: thumbnailImageView.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddingCorners, bottom: 0, right: paddingCorners))
         ideaDescriptionLabel.anchor(top: sneakerNameLabel.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddingCorners, bottom: 0, right: paddingCorners))
         statusLabel.anchor(top: ideaDescriptionLabel.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddingCorners, bottom: 0, right: paddingCorners))
-        approveButton.anchor(top: statusLabel.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddingCorners, bottom: 0, right: paddingCorners), size: .init(width: 0, height: GlobalConstants.height))
+        priceTextField.anchor(top: statusLabel.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddingCorners, bottom: 0, right: paddingCorners))
+        approveButton.anchor(top: priceTextField.bottomAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: paddingTop, left: paddingCorners, bottom: 0, right: paddingCorners), size: .init(width: 0, height: GlobalConstants.height))
     }
     
     
@@ -131,7 +165,7 @@ extension RequestDetailsVC {
         
         NSLayoutConstraint.activate([
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            contentView.heightAnchor.constraint(equalToConstant: 800)
+            contentView.heightAnchor.constraint(equalToConstant: 950)
         ])
     }
 }

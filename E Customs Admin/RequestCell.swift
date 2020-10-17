@@ -9,6 +9,7 @@ class RequestCell: UITableViewCell {
     fileprivate let sneakerNameLabel = ECRegularLabel(textAlignment: .left, fontSize: 15, numberOfLines: 2)
     fileprivate let ideaDescriptionLabel = ECRegularLabel(textAlignment: .left, textColor: .gray, fontSize: 15)
     fileprivate let statusLabel = ECRegularLabel(textAlignment: .left, textColor: .gray, fontSize: 15)
+    fileprivate let priceLabel = ECRegularLabel(textAlignment: .left, textColor: .gray, fontSize: 15)
     fileprivate let separatorLine = UIView()
 
     
@@ -31,6 +32,7 @@ extension RequestCell {
         ideaDescriptionLabel.text = request.ideaDescription ?? ""
         thumbnailImageView.downloadImage(from: request.thumbnailUrl ?? "")
         statusLabel.text = (request.isApproved ?? false) ? Strings.requestApproved : Strings.requestPending
+        if let price = request.price {priceLabel.text = "$\(price)"}
         
         if isLastRequest {
             separatorLine.alpha = 0
@@ -46,7 +48,7 @@ extension RequestCell {
         let paddingTop: CGFloat = 24
         let dimensions: CGFloat = 102
         
-        let stackView = UIStackView(arrangedSubviews: [sneakerNameLabel, ideaDescriptionLabel, statusLabel])
+        let stackView = UIStackView(arrangedSubviews: [sneakerNameLabel, ideaDescriptionLabel, statusLabel, priceLabel])
         stackView.axis = .vertical
         stackView.spacing = 8
         stackView.alignment = .leading

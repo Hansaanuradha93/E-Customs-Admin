@@ -3,7 +3,7 @@ import Firebase
 struct Order {
     
     // MARK: Properties
-    var orderId, uid, type, status, paymentMethod, shippingMethod, address, thumbnailUrl: String?
+    var orderId, uid, type, status, description, paymentMethod, shippingMethod, address, thumbnailUrl: String?
     var subtotal, proccessingFees, total : Double?
     var itemCount: Int?
     var timestamp: Timestamp?
@@ -16,6 +16,7 @@ struct Order {
         self.uid = dictionary["uid"] as? String
         self.status = dictionary["status"] as? String
         self.type = dictionary["type"] as? String
+        self.description = dictionary["description"] as? String
         self.paymentMethod = dictionary["paymentMethod"] as? String
         self.shippingMethod = dictionary["shippingMethod"] as? String
         self.address = dictionary["address"] as? String

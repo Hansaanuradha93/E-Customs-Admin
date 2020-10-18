@@ -28,9 +28,17 @@ extension RequestListVM {
                 return
             }
             for change in documentChanges {
-                if change.type == .added {
+                switch change.type {
+                case .added:
                     let request = Request(dictionary: change.document.data())
                     self.requestsDictionary[request.id ?? ""] = request
+                case .modified:
+                    let request = Request(dictionary: change.document.data())
+                    self.requestsDictionary.removeValue(forKey: request.id ?? "")
+                    self.requestsDictionary[request.id ?? ""] = request
+                case .removed:
+                    let request = Request(dictionary: change.document.data())
+                    self.requestsDictionary.removeValue(forKey: request.id ?? "")
                 }
             }
             self.sortRequestsByTimestamp(completion: completion)

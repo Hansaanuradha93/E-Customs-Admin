@@ -19,7 +19,7 @@ extension RequestListVM {
         
         let listener = reference.addSnapshotListener { querySnapshot, error in
             if let error = error {
-                print(error)
+                print(error.localizedDescription)
                 completion(false)
                 return
             }

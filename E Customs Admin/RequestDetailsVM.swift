@@ -29,11 +29,11 @@ extension RequestDetailsVM {
         reference.updateData(data) { error in
             self.bindableIsApproving.value = false
             if let error = error {
-                print(error)
-                completion(false, error.localizedDescription)
+                print(error.localizedDescription)
+                completion(false, Strings.somethingWentWrong)
                 return
             }
-            completion(true, "Request updated successfully")
+            completion(true, Strings.requestUpdated)
         }
     }
     

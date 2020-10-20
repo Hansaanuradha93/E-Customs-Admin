@@ -43,7 +43,7 @@ extension ProductDetialsVM {
         let currentUserId = Auth.auth().currentUser?.uid ?? ""
         let reference = Firestore.firestore().collection("bag").document(currentUserId).collection("items")
         guard let productID = product.id else {
-            completion(false, "Something wend wrong!")
+            completion(false, Strings.somethingWentWrong)
             return
         }
         
@@ -54,15 +54,15 @@ extension ProductDetialsVM {
         itemReference.getDocument { [weak self] snapshot, error in
             guard let self = self else { return }
             if let error = error {
-                print(error)
                 self.bindableIsSaving.value = false
-                completion(false, error.localizedDescription)
+                print(error.localizedDescription)
+                completion(false, Strings.somethingWentWrong)
                 return
             }
             
             if snapshot?.exists ?? false {
                 self.bindableIsSaving.value = false
-                completion(true, "Product is already in the Bag")
+                completion(true, Strings.productAlreadyInBag)
             } else {
                 let documentData : [String : Any] = [
                     "id" : productID,
@@ -79,12 +79,12 @@ extension ProductDetialsVM {
                     self.bindableIsSaving.value = false
 
                     if let error = error {
-                        print(error)
-                        completion(false, error.localizedDescription)
+                        print(error.localizedDescription)
+                        completion(false, Strings.somethingWentWrong)
                         return
                     }
 
-                    completion(true, "Poduct added to Bag successfully!")
+                    completion(true, Strings.productAddedToBag)
                 }
             }
         }

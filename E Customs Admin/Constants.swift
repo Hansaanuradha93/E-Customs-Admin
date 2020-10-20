@@ -58,10 +58,18 @@ struct Strings {
     // Alerts
     static let failed = "Failed"
     static let successfull = "Successful"
+    static let somethingWentWrong = "Something Went Wrong, Please Try Again"
     static let yes = "Yes"
     static let no = "No"
+    static let authenticationSuccessfull = "Authentication successfull"
+    static let loggedInSuccessfully = "Logged in successfully"
     static let confirmApproval = "Confirm Approval"
     static let approvalConfirmation = "Do you want to approve the request"
+    static let productSaved = "Product save successfully"
+    static let productAlreadyInBag = "Product is already in the Bag"
+    static let productAddedToBag = "Poduct added to Bag successfully!"
+    static let requestUpdated = "Request updated successfully"
+    static let orderStatusUpdatedTo = "Order status updated to"
     
     // Labels
     static let size = "Size"

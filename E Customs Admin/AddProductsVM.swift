@@ -29,7 +29,8 @@ extension AddProductsVM {
         storageRef.putData(uploadData, metadata: nil) { (_, error) in
             if let error = error {
                 self.bindableIsSaving.value = false
-                completion(false, error.localizedDescription)
+                print(error.localizedDescription)
+                completion(false, Strings.somethingWentWrong)
                 return
             }
             self.fetchImageDownloadUrl(reference: storageRef, completion: completion)
@@ -41,7 +42,8 @@ extension AddProductsVM {
         reference.downloadURL { (url, error) in
             if let error = error {
                 self.bindableIsSaving.value = false
-                completion(false, error.localizedDescription)
+                print(error.localizedDescription)
+                completion(false, Strings.somethingWentWrong)
                 return
             }
             let downloadUrl = url?.absoluteString ?? ""
@@ -67,10 +69,11 @@ extension AddProductsVM {
             guard let self = self else { return }
             self.bindableIsSaving.value = false
             if let error = error {
-                completion(false, error.localizedDescription)
+                print(error.localizedDescription)
+                completion(false, Strings.somethingWentWrong)
                 return
             }
-            completion(true, "Product save successfully")
+            completion(true, Strings.productSaved)
         }
     }
     

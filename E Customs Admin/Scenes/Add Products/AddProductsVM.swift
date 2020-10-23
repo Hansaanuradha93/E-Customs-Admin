@@ -9,6 +9,7 @@ class AddProductsVM {
     var price: String? { didSet { checkFormValidity() } }
     var sizes: String? { didSet { checkFormValidity() } }
     
+    
     // MARK: Bindlable
     var bindableImage = Bindable<UIImage>()
     var bindalbeIsFormValid = Bindable<Bool>()

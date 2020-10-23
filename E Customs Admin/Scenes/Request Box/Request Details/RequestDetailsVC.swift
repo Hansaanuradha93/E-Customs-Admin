@@ -51,8 +51,8 @@ extension RequestDetailsVC {
         var message = ""
         
         if request.isApproved ?? false {
-            title = "Confirm Change"
-            message = "Do you want to change the price"
+            title = Strings.confirmChange
+            message = Strings.doYouWantToChangeThePrice
         } else {
             title = Strings.confirmApproval
             message = Strings.approvalConfirmation

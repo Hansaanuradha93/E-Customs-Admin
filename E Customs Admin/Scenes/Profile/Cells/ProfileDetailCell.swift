@@ -21,16 +21,20 @@ class ProfileDetailCell: UITableViewCell {
 }
 
 
-// MARK: - Methods
+// MARK: - Public Methods
 extension ProfileDetailCell {
     
     func set(name: String, value: String?) {
         nameLabel.text = name
         valueLabel.text = value ?? ""
     }
+}
+
+
+// MARK: - Fileprivate Methods
+fileprivate extension ProfileDetailCell {
     
-    
-    fileprivate func setupUI() {
+    func setupUI() {
         backgroundColor = .white
         selectionStyle = .none
         separatorLine.backgroundColor = .lightGray
@@ -44,6 +48,5 @@ extension ProfileDetailCell {
         valueLabel.centerVertically(in: contentView)
         valueLabel.anchor(top: nil, leading: nameLabel.trailingAnchor, bottom: nil, trailing: contentView.trailingAnchor, padding: .init(top: 0, left: paddingLeft, bottom: 0, right: padding))
         separatorLine.anchor(top: nil, leading: leadingAnchor, bottom: contentView.bottomAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: padding, bottom: 0, right: 0), size: .init(width: 0, height: 0.2))
-
     }
 }

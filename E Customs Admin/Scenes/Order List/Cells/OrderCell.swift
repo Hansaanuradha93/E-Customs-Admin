@@ -24,7 +24,7 @@ class OrderCell: UITableViewCell {
 }
 
 
-// MARK: - Methods
+// MARK: - Public Methods
 extension OrderCell {
     
     func set(order: Order, isLastOrder: Bool) {
@@ -32,29 +32,16 @@ extension OrderCell {
         priceLabel.text = "$\(order.total ?? 0.00)"
         statusLabel.text = "\(order.status ?? "")"
         thumbnailImageView.downloadImage(from: order.thumbnailUrl ?? "")
-        
-        var itemCountString = ""
-        if let itemCount = order.itemCount {
-            if itemCount == 0 {
-                itemCountString = Strings.noItemsYet
-            } else if itemCount == 1 {
-                itemCountString = "\(itemCount) Item"
-            } else {
-                itemCountString = "\(itemCount) Items"
-            }
-        }
-        
-        itemsCountLabel.text = itemCountString
-        
-        if isLastOrder {
-            separatorLine.alpha = 0
-        } else {
-            separatorLine.alpha = 1
-        }
+        itemsCountLabel.text = order.itemCountString
+        separatorLine.alpha = isLastOrder ? 0 : 1
     }
+}
+
+
+// MARK: - Fileprivate Methods
+fileprivate extension OrderCell {
     
-    
-    fileprivate func setupUI() {
+    func setupUI() {
         selectionStyle = .none
         
         let paddingTop: CGFloat = 24

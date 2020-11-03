@@ -131,10 +131,10 @@ extension OrderDetailsVC {
 }
 
 
-// MARK: - Methods
-extension OrderDetailsVC {
+// MARK: - Fileprivate Methods
+fileprivate extension OrderDetailsVC {
     
-    fileprivate func showPickerWithAnimation() {
+    func showPickerWithAnimation() {
         UIView.animate(withDuration: 0.5) {
             self.picker.alpha = 1
             self.toolBar.alpha = 1
@@ -142,7 +142,7 @@ extension OrderDetailsVC {
     }
     
     
-    fileprivate func hidePickerWithAnimation() {
+    func hidePickerWithAnimation() {
         UIView.animate(withDuration: 0.5) {
             self.picker.alpha = 0
             self.toolBar.alpha = 0
@@ -150,7 +150,7 @@ extension OrderDetailsVC {
     }
     
     
-    fileprivate func createToolBar() {
+    func createToolBar() {
         toolBar.sizeToFit()
         let doneButton = UIBarButtonItem(title: Strings.done, style: .plain, target: self, action: #selector(handleDone))
         
@@ -165,7 +165,7 @@ extension OrderDetailsVC {
     }
     
     
-    fileprivate func updateUI() {
+    func updateUI() {
         viewModel.order.status = viewModel.seletedOrderStatus
         let indexPath = IndexPath(row: 0, section: 0)
         DispatchQueue.main.async {
@@ -174,7 +174,7 @@ extension OrderDetailsVC {
     }
     
     
-    fileprivate func updateOrderStatus() {
+    func updateOrderStatus() {
         viewModel.updateOrderStatus { [weak self] status, message in
             guard let self = self else { return }
             if status {
@@ -187,7 +187,7 @@ extension OrderDetailsVC {
     }
     
     
-    fileprivate func fetchCustomerDetails() {
+    func fetchCustomerDetails() {
         viewModel.fetchCustomerDetails { [weak self] status in
             guard let self = self else { return }
             if status {
@@ -196,7 +196,7 @@ extension OrderDetailsVC {
         }
     }
     
-    fileprivate func fetchItems() {
+    func fetchItems() {
         viewModel.fetchItems { [weak self] status in
             guard let self = self else { return }
             if status {
@@ -206,7 +206,7 @@ extension OrderDetailsVC {
     }
     
     
-    fileprivate func setupUI() {
+    func setupUI() {
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white

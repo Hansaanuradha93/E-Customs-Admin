@@ -32,6 +32,7 @@ class ItemCell: UITableViewCell {
 extension ItemCell {
     
     func set(item: Item, itemType: ItemType = .bagItem) {
+        // TODO: refactor this logic to a controller or model
         thumbnailImageView.downloadImage(from: item.thumbnailUrl ?? "")
         nameLabel.text = item.name ?? ""
         descriptionLabel.text = item.description ?? ""

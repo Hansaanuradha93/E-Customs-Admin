@@ -49,10 +49,11 @@ extension PaymentInfoCell {
 }
 
 
-// MARK: - Methods
+// MARK: - Public Methods
 extension PaymentInfoCell {
     
     func set(subtotalPennies: Int, processingFeesPennies: Int, totalPennies: Int, paymentMethod: String?, shippingMethod: String?) {
+        // TODO: refactor this logic to a controller or model
         let subtotal = Double(subtotalPennies) / 100
         let processingFees = Double(processingFeesPennies) / 100
         let total = Double(totalPennies) / 100
@@ -63,9 +64,13 @@ extension PaymentInfoCell {
         shippingMethodValueLabel.text = shippingMethod ?? (Strings.select + " ↓")
         paymentMethodValueLabel.text = paymentMethod ?? (Strings.select + " ↓")
     }
+}
+
+
+// MARK: - Fileprivate Methods
+fileprivate extension PaymentInfoCell {
     
-    
-    fileprivate func setupUI() {
+    func setupUI() {
         selectionStyle = .none
         
         shippingMethodValueLabel.isUserInteractionEnabled = true

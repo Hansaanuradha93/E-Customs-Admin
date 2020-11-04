@@ -1,5 +1,4 @@
 import UIKit
-import Firebase
 
 class OrderHeaderCell: UITableViewCell {
 
@@ -22,20 +21,21 @@ class OrderHeaderCell: UITableViewCell {
 }
 
 
-// MARK: - Methods
+// MARK: - Public Methods
 extension OrderHeaderCell {
     
     func set(order: Order) {
         orderNumberLabel.text = "\(order.type ?? "") Order #" + (order.orderId ?? "").uppercased()
         statusLabel.text =  "Order " + (order.status ?? "").uppercased()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE, MMM d, yyyy"
-        let date = (order.timestamp ?? Timestamp(date: Date())).dateValue()
-        dateLabel.text = formatter.string(from: date)
+        if let timestamp = order.timestamp { dateLabel.text = timestamp.toString()}
     }
+}
+
+
+// MARK: - Fileprivate Methods
+fileprivate extension OrderHeaderCell {
     
-    
-    fileprivate func setupUI() {
+    func setupUI() {
         selectionStyle = .none
         let padding: CGFloat = 24
         

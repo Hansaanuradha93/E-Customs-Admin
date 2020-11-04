@@ -31,7 +31,7 @@ class CustomerDetailsCell: UITableViewCell {
 }
 
 
-// MARK: - Methods
+// MARK: - Public Methods
 extension CustomerDetailsCell {
     
     func set(user: User, address: String) {
@@ -45,9 +45,13 @@ extension CustomerDetailsCell {
             genderValueLabel.text = Strings.female
         }
     }
+}
+
+
+// MARK: - Fileprivate Methods
+fileprivate extension CustomerDetailsCell {
     
-    
-    fileprivate func setupUI() {
+    func setupUI() {
         selectionStyle = .none
         let padding: CGFloat = 24
         

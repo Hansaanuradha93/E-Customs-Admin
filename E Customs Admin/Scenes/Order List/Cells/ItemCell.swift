@@ -28,18 +28,8 @@ class ItemCell: UITableViewCell {
 }
 
 
-// MARK: - Methods
+// MARK: - Public Methods
 extension ItemCell {
-    
-    @objc fileprivate func handleQuntity() {
-        selectQuntity?()
-    }
-    
-    
-    @objc fileprivate func handleClose() {
-        removeAction?()
-    }
-    
     
     func set(item: Item, itemType: ItemType = .bagItem) {
         thumbnailImageView.downloadImage(from: item.thumbnailUrl ?? "")
@@ -66,9 +56,23 @@ extension ItemCell {
             quantityLabel.attributedText = attributedString
         }
     }
+}
+
+
+// MARK: - Fileprivate Methods
+fileprivate extension ItemCell {
+    
+    @objc func handleQuntity() {
+        selectQuntity?()
+    }
     
     
-    fileprivate func setupUI() {
+    @objc func handleClose() {
+        removeAction?()
+    }
+    
+    
+    func setupUI() {
         selectionStyle = .none
         quantityLabel.isUserInteractionEnabled = true
         quantityLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleQuntity)))
@@ -90,7 +94,6 @@ extension ItemCell {
         contentView.addSubviews(thumbnailImageView, closeButton, stackView)
         
         thumbnailImageView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: paddingTop, left: paddingTop, bottom: 0, right: 0), size: .init(width: dimensions, height: dimensions))
-        
         closeButton.anchor(top: thumbnailImageView.topAnchor, leading: nil, bottom: nil, trailing: trailingAnchor, padding: .init(top: 0, left: paddingTop / 2, bottom: 0, right: paddingTop), size: .init(width: closeButtonDimensions, height: closeButtonDimensions))
         stackView.anchor(top: thumbnailImageView.topAnchor, leading: thumbnailImageView.trailingAnchor, bottom: nil, trailing: closeButton.leadingAnchor, padding: .init(top: 0, left: paddingTop / 2, bottom: paddingTop, right: paddingTop))
     }

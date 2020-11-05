@@ -1,7 +1,7 @@
 import UIKit
 import Firebase
 
-class RequestDetailsVM {
+final class RequestDetailsVM {
     
     // MARK: Properties
     var price: String? { didSet { checkFormValidity() } }
@@ -38,7 +38,7 @@ extension RequestDetailsVM {
     }
     
     
-    func checkFormValidity() {
+    fileprivate func checkFormValidity() {
         let isFormValid = price?.isEmpty == false
         bindalbeIsFormValid.value = isFormValid
     }

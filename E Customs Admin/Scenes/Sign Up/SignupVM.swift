@@ -47,7 +47,7 @@ extension SignupVM {
             "firstname": firstName ?? "",
             "lastname": lastName ?? "",
             "isMale": isMale ?? false,
-            "isAdminUser": false
+            "isAdminUser": true
             ] as [String : Any]
         
         Firestore.firestore().collection("users").document(uid).setData(userInfo) { [weak self] error in

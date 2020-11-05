@@ -9,6 +9,12 @@ struct Request {
     var timestamp: Timestamp?
     
     
+    // MARK: Computed Properties
+    var requestStatusString: String {
+        return (isApproved ?? false) ? Strings.requestApproved : Strings.requestPending
+    }
+    
+    
     // MARK: Initializers
     init(dictionary: [String : Any]) {
         self.id = dictionary["id"] as? String

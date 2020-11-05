@@ -1,7 +1,7 @@
 import UIKit
 import Firebase
 
-class RequestListVM {
+final class RequestListVM {
     
     // MARK: Properties
     var requests = [Request]()

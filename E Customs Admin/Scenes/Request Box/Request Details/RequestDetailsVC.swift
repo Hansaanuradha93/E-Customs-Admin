@@ -43,10 +43,10 @@ class RequestDetailsVC: UIViewController {
 }
 
 
-// MARK: - Methods
-extension RequestDetailsVC {
+// MARK: - Fileprivate Methods
+fileprivate extension RequestDetailsVC {
     
-    @objc fileprivate func handleApprove() {
+    @objc func handleApprove() {
         var title = ""
         var message = ""
         
@@ -64,12 +64,12 @@ extension RequestDetailsVC {
     }
     
     
-    @objc fileprivate func handleTextChange(textField: UITextField) {
+    @objc func handleTextChange(textField: UITextField) {
         viewModel.price = priceTextField.text
     }
     
     
-    fileprivate func setupViewModelObserver() {
+    func setupViewModelObserver() {
         viewModel.bindalbeIsFormValid.bind { [weak self] isFormValid in
             guard let self = self, let isFormValid = isFormValid else { return }
             if isFormValid {
@@ -93,7 +93,7 @@ extension RequestDetailsVC {
     }
     
     
-    fileprivate func approveRequest() {
+    func approveRequest() {
         viewModel.approve(request: request) { [weak self] status, message in
             guard let self = self else { return }
             if status {
@@ -106,7 +106,7 @@ extension RequestDetailsVC {
     }
     
     
-    fileprivate func updateUI() {
+    func updateUI() {
         statusLabel.text = Strings.requestIsApproved
         approveButton.setTitle(Strings.changePrice, for: .normal)
         priceTextField.text = ""
@@ -115,7 +115,7 @@ extension RequestDetailsVC {
     }
     
     
-    fileprivate func setData() {
+    func setData() {
         thumbnailImageView.downloadImage(from: request.thumbnailUrl ?? "")
         sneakerNameLabel.text = (request.sneakerName ?? "").uppercased()
         ideaDescriptionLabel.text = request.ideaDescription ?? ""
@@ -130,7 +130,7 @@ extension RequestDetailsVC {
     }
     
     
-    fileprivate func setupUI() {
+    func setupUI() {
         priceTextField.keyboardType = .decimalPad
         priceTextField.autocorrectionType = .no
         priceTextField.setRoundedBorder(borderColor: GlobalConstants.borderColor, borderWidth: GlobalConstants.borderWidth, radius: GlobalConstants.cornerRadius)
@@ -152,7 +152,7 @@ extension RequestDetailsVC {
     }
     
     
-    fileprivate func setupScrollView(){
+    func setupScrollView(){
         view.backgroundColor = .white
         title = Strings.requestDetail
         tabBarItem.title = Strings.empty

@@ -46,9 +46,9 @@ class AddProductsVC: UIViewController {
 
 
 // MARK: - Objc Methods
-extension AddProductsVC {
+fileprivate extension AddProductsVC {
     
-    @objc fileprivate func handleSave() {
+    @objc func handleSave() {
         handleTapDismiss()
         
         viewModel.saveImageToFirebase { [weak self] status, message in
@@ -63,7 +63,7 @@ extension AddProductsVC {
     }
     
     
-    @objc fileprivate func handleSelectPhoto() {
+    @objc func handleSelectPhoto() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
@@ -71,7 +71,7 @@ extension AddProductsVC {
     }
     
     
-    @objc fileprivate func handleTextChange(textField: UITextField) {
+    @objc func handleTextChange(textField: UITextField) {
         viewModel.name = nameTextField.text
         viewModel.description = descriptionTextField.text
         viewModel.price = priceTextField.text
@@ -79,19 +79,19 @@ extension AddProductsVC {
     }
     
     
-    @objc fileprivate func handleTapDismiss() {
+    @objc func handleTapDismiss() {
         view.endEditing(true)
     }
     
     
-    @objc fileprivate func handleKeyboardHide() {
+    @objc func handleKeyboardHide() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.overrallStackView.transform = .identity
         })
     }
     
     
-    @objc fileprivate func handleKeyboardShow(notification: Notification) {
+    @objc func handleKeyboardShow(notification: Notification) {
         guard let value = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
         let keyboardFrame = value.cgRectValue
         let bottomSpace = view.frame.height - overrallStackView.frame.origin.y - overrallStackView.frame.height
@@ -101,10 +101,10 @@ extension AddProductsVC {
 }
 
 
-// MARK: - Methods
-extension AddProductsVC {
+// MARK: - Fileprivate Methods
+fileprivate extension AddProductsVC {
     
-    fileprivate func clearData() {
+    func clearData() {
         photoButton.setImage(nil, for: .normal)
         nameTextField.text = ""
         descriptionTextField.text = ""
@@ -119,13 +119,13 @@ extension AddProductsVC {
     }
     
     
-    fileprivate func setupNotifications() {
+    func setupNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     
-    fileprivate func setupViewModelObserver() {
+    func setupViewModelObserver() {
         viewModel.bindalbeIsFormValid.bind { [weak self] isFormValid in
             guard let self = self, let isFormValid = isFormValid else { return }
             if isFormValid {
@@ -155,7 +155,7 @@ extension AddProductsVC {
     }
     
     
-    fileprivate func addTargets() {
+    func addTargets() {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapDismiss)))
         photoButton.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
         nameTextField.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
@@ -165,7 +165,7 @@ extension AddProductsVC {
     }
     
     
-    fileprivate func setupUI() {
+    func setupUI() {
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white

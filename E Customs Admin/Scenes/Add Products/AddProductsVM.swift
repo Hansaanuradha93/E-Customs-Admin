@@ -1,7 +1,7 @@
 import UIKit
 import Firebase
 
-class AddProductsVM {
+final class AddProductsVM {
     
     // MARK: Properties
     var name: String? { didSet { checkFormValidity() } }
@@ -17,7 +17,7 @@ class AddProductsVM {
 }
 
 
-// MARK: - Methods
+// MARK: - Public Methods
 extension AddProductsVM {
     
     func saveImageToFirebase(completion: @escaping (Bool, String) -> ()) {
@@ -39,7 +39,17 @@ extension AddProductsVM {
     }
     
     
-    fileprivate func fetchImageDownloadUrl(reference: StorageReference, completion: @escaping (Bool, String) -> ()) {
+    func checkFormValidity() {
+        let isFormValid = name?.isEmpty == false && description?.isEmpty == false && price?.isEmpty == false && sizes?.isEmpty == false && bindableImage.value != nil
+        bindalbeIsFormValid.value = isFormValid
+    }
+}
+
+
+// MARK: - Fileprivate Methods
+fileprivate extension AddProductsVM {
+    
+    func fetchImageDownloadUrl(reference: StorageReference, completion: @escaping (Bool, String) -> ()) {
         reference.downloadURL { (url, error) in
             if let error = error {
                 self.bindableIsSaving.value = false
@@ -53,7 +63,7 @@ extension AddProductsVM {
     }
     
     
-    fileprivate func saveInfoToFirestore(imageUrl: String, completion: @escaping (Bool, String) -> ()) {
+    func saveInfoToFirestore(imageUrl: String, completion: @escaping (Bool, String) -> ()) {
         let reference = Firestore.firestore().collection("products")
         let documentId = reference.document().documentID
         
@@ -76,11 +86,5 @@ extension AddProductsVM {
             }
             completion(true, Strings.productSaved)
         }
-    }
-    
-    
-    func checkFormValidity() {
-        let isFormValid = name?.isEmpty == false && description?.isEmpty == false && price?.isEmpty == false && sizes?.isEmpty == false && bindableImage.value != nil
-        bindalbeIsFormValid.value = isFormValid
     }
 }

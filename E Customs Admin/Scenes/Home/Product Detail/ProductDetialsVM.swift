@@ -1,6 +1,6 @@
 import Firebase
 
-class ProductDetialsVM {
+final class ProductDetialsVM {
     
     // MARK: Properties
     let product: Product
@@ -20,23 +20,7 @@ class ProductDetialsVM {
 }
 
 
-// MARK: - Methods
-extension ProductDetialsVM {
-    
-    func isSizesAvailable() {
-        let isSizesAvailable = (sizes.count != 0)
-        bindableIsSizesAvailable.value = isSizesAvailable
-    }
-    
-    
-    func checkIsReadyToAddToBag() {
-        let isReady = selectedSize?.isEmpty == false && selectedSize != "0"
-        bindalbeIsProductIsReady.value = isReady
-    }
-}
-
-
-// MARK: - Firebase Methods
+// MARK: - Public Methods
 extension ProductDetialsVM {
     
     func addToBag(completion: @escaping (Bool, String) -> ()) {
@@ -88,5 +72,21 @@ extension ProductDetialsVM {
                 }
             }
         }
+    }
+}
+
+
+// MARK: - Fileprivate Methods
+fileprivate extension ProductDetialsVM {
+    
+    func isSizesAvailable() {
+        let isSizesAvailable = (sizes.count != 0)
+        bindableIsSizesAvailable.value = isSizesAvailable
+    }
+    
+    
+    func checkIsReadyToAddToBag() {
+        let isReady = selectedSize?.isEmpty == false && selectedSize != "0"
+        bindalbeIsProductIsReady.value = isReady
     }
 }

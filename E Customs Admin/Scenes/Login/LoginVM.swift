@@ -1,7 +1,7 @@
 import UIKit
 import Firebase
 
-class LoginVM {
+final class LoginVM {
     
     // MARK: Properties
     var email: String? { didSet { checkFormValidity() } }
@@ -32,7 +32,7 @@ extension LoginVM {
     }
     
     
-    func checkFormValidity() {
+    fileprivate func checkFormValidity() {
         let isFormValid = email?.isEmpty == false && password?.isEmpty == false && password?.count ?? 0 >= 6
         bindalbeIsFormValid.value = isFormValid
     }

@@ -7,12 +7,6 @@ public enum ButtonType {
 }
 
 
-public enum ItemType {
-    case bagItem
-    case orderItem
-}
-
-
 public enum OrderStatusType: String {
     case created = "Created"
     case processing = "Processing"

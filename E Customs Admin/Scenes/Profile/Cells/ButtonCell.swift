@@ -5,7 +5,7 @@ class ButtonCell: UITableViewCell {
     // MARK: Properties
     static let reuseID = "CheckoutButtonCell"
     
-    fileprivate let button = ECButton(backgroundColor: .black, titleColor: .white, radius: 2, fontSize: 16)
+    fileprivate let button = ECButton(backgroundColor: .black, titleColor: .white, radius: GlobalConstants.cornerRadius, fontSize: 16)
     var buttonAction: (() -> Void)? = nil
 
     

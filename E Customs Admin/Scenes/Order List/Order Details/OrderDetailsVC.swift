@@ -58,7 +58,7 @@ extension OrderDetailsVC {
             let cell = tableView.dequeueReusableCell(withIdentifier: ItemCell.reuseID, for: indexPath) as! ItemCell
             if order.items.count > 0 {
                 let item = order.items[indexPath.row]
-                cell.set(item: item, itemType: .orderItem)
+                cell.set(item: item)
             }
             return cell
         case 3:

@@ -31,31 +31,15 @@ class ItemCell: UITableViewCell {
 // MARK: - Public Methods
 extension ItemCell {
     
-    func set(item: Item, itemType: ItemType = .bagItem) {
-        // TODO: refactor this logic to a controller or model
+    func set(item: Item) {
         thumbnailImageView.downloadImage(from: item.thumbnailUrl ?? "")
         nameLabel.text = item.name ?? ""
         descriptionLabel.text = item.description ?? ""
         sizeLabel.text = "\(Strings.size) \(item.selectedSize ?? Strings.notAvailable)"
-        
-        let quantity = item.quantity ?? 1
-        let quantityString = "\(Strings.qty) \(quantity) ↓"
-        let arrowString = "↓"
-
-        let range = (quantityString as NSString).range(of: arrowString)
-        let attributedString = NSMutableAttributedString(string:quantityString)
-        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.gray, range: range)
-        
-        let price = (Double(item.price ?? "0") ?? 0) * Double(quantity)
-        priceLabel.text = "$\(price)"
-        
-        if itemType == .orderItem {
-            closeButton.alpha = 0
-            quantityLabel.text = "\(Strings.qty) \(quantity)"
-        } else if itemType ==  .bagItem {
-            closeButton.alpha = 1
-            quantityLabel.attributedText = attributedString
-        }
+        guard let quantity = item.quantity, let price = item.price else { return }
+        let quantityPrice = (Double(price) ?? 0) * Double(quantity)
+        priceLabel.text = "$\(quantityPrice)"
+        quantityLabel.text = "\(Strings.qty) \(quantity)"
     }
 }
 

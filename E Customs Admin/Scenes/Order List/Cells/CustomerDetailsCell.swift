@@ -38,12 +38,7 @@ extension CustomerDetailsCell {
         fullnameValueLabel.text = "\(user.firstname ?? "") \(user.lastname ?? "")"
         emailValueLabel.text = "\(user.email ?? "")"
         addressValueLabel.text = address
-        
-        if user.isMale ?? false {
-            genderValueLabel.text = Strings.male
-        } else {
-            genderValueLabel.text = Strings.female
-        }
+        genderValueLabel.text = user.gender
     }
 }
 

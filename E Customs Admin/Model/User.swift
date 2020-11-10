@@ -7,7 +7,7 @@ struct User {
     var isAdminUser, isMale: Bool?
     
     
-    // Computed Properties
+    // MARK: Computed Properties
     var gender: String {
         if isMale ?? false {
             return Strings.male

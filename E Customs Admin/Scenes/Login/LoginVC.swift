@@ -3,14 +3,14 @@ import UIKit
 class LoginVC: UIViewController {
     
     // MARK: Properties
-    fileprivate let viewModel = LoginVM()
+    private let viewModel = LoginVM()
     
-    fileprivate let emailTextField = ECTextField(padding: 16, placeholderText: Strings.email)
-    fileprivate let passwordTextField = ECTextField(padding: 16, placeholderText: Strings.password)
-    fileprivate let loginButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.login, titleColor: .gray, fontSize: 18)
-    fileprivate let gotoSignupButton = ECButton(backgroundColor: .white, title: Strings.gotoSignup, titleColor: .black, fontSize: 15)
+    private let emailTextField = ECTextField(padding: 16, placeholderText: Strings.email)
+    private let passwordTextField = ECTextField(padding: 16, placeholderText: Strings.password)
+    private let loginButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.login, titleColor: .gray, fontSize: 18)
+    private let gotoSignupButton = ECButton(backgroundColor: .white, title: Strings.gotoSignup, titleColor: .black, fontSize: 15)
     
-    fileprivate lazy var verticalStackView: UIStackView = {
+    private lazy var verticalStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginButton])
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
@@ -26,6 +26,7 @@ class LoginVC: UIViewController {
         addTargets()
         setupNotifications()
         setupViewModelObserver()
+        addDebugLoginCredentials()
     }
     
     
@@ -37,7 +38,7 @@ class LoginVC: UIViewController {
 
 
 // MARK: - Objc Methods
-fileprivate extension LoginVC {
+private extension LoginVC {
     
     @objc func handleLogin() {
         handleTapDismiss()
@@ -81,8 +82,8 @@ fileprivate extension LoginVC {
 }
 
 
-// MARK: - Fileprivate Methods
-fileprivate extension LoginVC {
+// MARK: - Private Methods
+private extension LoginVC {
     
     func navigateToHome() {
         UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = ECTabBar()
@@ -99,13 +100,10 @@ fileprivate extension LoginVC {
         viewModel.bindalbeIsFormValid.bind { [weak self] isFormValid in
             guard let self = self, let isFormValid = isFormValid else { return }
             if isFormValid {
-                self.loginButton.backgroundColor = .black
-                self.loginButton.setTitleColor(.white, for: .normal)
+                self.enableLoginButton()
             } else {
-                self.loginButton.backgroundColor = UIColor.appColor(.lightGray)
-                self.loginButton.setTitleColor(.gray, for: .disabled)
+                self.disableLoginButton()
             }
-            self.loginButton.isEnabled = isFormValid
         }
         
         viewModel.bindableIsLogin.bind { [weak self] isLogin in
@@ -118,6 +116,19 @@ fileprivate extension LoginVC {
         }
     }
     
+    func disableLoginButton() {
+        loginButton.backgroundColor = UIColor.appColor(.lightGray)
+        loginButton.setTitleColor(.gray, for: .disabled)
+        loginButton.isEnabled = false
+    }
+    
+    
+    func enableLoginButton() {
+        loginButton.backgroundColor = .black
+        loginButton.setTitleColor(.white, for: .normal)
+        loginButton.isEnabled = true
+    }
+    
     
     func addTargets() {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapDismiss)))
@@ -125,6 +136,16 @@ fileprivate extension LoginVC {
         passwordTextField.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
         loginButton.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         gotoSignupButton.addTarget(self, action: #selector(handleGoToLogin), for: .touchUpInside)
+    }
+    
+    func addDebugLoginCredentials() {
+        #if DEBUG
+        emailTextField.text = Strings.adminEmail
+        passwordTextField.text = Strings.adminPassword
+        viewModel.email = Strings.adminEmail
+        viewModel.password = Strings.adminPassword
+        enableLoginButton()
+        #endif
     }
     
     

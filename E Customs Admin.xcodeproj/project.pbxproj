@@ -22,7 +22,6 @@
 		4728D682252F3A7000E7E099 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4728D681252F3A7000E7E099 /* ButtonCell.swift */; };
 		475297872513CB1300106150 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475297862513CB1300106150 /* NetworkManager.swift */; };
 		475297892513CBA800106150 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475297882513CBA800106150 /* UIImageView+Ext.swift */; };
-		47660A05254539570088FFE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47660A04254539570088FFE3 /* GoogleService-Info.plist */; };
 		476758DA250A6398005E726E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476758D9250A6398005E726E /* AppDelegate.swift */; };
 		476758DC250A6398005E726E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476758DB250A6398005E726E /* SceneDelegate.swift */; };
 		476758E3250A6399005E726E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476758E2250A6399005E726E /* Assets.xcassets */; };
@@ -70,6 +69,7 @@
 		47DB895F251E5EC400DD86EF /* ECMediumLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DB895E251E5EC400DD86EF /* ECMediumLabel.swift */; };
 		47DB8962251E5F4900DD86EF /* ECRegularLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DB8961251E5F4900DD86EF /* ECRegularLabel.swift */; };
 		47E614F52553134300C8925E /* TimeStamp+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E614F42553134300C8925E /* TimeStamp+Ext.swift */; };
+		47F58090265E8C1800F0D01E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47F5808F265E8C1800F0D01E /* GoogleService-Info.plist */; };
 		CDD6DA0BDAF580919DEBEE0C /* Pods_E_Customs_Admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFFF634ADA54DF89D7D8AEB2 /* Pods_E_Customs_Admin.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +90,6 @@
 		4728D681252F3A7000E7E099 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		475297862513CB1300106150 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		475297882513CBA800106150 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
-		47660A04254539570088FFE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		476758D6250A6398005E726E /* E Customs Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E Customs Admin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		476758D9250A6398005E726E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		476758DB250A6398005E726E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +139,7 @@
 		47DB895E251E5EC400DD86EF /* ECMediumLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECMediumLabel.swift; sourceTree = "<group>"; };
 		47DB8961251E5F4900DD86EF /* ECRegularLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECRegularLabel.swift; sourceTree = "<group>"; };
 		47E614F42553134300C8925E /* TimeStamp+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeStamp+Ext.swift"; sourceTree = "<group>"; };
+		47F5808F265E8C1800F0D01E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		94CEC4D8F315C597F1FE6B52 /* Pods-E Customs Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E Customs Admin.debug.xcconfig"; path = "Target Support Files/Pods-E Customs Admin/Pods-E Customs Admin.debug.xcconfig"; sourceTree = "<group>"; };
 		AFFF634ADA54DF89D7D8AEB2 /* Pods_E_Customs_Admin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E_Customs_Admin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -200,7 +200,7 @@
 		476758ED250A6562005E726E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				47660A04254539570088FFE3 /* GoogleService-Info.plist */,
+				47F5808F265E8C1800F0D01E /* GoogleService-Info.plist */,
 				476758DB250A6398005E726E /* SceneDelegate.swift */,
 				476758D9250A6398005E726E /* AppDelegate.swift */,
 				476758E2250A6399005E726E /* Assets.xcassets */,
@@ -588,7 +588,7 @@
 			files = (
 				476758E6250A6399005E726E /* LaunchScreen.storyboard in Resources */,
 				476758E3250A6399005E726E /* Assets.xcassets in Resources */,
-				47660A05254539570088FFE3 /* GoogleService-Info.plist in Resources */,
+				47F58090265E8C1800F0D01E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

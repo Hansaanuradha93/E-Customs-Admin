@@ -87,8 +87,8 @@ extension ProfileVC {
 }
 
 
-// MARK: - Fileprivate Methods
-fileprivate extension ProfileVC {
+// MARK: - Private Methods
+private extension ProfileVC {
     
     @objc func signout() {
         signoutUser()

@@ -5,9 +5,9 @@ class OrderHeaderCell: UITableViewCell {
     // MARK: Properties
     static let reuseID = "OrderHeaderCell"
     
-    fileprivate let orderNumberLabel = ECMediumLabel(textAlignment: .left, fontSize: 17, numberOfLines: 0)
-    fileprivate let statusLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
-    fileprivate let dateLabel = ECMediumLabel(textAlignment: .left, textColor: .gray, fontSize: 17)
+    private let orderNumberLabel = ECMediumLabel(textAlignment: .left, fontSize: 17, numberOfLines: 0)
+    private let statusLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
+    private let dateLabel = ECMediumLabel(textAlignment: .left, textColor: .gray, fontSize: 17)
 
     
     // MARK: Initializers
@@ -33,7 +33,7 @@ extension OrderHeaderCell {
 
 
 // MARK: - Fileprivate Methods
-fileprivate extension OrderHeaderCell {
+private extension OrderHeaderCell {
     
     func setupUI() {
         selectionStyle = .none

@@ -117,22 +117,22 @@ extension OrderDetailsVC {
 }
 
 // MARK: - Objc Method
-extension OrderDetailsVC {
+private extension OrderDetailsVC {
     
-    @objc fileprivate func handleDone() {
+    @objc func handleDone() {
         updateOrderStatus()
         hidePickerWithAnimation()
     }
     
     
-    @objc fileprivate func handleTap() {
+    @objc func handleTap() {
         hidePickerWithAnimation()
     }
 }
 
 
 // MARK: - Fileprivate Methods
-fileprivate extension OrderDetailsVC {
+private extension OrderDetailsVC {
     
     func showPickerWithAnimation() {
         UIView.animate(withDuration: 0.5) {

@@ -5,7 +5,7 @@ class OrderListVC: UITableViewController {
     
     // MARK: Properties
     let viewModel = OrderListVM()
-    fileprivate var listener: ListenerRegistration?
+    private var listener: ListenerRegistration?
 
     
     // MARK: View Controller
@@ -59,7 +59,7 @@ extension OrderListVC {
 
 
 // MARK: - Fileprivate Methods
-fileprivate extension OrderListVC {
+private extension OrderListVC {
     
     func fetchOrders() {
         listener = viewModel.fetchOrders { [weak self] status in

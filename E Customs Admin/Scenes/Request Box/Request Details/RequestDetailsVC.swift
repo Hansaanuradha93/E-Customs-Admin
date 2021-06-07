@@ -3,18 +3,18 @@ import UIKit
 class RequestDetailsVC: UIViewController {
     
     // MARK: Properties
-    fileprivate let viewModel = RequestDetailsVM()
+    private let viewModel = RequestDetailsVM()
     var request: Request!
     
-    fileprivate let scrollView = UIScrollView()
-    fileprivate let contentView = UIView()
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
     
-    fileprivate let thumbnailImageView = ECImageView(contentMode: .scaleAspectFill)
-    fileprivate let sneakerNameLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
-    fileprivate let ideaDescriptionLabel =  ECRegularLabel(textAlignment: .left, textColor: .lightGray, fontSize: 15, numberOfLines: 0)
-    fileprivate let statusLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
-    fileprivate let priceTextField = ECTextField(padding: 16, placeholderText: Strings.price)
-    fileprivate let approveButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.approve, titleColor: .gray, radius: GlobalConstants.cornerRadius, fontSize: 18)
+    private let thumbnailImageView = ECImageView(contentMode: .scaleAspectFill)
+    private let sneakerNameLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
+    private let ideaDescriptionLabel =  ECRegularLabel(textAlignment: .left, textColor: .lightGray, fontSize: 15, numberOfLines: 0)
+    private let statusLabel = ECMediumLabel(textAlignment: .left, fontSize: 17)
+    private let priceTextField = ECTextField(padding: 16, placeholderText: Strings.price)
+    private let approveButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.approve, titleColor: .gray, radius: GlobalConstants.cornerRadius, fontSize: 18)
     
     
     // MARK: Initializers
@@ -44,7 +44,7 @@ class RequestDetailsVC: UIViewController {
 
 
 // MARK: - Fileprivate Methods
-fileprivate extension RequestDetailsVC {
+private extension RequestDetailsVC {
     
     @objc func handleApprove() {
         var title = ""

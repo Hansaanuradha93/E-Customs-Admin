@@ -38,7 +38,7 @@ extension RequestDetailsVM {
     }
     
     
-    fileprivate func checkFormValidity() {
+    private func checkFormValidity() {
         let isFormValid = price?.isEmpty == false
         bindalbeIsFormValid.value = isFormValid
     }

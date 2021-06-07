@@ -5,12 +5,12 @@ class RequestCell: UITableViewCell {
     // MARK: Properties
     static let reuseID = "RequestCell"
     
-    fileprivate let thumbnailImageView = ECImageView(contentMode: .scaleAspectFill)
-    fileprivate let sneakerNameLabel = ECRegularLabel(textAlignment: .left, fontSize: 15, numberOfLines: 2)
-    fileprivate let ideaDescriptionLabel = ECRegularLabel(textAlignment: .left, textColor: .gray, fontSize: 15)
-    fileprivate let statusLabel = ECRegularLabel(textAlignment: .left, textColor: .gray, fontSize: 15)
-    fileprivate let priceLabel = ECRegularLabel(textAlignment: .left, textColor: .gray, fontSize: 15)
-    fileprivate let separatorLine = UIView()
+    private let thumbnailImageView = ECImageView(contentMode: .scaleAspectFill)
+    private let sneakerNameLabel = ECRegularLabel(textAlignment: .left, fontSize: 15, numberOfLines: 2)
+    private let ideaDescriptionLabel = ECRegularLabel(textAlignment: .left, textColor: .gray, fontSize: 15)
+    private let statusLabel = ECRegularLabel(textAlignment: .left, textColor: .gray, fontSize: 15)
+    private let priceLabel = ECRegularLabel(textAlignment: .left, textColor: .gray, fontSize: 15)
+    private let separatorLine = UIView()
 
     
     // MARK: Initializers
@@ -39,7 +39,7 @@ extension RequestCell {
 
 
 // MARK: - Fileprivate Methods
-fileprivate extension RequestCell {
+private extension RequestCell {
     
     func setupUI() {
         selectionStyle = .none

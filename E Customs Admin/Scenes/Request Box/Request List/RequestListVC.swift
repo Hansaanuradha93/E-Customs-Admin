@@ -5,7 +5,7 @@ class RequestListVC: UITableViewController {
     
     // MARK: Properties
     let viewModel = RequestListVM()
-    fileprivate var listener: ListenerRegistration?
+    private var listener: ListenerRegistration?
 
     
     // MARK: View Controller
@@ -60,7 +60,7 @@ extension RequestListVC {
 
 
 // MARK: - Fileprivate Methods
-fileprivate extension RequestListVC {
+private extension RequestListVC {
     
     func fetchRequests() {
         listener = viewModel.fetchRequest { [weak self] status in

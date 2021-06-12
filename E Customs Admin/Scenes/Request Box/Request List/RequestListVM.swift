@@ -5,7 +5,7 @@ final class RequestListVM {
     
     // MARK: Properties
     var requests = [Request]()
-    fileprivate var requestsDictionary = [String : Request]()
+    private var requestsDictionary = [String : Request]()
 }
 
 
@@ -47,7 +47,7 @@ extension RequestListVM {
     }
     
     
-    fileprivate func sortRequestsByTimestamp(completion: @escaping (Bool) -> ()) {
+    private func sortRequestsByTimestamp(completion: @escaping (Bool) -> ()) {
         let values = Array(requestsDictionary.values)
         requests = values.sorted(by: { (request1, request2) -> Bool in
             guard let timestamp1 = request1.timestamp, let timestamp2 = request2.timestamp else { return false }

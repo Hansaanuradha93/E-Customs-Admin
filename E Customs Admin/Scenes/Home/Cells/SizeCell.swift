@@ -4,7 +4,7 @@ class SizeCell: UICollectionViewCell {
     
     // MARK: Properties
     static let reuseID = "SizeCell"
-    fileprivate let sizeLabel = ECRegularLabel(textColor: .gray, fontSize: 12)
+    private let sizeLabel = ECRegularLabel(textColor: .gray, fontSize: 12)
     
     
     // MARK: Initializers
@@ -39,7 +39,7 @@ extension SizeCell {
 
 
 // MARK: - Fileprivate Methods
-fileprivate extension SizeCell {
+private extension SizeCell {
     
     func setupUI() {
         self.setRoundedBorder(borderColor: GlobalConstants.borderColor, borderWidth: GlobalConstants.borderWidth, radius: GlobalConstants.cornerRadius)

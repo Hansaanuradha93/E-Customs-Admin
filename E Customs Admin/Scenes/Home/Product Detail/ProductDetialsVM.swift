@@ -76,8 +76,8 @@ extension ProductDetialsVM {
 }
 
 
-// MARK: - Fileprivate Methods
-fileprivate extension ProductDetialsVM {
+// MARK: - Private Methods
+private extension ProductDetialsVM {
     
     func isSizesAvailable() {
         let isSizesAvailable = (sizes.count != 0)

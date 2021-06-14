@@ -5,7 +5,7 @@ class HomeVC: UITableViewController {
 
     // MARK: Properties
     let viewModel = HomeVM()
-    fileprivate var listener: ListenerRegistration?
+    private var listener: ListenerRegistration?
     
     
     // MARK: View Controller
@@ -58,7 +58,7 @@ extension HomeVC {
 
 
 // MARK: - Fileprivate Methods
-fileprivate extension HomeVC {
+private extension HomeVC {
     
     func fetchProducts() {
         listener = viewModel.fetchProducts { (status) in

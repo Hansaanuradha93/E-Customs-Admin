@@ -3,16 +3,16 @@ import UIKit
 class AddProductsVC: UIViewController {
     
     // MARK: Properties
-    fileprivate let viewModel = AddProductsVM()
+    private let viewModel = AddProductsVM()
     
-    fileprivate let photoButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.selectPhoto, titleColor: .gray, fontSize: 21)
-    fileprivate let nameTextField = ECTextField(padding: 16, placeholderText: Strings.productName)
-    fileprivate let descriptionTextField = ECTextField(padding: 16, placeholderText: Strings.description)
-    fileprivate let priceTextField = ECTextField(padding: 16, placeholderText: Strings.price)
-    fileprivate let sizesTextField = ECTextField(padding: 16, placeholderText: Strings.sizes)
-    fileprivate let saveButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.save, titleColor: .gray, fontSize: 18)
+    private let photoButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.selectPhoto, titleColor: .gray, fontSize: 21)
+    private let nameTextField = ECTextField(padding: 16, placeholderText: Strings.productName)
+    private let descriptionTextField = ECTextField(padding: 16, placeholderText: Strings.description)
+    private let priceTextField = ECTextField(padding: 16, placeholderText: Strings.price)
+    private let sizesTextField = ECTextField(padding: 16, placeholderText: Strings.sizes)
+    private let saveButton = ECButton(backgroundColor: UIColor.appColor(.lightGray), title: Strings.save, titleColor: .gray, fontSize: 18)
     
-    fileprivate lazy var verticalStackView: UIStackView = {
+    private lazy var verticalStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [nameTextField, descriptionTextField, priceTextField, sizesTextField, saveButton])
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
@@ -20,7 +20,7 @@ class AddProductsVC: UIViewController {
         return stackView
     }()
     
-    fileprivate lazy var overrallStackView: UIStackView = {
+    private lazy var overrallStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [photoButton, verticalStackView])
         stackView.axis = .vertical
         stackView.spacing = 24
@@ -46,7 +46,7 @@ class AddProductsVC: UIViewController {
 
 
 // MARK: - Objc Methods
-fileprivate extension AddProductsVC {
+private extension AddProductsVC {
     
     @objc func handleSave() {
         handleTapDismiss()
@@ -102,7 +102,7 @@ fileprivate extension AddProductsVC {
 
 
 // MARK: - Fileprivate Methods
-fileprivate extension AddProductsVC {
+private extension AddProductsVC {
     
     func clearData() {
         photoButton.setImage(nil, for: .normal)

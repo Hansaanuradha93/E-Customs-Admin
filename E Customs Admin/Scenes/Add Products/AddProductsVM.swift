@@ -46,8 +46,8 @@ extension AddProductsVM {
 }
 
 
-// MARK: - Fileprivate Methods
-fileprivate extension AddProductsVM {
+// MARK: - Private Methods
+private extension AddProductsVM {
     
     func fetchImageDownloadUrl(reference: StorageReference, completion: @escaping (Bool, String) -> ()) {
         reference.downloadURL { (url, error) in

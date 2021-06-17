@@ -32,7 +32,7 @@ extension LoginVM {
     }
     
     
-    fileprivate func checkFormValidity() {
+    private func checkFormValidity() {
         let isFormValid = email?.isEmpty == false && password?.isEmpty == false && password?.count ?? 0 >= 6
         bindalbeIsFormValid.value = isFormValid
     }
